@@ -2,7 +2,7 @@
 
 This repository contains benchmarks for [LiveKit](https://github.com/livekit/livekit), an open-source platform for real-time audio, video, and data communication.
 
-You can view the evaluation reports at [tabbyml.github.io/livekit-benchmark](https://tabbyml.github.io/livekit-benchmark/).
+You can view the evaluation reports at [desu-club.github.io/livekit-benchmark](https://desu-club.github.io/livekit-benchmark/).
 
 ## Project Structure
 
