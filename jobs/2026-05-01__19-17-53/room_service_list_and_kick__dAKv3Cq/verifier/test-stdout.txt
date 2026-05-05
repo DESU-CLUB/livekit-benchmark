@@ -1,0 +1,39 @@
+downloading uv 0.9.7 aarch64-unknown-linux-gnu
+no checksums to verify
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+
+To add $HOME/.local/bin to your PATH, either restart your shell or run:
+
+    source $HOME/.local/bin/env (sh, bash, zsh)
+    source $HOME/.local/bin/env.fish (fish)
+Downloading pygments (1.2MiB)
+ Downloading pygments
+Installed 7 packages in 19ms
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 14 items
+
+../../tests/test_final_state.py ..............                           [100%]
+
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../../tests/test_final_state.py::test_script_exists
+PASSED ../../tests/test_final_state.py::test_output_log_exists
+PASSED ../../tests/test_final_state.py::test_output_log_not_empty
+PASSED ../../tests/test_final_state.py::test_output_log_contains_active_rooms
+PASSED ../../tests/test_final_state.py::test_output_log_contains_removed_participant
+PASSED ../../tests/test_final_state.py::test_output_log_contains_live_session
+PASSED ../../tests/test_final_state.py::test_script_contains_list_rooms
+PASSED ../../tests/test_final_state.py::test_script_contains_remove_participant
+PASSED ../../tests/test_final_state.py::test_script_contains_banned_user
+PASSED ../../tests/test_final_state.py::test_script_contains_live_session
+PASSED ../../tests/test_final_state.py::test_script_contains_room_service_client
+PASSED ../../tests/test_final_state.py::test_script_contains_output_log_write
+PASSED ../../tests/test_final_state.py::test_script_has_error_handling
+PASSED ../../tests/test_final_state.py::test_active_rooms_line_has_number
+============================== 14 passed in 0.02s ==============================

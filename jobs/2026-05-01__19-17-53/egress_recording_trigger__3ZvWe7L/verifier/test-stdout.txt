@@ -1,0 +1,140 @@
+downloading uv 0.9.7 aarch64-unknown-linux-gnu
+no checksums to verify
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+
+To add $HOME/.local/bin to your PATH, either restart your shell or run:
+
+    source $HOME/.local/bin/env (sh, bash, zsh)
+    source $HOME/.local/bin/env.fish (fish)
+Downloading pygments (1.2MiB)
+ Downloading pygments
+Installed 7 packages in 39ms
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 10 items
+
+../../../tests/test_final_state.py ........F.                            [100%]
+
+=================================== FAILURES ===================================
+____________________ test_start_recording_returns_egress_id ____________________
+
+    def test_start_recording_returns_egress_id():
+        node_path = shutil.which("node")
+        assert node_path is not None, "node must be installed"
+    
+        env = os.environ.copy()
+        env.setdefault("LIVEKIT_URL", "wss://test.livekit.cloud")
+        env.setdefault("LIVEKIT_API_KEY", "test-api-key")
+        env.setdefault("LIVEKIT_API_SECRET", "test-api-secret-that-is-long-enough-32chars")
+    
+        proc = subprocess.Popen(
+            [node_path, "server.js"],
+            cwd=str(PROJECT_DIR),
+            env=env,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        )
+    
+        try:
+            time.sleep(2)
+    
+            payload = json.dumps({"room": "test-room", "filepath": "/tmp/recording.mp4"}).encode()
+            request = urllib.request.Request(
+                f"{SERVER_URL}/start-recording",
+                data=payload,
+                headers={"Content-Type": "application/json"},
+                method="POST",
+            )
+    
+            try:
+>               with urllib.request.urlopen(request, timeout=10) as resp:
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/tests/test_final_state.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/urllib/request.py:215: in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/urllib/request.py:521: in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/urllib/request.py:630: in http_response
+    response = self.parent.error(
+/usr/lib/python3.12/urllib/request.py:559: in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/urllib/request.py:492: in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <urllib.request.HTTPDefaultErrorHandler object at 0xf9fa4c74ed80>
+req = <urllib.request.Request object at 0xf9fa4c432ab0>
+fp = <http.client.HTTPResponse object at 0xf9fa4c85b490>, code = 500
+msg = 'Internal Server Error'
+hdrs = <http.client.HTTPMessage object at 0xf9fa4c433740>
+
+    def http_error_default(self, req, fp, code, msg, hdrs):
+>       raise HTTPError(req.full_url, code, msg, hdrs, fp)
+E       urllib.error.HTTPError: HTTP Error 500: Internal Server Error
+
+/usr/lib/python3.12/urllib/request.py:639: HTTPError
+
+During handling of the above exception, another exception occurred:
+
+    def test_start_recording_returns_egress_id():
+        node_path = shutil.which("node")
+        assert node_path is not None, "node must be installed"
+    
+        env = os.environ.copy()
+        env.setdefault("LIVEKIT_URL", "wss://test.livekit.cloud")
+        env.setdefault("LIVEKIT_API_KEY", "test-api-key")
+        env.setdefault("LIVEKIT_API_SECRET", "test-api-secret-that-is-long-enough-32chars")
+    
+        proc = subprocess.Popen(
+            [node_path, "server.js"],
+            cwd=str(PROJECT_DIR),
+            env=env,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        )
+    
+        try:
+            time.sleep(2)
+    
+            payload = json.dumps({"room": "test-room", "filepath": "/tmp/recording.mp4"}).encode()
+            request = urllib.request.Request(
+                f"{SERVER_URL}/start-recording",
+                data=payload,
+                headers={"Content-Type": "application/json"},
+                method="POST",
+            )
+    
+            try:
+                with urllib.request.urlopen(request, timeout=10) as resp:
+                    status = resp.status
+                    body = resp.read().decode("utf-8")
+            except urllib.error.HTTPError as e:
+                body = e.read().decode("utf-8")
+>               pytest.fail(f"POST /start-recording returned HTTP {e.code}: {body}")
+E               Failed: POST /start-recording returned HTTP 500: {"error":"requested room does not exist"}
+
+/tests/test_final_state.py:102: Failed
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../../../tests/test_final_state.py::test_server_js_exists
+PASSED ../../../tests/test_final_state.py::test_script_uses_egress_client
+PASSED ../../../tests/test_final_state.py::test_script_uses_start_room_composite_egress
+PASSED ../../../tests/test_final_state.py::test_script_uses_encoded_file_output
+PASSED ../../../tests/test_final_state.py::test_script_uses_stop_egress
+PASSED ../../../tests/test_final_state.py::test_script_listens_on_port_5000
+PASSED ../../../tests/test_final_state.py::test_script_has_start_recording_route
+PASSED ../../../tests/test_final_state.py::test_script_has_stop_recording_route
+PASSED ../../../tests/test_final_state.py::test_start_recording_returns_400_without_room
+FAILED ../../../tests/test_final_state.py::test_start_recording_returns_egress_id
+========================= 1 failed, 9 passed in 7.83s ==========================

@@ -1,0 +1,83 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 7,
+            "passed": 7,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777688799.5037422,
+            "stop": 1777688799.5335114
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_update_metadata_script_exists",
+                "status": "passed",
+                "duration": 0.0015558770392090082,
+                "start": 1777688799.5173092,
+                "stop": 1777688799.5195365,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_room_service_client",
+                "status": "passed",
+                "duration": 0.0021282119560055435,
+                "start": 1777688799.519714,
+                "stop": 1777688799.5224335,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_calls_update_room_metadata",
+                "status": "passed",
+                "duration": 0.0011761269415728748,
+                "start": 1777688799.5227814,
+                "stop": 1777688799.5245066,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_targets_conference_room",
+                "status": "passed",
+                "duration": 0.0010009600082412362,
+                "start": 1777688799.5247512,
+                "stop": 1777688799.526114,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_reads_env_vars",
+                "status": "passed",
+                "duration": 0.0010436679585836828,
+                "start": 1777688799.5263026,
+                "stop": 1777688799.527718,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_output_log_exists",
+                "status": "passed",
+                "duration": 0.0014237100258469582,
+                "start": 1777688799.527998,
+                "stop": 1777688799.5297735,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_output_log_contains_success_message",
+                "status": "passed",
+                "duration": 0.001930752070620656,
+                "start": 1777688799.530021,
+                "stop": 1777688799.5324686,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

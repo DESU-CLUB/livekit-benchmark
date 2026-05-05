@@ -1,0 +1,29 @@
+## Background
+LiveKit allows server-side code to dynamically update a participant's permissions while they are connected to a room. This is useful for scenarios like promoting a viewer to a speaker on a live stage, granting screenshare rights, or revoking publishing privileges. The `livekit-server-sdk` Python package exposes `lkapi.room.update_participant` with a `ParticipantPermission` object.
+
+## Requirements
+Write a Python script that uses the LiveKit Python Server SDK to update a participant's permissions to allow full publishing.
+
+## Implementation Guide
+1. Navigate to the project directory at `/home/user/livekit-admin`.
+2. Source `.env.local` to load credentials into your environment.
+3. Create `update_permissions.py` that:
+   - Imports `asyncio`, `api` from `livekit`, and `ParticipantPermission` from `livekit.protocol.models`.
+   - Defines an `async def main()` function.
+   - Uses `async with api.LiveKitAPI() as lkapi:` to create an authenticated API client.
+   - Calls `await lkapi.room.update_participant(api.UpdateParticipantRequest(room="stage-room", identity="speaker-1", permission=ParticipantPermission(can_publish=True, can_subscribe=True, can_publish_data=True)))`.
+   - After the call, opens `output.log` in append mode and writes `"Permissions updated\n"`.
+   - Also prints `"Permissions updated"` to stdout.
+4. Run the script: `python3 update_permissions.py`
+
+## Constraints
+- Project path: `/home/user/livekit-admin`
+- Log file: `/home/user/livekit-admin/output.log`
+- The script must be named `update_permissions.py`
+- Room name must be `stage-room`
+- Participant identity must be `speaker-1`
+- Must set `can_publish=True`, `can_subscribe=True`, `can_publish_data=True`
+- Use only the `livekit-server-sdk` package (already installed)
+
+## Integrations
+- **LiveKit Python Server SDK**: `livekit.api.LiveKitAPI` room participant management

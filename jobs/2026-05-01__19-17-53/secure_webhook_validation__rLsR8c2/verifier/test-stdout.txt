@@ -1,0 +1,145 @@
+downloading uv 0.9.7 aarch64-unknown-linux-gnu
+no checksums to verify
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+
+To add $HOME/.local/bin to your PATH, either restart your shell or run:
+
+    source $HOME/.local/bin/env (sh, bash, zsh)
+    source $HOME/.local/bin/env.fish (fish)
+Downloading pygments (1.2MiB)
+ Downloading pygments
+Installed 7 packages in 12ms
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 12 items
+
+../../../tests/test_final_state.py ..........FF                          [100%]
+
+=================================== FAILURES ===================================
+_______________________ test_health_endpoint_returns_ok ________________________
+
+    def test_health_endpoint_returns_ok():
+        node_path = shutil.which("node")
+        assert node_path is not None, "node must be installed"
+    
+        env = os.environ.copy()
+        env.setdefault("LIVEKIT_API_KEY", "test-api-key")
+        env.setdefault("LIVEKIT_API_SECRET", "test-api-secret")
+    
+        proc = subprocess.Popen(
+            [node_path, "server.js"],
+            cwd=str(PROJECT_DIR),
+            env=env,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        )
+    
+        try:
+            time.sleep(2)
+    
+            health_url = f"{SERVER_URL}/health"
+            try:
+                with urllib.request.urlopen(health_url, timeout=5) as resp:
+                    status = resp.status
+                    body = resp.read().decode("utf-8")
+            except urllib.error.HTTPError as e:
+                body = e.read().decode("utf-8")
+                pytest.fail(f"GET /health returned HTTP {e.code}: {body}")
+    
+            assert status == 200, f"Expected HTTP 200, got {status}"
+    
+>           data = json.loads(body)
+                   ^^^^^^^^^^^^^^^^
+
+/tests/test_final_state.py:113: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/json/decoder.py:337: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0xf38b89105a30>, s = 'OK', idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+/usr/lib/python3.12/json/decoder.py:355: JSONDecodeError
+____________________ test_unauthorized_webhook_returns_401 _____________________
+
+    def test_unauthorized_webhook_returns_401():
+        node_path = shutil.which("node")
+        assert node_path is not None, "node must be installed"
+    
+        env = os.environ.copy()
+        env.setdefault("LIVEKIT_API_KEY", "test-api-key")
+        env.setdefault("LIVEKIT_API_SECRET", "test-api-secret")
+    
+        proc = subprocess.Popen(
+            [node_path, "server.js"],
+            cwd=str(PROJECT_DIR),
+            env=env,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        )
+    
+        try:
+            time.sleep(2)
+    
+            webhook_url = f"{SERVER_URL}/webhook"
+            request = urllib.request.Request(
+                webhook_url,
+                data=b'{"event":"room_started","room":{}}',
+                headers={
+                    "Content-Type": "application/webhook+json",
+                },
+                method="POST",
+            )
+    
+            try:
+                with urllib.request.urlopen(request, timeout=5) as resp:
+                    status = resp.status
+            except urllib.error.HTTPError as e:
+                status = e.code
+    
+>           assert status == 401, (
+                f"POST /webhook with no/invalid Authorization header must return 401, got {status}"
+            )
+E           AssertionError: POST /webhook with no/invalid Authorization header must return 401, got 400
+E           assert 400 == 401
+
+/tests/test_final_state.py:159: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../../../tests/test_final_state.py::test_server_js_exists
+PASSED ../../../tests/test_final_state.py::test_script_uses_webhook_receiver
+PASSED ../../../tests/test_final_state.py::test_script_uses_express_raw_middleware
+PASSED ../../../tests/test_final_state.py::test_script_references_events_log
+PASSED ../../../tests/test_final_state.py::test_script_listens_on_port_4000
+PASSED ../../../tests/test_final_state.py::test_script_has_room_started_handler
+PASSED ../../../tests/test_final_state.py::test_script_has_room_finished_handler
+PASSED ../../../tests/test_final_state.py::test_script_has_participant_joined_handler
+PASSED ../../../tests/test_final_state.py::test_script_has_participant_left_handler
+PASSED ../../../tests/test_final_state.py::test_script_has_track_published_handler
+FAILED ../../../tests/test_final_state.py::test_health_endpoint_returns_ok - ...
+FAILED ../../../tests/test_final_state.py::test_unauthorized_webhook_returns_401
+========================= 2 failed, 10 passed in 4.13s =========================

@@ -1,0 +1,30 @@
+## Background
+Frontend applications that connect to LiveKit need short-lived access tokens issued by a server-side component. A common pattern is to create a lightweight HTTP server that accepts a room name and participant identity as query parameters and returns a signed JWT. This keeps the API key and secret secure on the server.
+
+## Requirements
+Build a Node.js/Express HTTP server that generates LiveKit access tokens on demand.
+
+## Implementation Guide
+1. Navigate to the project directory at `/home/user/livekit-token-server`.
+2. Create a file named `index.js` that:
+   - Imports `express` and `AccessToken`, `VideoGrants` from `livekit-server-sdk`.
+   - Reads `LIVEKIT_API_KEY` and `LIVEKIT_API_SECRET` from environment variables.
+   - Creates an Express app listening on port `3000`.
+   - Implements `GET /token` that:
+     - Reads `room` and `identity` from query parameters.
+     - Returns HTTP 400 if either is missing.
+     - Creates an `AccessToken` with the given identity.
+     - Adds a grant with `roomJoin: true`, `room`, `canPublish: true`, `canSubscribe: true`.
+     - Returns JSON: `{ "token": "<jwt>" }`.
+3. Start the server: `node index.js`
+
+## Constraints
+- Project path: `/home/user/livekit-token-server`
+- Port: `3000`
+- Start command: `node index.js`
+- `express` and `livekit-server-sdk` npm packages are already installed
+- Do not hardcode credentials; read from environment variables
+
+## Integrations
+- **LiveKit Node.js Server SDK**: `AccessToken` token generation
+- **Express**: HTTP framework

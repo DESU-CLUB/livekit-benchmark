@@ -1,0 +1,197 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 19,
+            "passed": 17,
+            "failed": 2,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777689546.153276,
+            "stop": 1777689546.18528
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_agent_file_exists",
+                "status": "passed",
+                "duration": 0.0006328320014290512,
+                "start": 1777689546.1618903,
+                "stop": 1777689546.1627786,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_toml_exists",
+                "status": "passed",
+                "duration": 0.0005656250286847353,
+                "start": 1777689546.1628928,
+                "stop": 1777689546.1636584,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_exists",
+                "status": "passed",
+                "duration": 0.0004307929193601012,
+                "start": 1777689546.1637611,
+                "stop": 1777689546.164363,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_venv_exists",
+                "status": "passed",
+                "duration": 0.0003693340113386512,
+                "start": 1777689546.164442,
+                "stop": 1777689546.164956,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_has_livekit_agents",
+                "status": "passed",
+                "duration": 0.00035320897586643696,
+                "start": 1777689546.1650395,
+                "stop": 1777689546.1655343,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_has_deepgram_plugin",
+                "status": "passed",
+                "duration": 0.0004324180190451443,
+                "start": 1777689546.1656055,
+                "stop": 1777689546.1661747,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_has_silero_plugin",
+                "status": "passed",
+                "duration": 0.0004269159981049597,
+                "start": 1777689546.166248,
+                "stop": 1777689546.1668818,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_imports_deepgram_plugin",
+                "status": "passed",
+                "duration": 0.0004265010356903076,
+                "start": 1777689546.166952,
+                "stop": 1777689546.1675434,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_deepgram_stt",
+                "status": "passed",
+                "duration": 0.00046008394565433264,
+                "start": 1777689546.167611,
+                "stop": 1777689546.1683612,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_nova_3_model",
+                "status": "passed",
+                "duration": 0.0006173339206725359,
+                "start": 1777689546.1684282,
+                "stop": 1777689546.169292,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_has_deepgram_agent_name",
+                "status": "passed",
+                "duration": 0.00044320797314867377,
+                "start": 1777689546.1693616,
+                "stop": 1777689546.1699913,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_inference_llm",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0008412509923800826,
+                "start": 1777689546.1700642,
+                "stop": 1777689546.178279,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_agent_uses_inference_llm():\n        source = AGENT_FILE.read_text()\n>       assert \"inference.LLM\" in source, (\n            \"src/agent.py must use inference.LLM for the language model\"\n        )\nE       AssertionError: src/agent.py must use inference.LLM for the language model\nE       assert 'inference.LLM' in 'import logging\\nfrom dotenv import load_dotenv\\nfrom livekit.agents import (\\n    AutoSubscribe,\\n    JobContext,\\n  ...\"Hey, how can I help you today?\", allow_interruptions=True)\\n\\n\\nif __name__ == \"__main__\":\\n    cli.run_app(server)\\n'\n\n/tests/test_final_state.py:82: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_inference_tts",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0008261250331997871,
+                "start": 1777689546.17848,
+                "stop": 1777689546.1808286,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_agent_uses_inference_tts():\n        source = AGENT_FILE.read_text()\n>       assert \"inference.TTS\" in source, (\n            \"src/agent.py must use inference.TTS for text-to-speech\"\n        )\nE       AssertionError: src/agent.py must use inference.TTS for text-to-speech\nE       assert 'inference.TTS' in 'import logging\\nfrom dotenv import load_dotenv\\nfrom livekit.agents import (\\n    AutoSubscribe,\\n    JobContext,\\n  ...\"Hey, how can I help you today?\", allow_interruptions=True)\\n\\n\\nif __name__ == \"__main__\":\\n    cli.run_app(server)\\n'\n\n/tests/test_final_state.py:89: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_silero_vad",
+                "status": "passed",
+                "duration": 0.00045849900925531983,
+                "start": 1777689546.1809323,
+                "stop": 1777689546.1815958,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_rtc_session_decorator",
+                "status": "passed",
+                "duration": 0.0003921670140698552,
+                "start": 1777689546.1816688,
+                "stop": 1777689546.182222,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_agent_session",
+                "status": "passed",
+                "duration": 0.0003667930141091347,
+                "start": 1777689546.1822894,
+                "stop": 1777689546.18285,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_has_livekit_keys",
+                "status": "passed",
+                "duration": 0.0003903750330209732,
+                "start": 1777689546.1829238,
+                "stop": 1777689546.1834755,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_has_deepgram_api_key",
+                "status": "passed",
+                "duration": 0.00041641690768301487,
+                "start": 1777689546.183544,
+                "stop": 1777689546.1841187,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_venv_has_python_binary",
+                "status": "passed",
+                "duration": 0.0007033339934423566,
+                "start": 1777689546.184188,
+                "stop": 1777689546.1850514,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}
