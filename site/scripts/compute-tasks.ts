@@ -237,8 +237,8 @@ async function main() {
     });
   }
 
-  const outputPath = path.join(siteRoot, '../.zealt/tasks.json');
-  const pendingTasksOutputPath = path.join(siteRoot, '../.zealt/pending-tasks.json');
+  const outputPath = path.join(siteRoot, 'zealt/tasks.json');
+  const pendingTasksOutputPath = path.join(siteRoot, 'zealt/pending-tasks.json');
   
   await fs.writeFile(outputPath, JSON.stringify(tasks, null, 2));
   await fs.writeFile(
