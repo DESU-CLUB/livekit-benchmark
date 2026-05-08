@@ -1,0 +1,119 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 11,
+            "passed": 11,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778200821.9750068,
+            "stop": 1778200825.0174456
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_server_js_exists",
+                "status": "passed",
+                "duration": 0.00037202308885753155,
+                "start": 1778200821.9812562,
+                "stop": 1778200821.9818068,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_server_contains_participant_events_table",
+                "status": "passed",
+                "duration": 0.0003040679730474949,
+                "start": 1778200821.9818861,
+                "stop": 1778200821.9823205,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_server_contains_webhook_receiver",
+                "status": "passed",
+                "duration": 0.00028281903360038996,
+                "start": 1778200821.9823842,
+                "stop": 1778200821.9827805,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_server_contains_express_raw",
+                "status": "passed",
+                "duration": 0.0002744861412793398,
+                "start": 1778200821.9828422,
+                "stop": 1778200821.9832165,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_server_contains_events_endpoint",
+                "status": "passed",
+                "duration": 0.00026619399432092905,
+                "start": 1778200821.9832823,
+                "stop": 1778200821.9837003,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_server_contains_participant_joined_check",
+                "status": "passed",
+                "duration": 0.00023373798467218876,
+                "start": 1778200821.9837818,
+                "stop": 1778200821.9841242,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_server_contains_port_4000",
+                "status": "passed",
+                "duration": 0.00021348882000893354,
+                "start": 1778200821.984181,
+                "stop": 1778200821.984482,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_server_contains_webhook_route",
+                "status": "passed",
+                "duration": 0.00020628201309591532,
+                "start": 1778200821.9845328,
+                "stop": 1778200821.9848223,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_server_contains_better_sqlite3",
+                "status": "passed",
+                "duration": 0.0002502369461581111,
+                "start": 1778200821.9848714,
+                "stop": 1778200821.9852138,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_server_contains_insert",
+                "status": "passed",
+                "duration": 0.00025186396669596434,
+                "start": 1778200821.9852738,
+                "stop": 1778200821.9856238,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_server_starts_and_events_endpoint_returns_json",
+                "status": "passed",
+                "duration": 3.0302080251276493,
+                "start": 1778200821.9856808,
+                "stop": 1778200825.0167391,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

@@ -1,0 +1,101 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 9,
+            "passed": 9,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778205855.5391614,
+            "stop": 1778205855.5490162
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_subscribe_only_script_exists",
+                "status": "passed",
+                "duration": 0.0003610767889767885,
+                "start": 1778205855.5445645,
+                "stop": 1778205855.5450854,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_sets_can_publish_false",
+                "status": "passed",
+                "duration": 0.00032491202000528574,
+                "start": 1778205855.5451555,
+                "stop": 1778205855.545615,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_sets_can_subscribe_true",
+                "status": "passed",
+                "duration": 0.00029278709553182125,
+                "start": 1778205855.54568,
+                "stop": 1778205855.54609,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_viewer_identity",
+                "status": "passed",
+                "duration": 0.00029999599792063236,
+                "start": 1778205855.5461478,
+                "stop": 1778205855.5465672,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_broadcast_room",
+                "status": "passed",
+                "duration": 0.0002810799051076174,
+                "start": 1778205855.5466225,
+                "stop": 1778205855.5470238,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_livekit_access_token",
+                "status": "passed",
+                "duration": 0.00028199609369039536,
+                "start": 1778205855.5470774,
+                "stop": 1778205855.5474658,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_token_file_exists",
+                "status": "passed",
+                "duration": 0.00027857907116413116,
+                "start": 1778205855.5475233,
+                "stop": 1778205855.547922,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_token_file_not_empty",
+                "status": "passed",
+                "duration": 0.00029274506960064173,
+                "start": 1778205855.5479746,
+                "stop": 1778205855.5483782,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_token_is_valid_jwt_format",
+                "status": "passed",
+                "duration": 0.0003079540329053998,
+                "start": 1778205855.5484416,
+                "stop": 1778205855.5488553,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

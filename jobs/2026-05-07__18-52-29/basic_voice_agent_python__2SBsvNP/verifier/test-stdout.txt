@@ -1,0 +1,41 @@
+downloading uv 0.9.7 aarch64-unknown-linux-gnu
+no checksums to verify
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+Downloading pygments (1.2MiB)
+ Downloading pygments
+Installed 7 packages in 5ms
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 21 items
+
+../../../tests/test_final_state.py .....................                 [100%]
+
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../../../tests/test_final_state.py::test_pyproject_toml_exists
+PASSED ../../../tests/test_final_state.py::test_pyproject_has_livekit_agents_dep
+PASSED ../../../tests/test_final_state.py::test_pyproject_has_silero_dep
+PASSED ../../../tests/test_final_state.py::test_pyproject_has_openai_dep
+PASSED ../../../tests/test_final_state.py::test_pyproject_has_python_dotenv_dep
+PASSED ../../../tests/test_final_state.py::test_agent_file_exists
+PASSED ../../../tests/test_final_state.py::test_agent_uses_agent_server
+PASSED ../../../tests/test_final_state.py::test_agent_uses_rtc_session_decorator
+PASSED ../../../tests/test_final_state.py::test_agent_name_is_my_voice_agent
+PASSED ../../../tests/test_final_state.py::test_agent_uses_inference_stt
+PASSED ../../../tests/test_final_state.py::test_agent_uses_deepgram_nova3
+PASSED ../../../tests/test_final_state.py::test_agent_uses_inference_llm
+PASSED ../../../tests/test_final_state.py::test_agent_uses_gpt4o
+PASSED ../../../tests/test_final_state.py::test_agent_uses_inference_tts
+PASSED ../../../tests/test_final_state.py::test_agent_uses_cartesia_sonic3
+PASSED ../../../tests/test_final_state.py::test_agent_uses_silero_vad
+PASSED ../../../tests/test_final_state.py::test_env_local_exists
+PASSED ../../../tests/test_final_state.py::test_env_local_has_livekit_url
+PASSED ../../../tests/test_final_state.py::test_env_local_has_api_key
+PASSED ../../../tests/test_final_state.py::test_env_local_has_api_secret
+PASSED ../../../tests/test_final_state.py::test_venv_exists_after_uv_sync
+============================== 21 passed in 0.03s ==============================

@@ -1,0 +1,28 @@
+- Initializing MCP connections...
+You
+# Preserving your work Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable. *** ## Background LiveKit's `RoomServiceClient` provides server-side APIs to manage rooms and participants. Common administrative operations include listing active rooms and forcibly removing participants who violate platform policies. ## Requirements Write a Node.js script that uses `RoomServiceClient` to list all active rooms, log the count, remove a specific participant from a target room, and write all log output to a file. ## Implementation Guide 1. Navigate to `/home/user/livekit-admin`. 2. Create `list_and_kick.mjs` that: * Imports `RoomServiceClient` from `livekit-server-sdk` * Imports `fs` from `node:fs` * Reads `LIVEKIT_URL`, `LIVEKIT_API_KEY`, `LIVEKIT_API_SECRET` from environment (fall back to `"http://localhost:7880"`, `"devkey"`, `"devsecret"`) * Creates a `RoomServiceClient` instance * Calls `svc.listRooms()` and stores the result * Builds a log line: `"Active rooms: N"` where `N` is `rooms.length` * Calls `svc.removeParticipant('live-session', 'banned-user')` inside a `try/catch` (participant may not exist) * In the `catch` block, logs `"Note: participant not found or already removed"` * After the try/catch, appends `"Removed participant banned-user from live-session"` to the log * Collects all log lines into an array and writes them (newline-joined) to `output.log` * Also prints each log line to stdout with `console.log` 3. Run the script with `node list_and_kick.mjs` to produce `output.log`. ## Constraints * Project path: `/home/user/livekit-admin` * Log file: `/home/user/livekit-admin/output.log` ## Integrations * LiveKit Server SDK (Node.js)   
+
+Pochi
+💭 Thinking for 523 characters   
+💫 Executing mkdir -p /home/user/livekit-admin && cd /home/user/livekit-admin && npm init -y && npm install livekit-server-sdk ✔ 
+💭 Thinking for 563 characters   
+✏️  Writing /home/user/livekit-admin/list_and_kick.mjs ✔ 
+💭 Thinking for 621 characters   
+💫 Executing cd /home/user/livekit-admin && node list_and_kick.mjs ✔ 
+💭 Thinking for 192 characters   
+📖 Reading /home/user/livekit-admin/output.log ✔ 
+💭 Thinking for 203 characters   
+💫 Executing mkdir -p /logs/artifacts && cp /home/user/livekit-admin/list_and_kick.mjs /logs/artifacts/ && cp /home/user/livekit-admin/output.log /logs/artifacts/ ✔ 
+💭 Thinking for 133 characters   
+🎉 Task Completed
+I have created the requested Node.js script `/home/user/livekit-admin/list_and_kick.mjs` and executed it.
+
+The script:
+- Imports `RoomServiceClient` from `livekit-server-sdk` and `fs` from `node:fs`
+- Reads `LIVEKIT_URL`, `LIVEKIT_API_KEY`, and `LIVEKIT_API_SECRET` from the environment with the specified fallbacks
+- Creates the `RoomServiceClient` and uses it to list the active rooms and remove the specified participant
+- Logs the active rooms count, catches the missing participant error, and logs the removal message
+- Prints the output to `stdout` and writes it to `/home/user/livekit-admin/output.log`
+
+I have also preserved the script and the output log in `/logs/artifacts/` for inspection.   
+  

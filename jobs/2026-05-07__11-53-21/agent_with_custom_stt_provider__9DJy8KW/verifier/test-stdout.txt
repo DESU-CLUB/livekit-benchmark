@@ -1,0 +1,170 @@
+downloading uv 0.9.7 aarch64-unknown-linux-gnu
+no checksums to verify
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+Downloading pygments (1.2MiB)
+ Downloading pygments
+Installed 7 packages in 6ms
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 19 items
+
+../../../tests/test_final_state.py .F..FFF..F.FF......                   [100%]
+
+=================================== FAILURES ===================================
+__________________________ test_pyproject_toml_exists __________________________
+
+    def test_pyproject_toml_exists():
+>       assert PYPROJECT_FILE.is_file(), f"pyproject.toml not found at {PYPROJECT_FILE}"
+E       AssertionError: pyproject.toml not found at /home/user/livekit-agent/pyproject.toml
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/home/user/livekit-agent/pyproject.toml').is_file
+
+/tests/test_final_state.py:18: AssertionError
+______________________ test_pyproject_has_livekit_agents _______________________
+
+    def test_pyproject_has_livekit_agents():
+>       content = PYPROJECT_FILE.read_text()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/tests/test_final_state.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/livekit-agent/pyproject.toml'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/pyproject.toml'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+______________________ test_pyproject_has_deepgram_plugin ______________________
+
+    def test_pyproject_has_deepgram_plugin():
+>       content = PYPROJECT_FILE.read_text()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/tests/test_final_state.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/livekit-agent/pyproject.toml'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/pyproject.toml'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_______________________ test_pyproject_has_silero_plugin _______________________
+
+    def test_pyproject_has_silero_plugin():
+>       content = PYPROJECT_FILE.read_text()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/tests/test_final_state.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/livekit-agent/pyproject.toml'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/pyproject.toml'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_________________________ test_agent_uses_nova_3_model _________________________
+
+    def test_agent_uses_nova_3_model():
+        source = AGENT_FILE.read_text()
+>       assert "nova-3" in source, (
+            "src/agent.py must use model='nova-3' for Deepgram STT"
+        )
+E       AssertionError: src/agent.py must use model='nova-3' for Deepgram STT
+E       assert 'nova-3' in 'import logging\n\nfrom dotenv import load_dotenv\nfrom livekit.agents import (\n    AgentServer,\n    AgentSession,\n...      agent=DeepgramAgent(),\n        room=ctx.room,\n    )\n\n\nif __name__ == "__main__":\n    cli.run_app(server)\n'
+
+/tests/test_final_state.py:68: AssertionError
+________________________ test_agent_uses_inference_llm _________________________
+
+    def test_agent_uses_inference_llm():
+        source = AGENT_FILE.read_text()
+>       assert "inference.LLM" in source, (
+            "src/agent.py must use inference.LLM for the language model"
+        )
+E       AssertionError: src/agent.py must use inference.LLM for the language model
+E       assert 'inference.LLM' in 'import logging\n\nfrom dotenv import load_dotenv\nfrom livekit.agents import (\n    AgentServer,\n    AgentSession,\n...      agent=DeepgramAgent(),\n        room=ctx.room,\n    )\n\n\nif __name__ == "__main__":\n    cli.run_app(server)\n'
+
+/tests/test_final_state.py:82: AssertionError
+________________________ test_agent_uses_inference_tts _________________________
+
+    def test_agent_uses_inference_tts():
+        source = AGENT_FILE.read_text()
+>       assert "inference.TTS" in source, (
+            "src/agent.py must use inference.TTS for text-to-speech"
+        )
+E       AssertionError: src/agent.py must use inference.TTS for text-to-speech
+E       assert 'inference.TTS' in 'import logging\n\nfrom dotenv import load_dotenv\nfrom livekit.agents import (\n    AgentServer,\n    AgentSession,\n...      agent=DeepgramAgent(),\n        room=ctx.room,\n    )\n\n\nif __name__ == "__main__":\n    cli.run_app(server)\n'
+
+/tests/test_final_state.py:89: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../../../tests/test_final_state.py::test_agent_file_exists
+PASSED ../../../tests/test_final_state.py::test_env_local_exists
+PASSED ../../../tests/test_final_state.py::test_venv_exists
+PASSED ../../../tests/test_final_state.py::test_agent_imports_deepgram_plugin
+PASSED ../../../tests/test_final_state.py::test_agent_uses_deepgram_stt
+PASSED ../../../tests/test_final_state.py::test_agent_has_deepgram_agent_name
+PASSED ../../../tests/test_final_state.py::test_agent_uses_silero_vad
+PASSED ../../../tests/test_final_state.py::test_agent_uses_rtc_session_decorator
+PASSED ../../../tests/test_final_state.py::test_agent_uses_agent_session
+PASSED ../../../tests/test_final_state.py::test_env_local_has_livekit_keys
+PASSED ../../../tests/test_final_state.py::test_env_local_has_deepgram_api_key
+PASSED ../../../tests/test_final_state.py::test_venv_has_python_binary
+FAILED ../../../tests/test_final_state.py::test_pyproject_toml_exists - Asser...
+FAILED ../../../tests/test_final_state.py::test_pyproject_has_livekit_agents
+FAILED ../../../tests/test_final_state.py::test_pyproject_has_deepgram_plugin
+FAILED ../../../tests/test_final_state.py::test_pyproject_has_silero_plugin
+FAILED ../../../tests/test_final_state.py::test_agent_uses_nova_3_model - Ass...
+FAILED ../../../tests/test_final_state.py::test_agent_uses_inference_llm - As...
+FAILED ../../../tests/test_final_state.py::test_agent_uses_inference_tts - As...
+========================= 7 failed, 12 passed in 0.07s =========================

@@ -1,0 +1,140 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 10,
+            "passed": 0,
+            "failed": 10,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778205388.4967158,
+            "stop": 1778205388.5905793
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_backend_dir_exists",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0004678709665313363,
+                "start": 1778205388.5083587,
+                "stop": 1778205388.5145452,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_backend_dir_exists():\n>       assert BACKEND_DIR.is_dir(), f\"Backend directory not found at {BACKEND_DIR}\"\nE       AssertionError: Backend directory not found at /home/user/livekit-meet/backend\nE       assert False\nE        +  where False = is_dir()\nE        +    where is_dir = PosixPath('/home/user/livekit-meet/backend').is_dir\n\n/tests/test_final_state.py:32: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_frontend_dir_exists",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00038095307536423206,
+                "start": 1778205388.5146263,
+                "stop": 1778205388.5162969,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_frontend_dir_exists():\n>       assert FRONTEND_DIR.is_dir(), f\"Frontend directory not found at {FRONTEND_DIR}\"\nE       AssertionError: Frontend directory not found at /home/user/livekit-meet/frontend\nE       assert False\nE        +  where False = is_dir()\nE        +    where is_dir = PosixPath('/home/user/livekit-meet/frontend').is_dir\n\n/tests/test_final_state.py:36: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_backend_entry_point_exists",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0002929570619016886,
+                "start": 1778205388.5163593,
+                "stop": 1778205388.517925,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_backend_entry_point_exists():\n        entry = BACKEND_DIR / \"index.js\"\n>       assert entry.is_file(), f\"Backend entry point not found at {entry}\"\nE       AssertionError: Backend entry point not found at /home/user/livekit-meet/backend/index.js\nE       assert False\nE        +  where False = is_file()\nE        +    where is_file = PosixPath('/home/user/livekit-meet/backend/index.js').is_file\n\n/tests/test_final_state.py:41: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_backend_uses_access_token",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00037641392555087805,
+                "start": 1778205388.518018,
+                "stop": 1778205388.5293598,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_backend_uses_access_token():\n        entry = BACKEND_DIR / \"index.js\"\n>       source = entry.read_text()\n                 ^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:46: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/pathlib.py:1029: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/home/user/livekit-meet/backend/index.js'), mode = 'r'\nbuffering = -1, encoding = 'utf-8', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-meet/backend/index.js'\n\n/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_backend_listens_on_port_3001",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0003479970619082451,
+                "start": 1778205388.5294497,
+                "stop": 1778205388.5399566,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_backend_listens_on_port_3001():\n        entry = BACKEND_DIR / \"index.js\"\n>       source = entry.read_text()\n                 ^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:52: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/pathlib.py:1029: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/home/user/livekit-meet/backend/index.js'), mode = 'r'\nbuffering = -1, encoding = 'utf-8', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-meet/backend/index.js'\n\n/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_frontend_has_livekit_room_component",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.000409413012675941,
+                "start": 1778205388.5400488,
+                "stop": 1778205388.541705,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_frontend_has_livekit_room_component():\n        # Search all js/jsx/ts/tsx files for LiveKitRoom\n        found = False\n        src_dir = FRONTEND_DIR / \"src\"\n        if not src_dir.is_dir():\n            src_dir = FRONTEND_DIR\n        for ext in (\"*.jsx\", \"*.tsx\", \"*.js\", \"*.ts\"):\n            for f in src_dir.rglob(ext):\n                if \"LiveKitRoom\" in f.read_text():\n                    found = True\n                    break\n            if found:\n                break\n>       assert found, \"Frontend source must contain LiveKitRoom component\"\nE       AssertionError: Frontend source must contain LiveKitRoom component\nE       assert False\n\n/tests/test_final_state.py:69: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_frontend_has_video_conference_component",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0003065380733460188,
+                "start": 1778205388.5417657,
+                "stop": 1778205388.5432987,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_frontend_has_video_conference_component():\n        found = False\n        src_dir = FRONTEND_DIR / \"src\"\n        if not src_dir.is_dir():\n            src_dir = FRONTEND_DIR\n        for ext in (\"*.jsx\", \"*.tsx\", \"*.js\", \"*.ts\"):\n            for f in src_dir.rglob(ext):\n                if \"VideoConference\" in f.read_text():\n                    found = True\n                    break\n            if found:\n                break\n>       assert found, \"Frontend source must contain VideoConference component\"\nE       AssertionError: Frontend source must contain VideoConference component\nE       assert False\n\n/tests/test_final_state.py:84: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_backend_token_endpoint",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0008798670023679733,
+                "start": 1778205388.5433578,
+                "stop": 1778205388.566618,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_backend_token_endpoint():\n        node_path = shutil.which(\"node\")\n        assert node_path is not None, \"node must be installed\"\n    \n        env = os.environ.copy()\n        env.setdefault(\"LIVEKIT_API_KEY\", \"test-api-key\")\n        env.setdefault(\"LIVEKIT_API_SECRET\", \"test-api-secret-at-least-32-chars-long\")\n        env.setdefault(\"LIVEKIT_URL\", \"wss://test.livekit.cloud\")\n    \n>       proc = subprocess.Popen(\n            [node_path, \"index.js\"],\n            cwd=str(BACKEND_DIR),\n            env=env,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n        )\n\n/tests/test_final_state.py:96: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/subprocess.py:1026: in __init__\n    self._execute_child(args, executable, preexec_fn, close_fds,\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <Popen: returncode: 255 args: ['/usr/bin/node', 'index.js']>\nargs = ['/usr/bin/node', 'index.js'], executable = b'/usr/bin/node'\npreexec_fn = None, close_fds = True, pass_fds = ()\ncwd = '/home/user/livekit-meet/backend'\nenv = {'DEBIAN_FRONTEND': 'noninteractive', 'HOME': '/root', 'HOSTNAME': 'b593b094d413', 'LC_CTYPE': 'C.UTF-8', ...}\nstartupinfo = None, creationflags = 0, shell = False, p2cread = -1\np2cwrite = -1, c2pread = 11, c2pwrite = 12, errread = 13, errwrite = 14\nrestore_signals = True, gid = None, gids = None, uid = None, umask = -1\nstart_new_session = False, process_group = -1\n\n    def _execute_child(self, args, executable, preexec_fn, close_fds,\n                       pass_fds, cwd, env,\n                       startupinfo, creationflags, shell,\n                       p2cread, p2cwrite,\n                       c2pread, c2pwrite,\n                       errread, errwrite,\n                       restore_signals,\n                       gid, gids, uid, umask,\n                       start_new_session, process_group):\n        \"\"\"Execute program (POSIX version)\"\"\"\n    \n        if isinstance(args, (str, bytes)):\n            args = [args]\n        elif isinstance(args, os.PathLike):\n            if shell:\n                raise TypeError('path-like args is not allowed when '\n                                'shell is true')\n            args = [args]\n        else:\n            args = list(args)\n    \n        if shell:\n            # On Android the default shell is at '/system/bin/sh'.\n            unix_shell = ('/system/bin/sh' if\n                      hasattr(sys, 'getandroidapilevel') else '/bin/sh')\n            args = [unix_shell, \"-c\"] + args\n            if executable:\n                args[0] = executable\n    \n        if executable is None:\n            executable = args[0]\n    \n        sys.audit(\"subprocess.Popen\", executable, args, cwd, env)\n    \n        if (_USE_POSIX_SPAWN\n                and os.path.dirname(executable)\n                and preexec_fn is None\n                and not close_fds\n                and not pass_fds\n                and cwd is None\n                and (p2cread == -1 or p2cread > 2)\n                and (c2pwrite == -1 or c2pwrite > 2)\n                and (errwrite == -1 or errwrite > 2)\n                and not start_new_session\n                and process_group == -1\n                and gid is None\n                and gids is None\n                and uid is None\n                and umask < 0):\n            self._posix_spawn(args, executable, env, restore_signals,\n                              p2cread, p2cwrite,\n                              c2pread, c2pwrite,\n                              errread, errwrite)\n            return\n    \n        orig_executable = executable\n    \n        # For transferring possible exec failure from child to parent.\n        # Data format: \"exception name:hex errno:description\"\n        # Pickle is not used; it is complex and involves memory allocation.\n        errpipe_read, errpipe_write = os.pipe()\n        # errpipe_write must not be in the standard io 0, 1, or 2 fd range.\n        low_fds_to_close = []\n        while errpipe_write < 3:\n            low_fds_to_close.append(errpipe_write)\n            errpipe_write = os.dup(errpipe_write)\n        for low_fd in low_fds_to_close:\n            os.close(low_fd)\n        try:\n            try:\n                # We must avoid complex work that could involve\n                # malloc or free in the child process to avoid\n                # potential deadlocks, thus we do all this here.\n                # and pass it to fork_exec()\n    \n                if env is not None:\n                    env_list = []\n                    for k, v in env.items():\n                        k = os.fsencode(k)\n                        if b'=' in k:\n                            raise ValueError(\"illegal environment variable name\")\n                        env_list.append(k + b'=' + os.fsencode(v))\n                else:\n                    env_list = None  # Use execv instead of execve.\n                executable = os.fsencode(executable)\n                if os.path.dirname(executable):\n                    executable_list = (executable,)\n                else:\n                    # This matches the behavior of os._execvpe().\n                    executable_list = tuple(\n                        os.path.join(os.fsencode(dir), executable)\n                        for dir in os.get_exec_path(env))\n                fds_to_keep = set(pass_fds)\n                fds_to_keep.add(errpipe_write)\n                self.pid = _fork_exec(\n                        args, executable_list,\n                        close_fds, tuple(sorted(map(int, fds_to_keep))),\n                        cwd, env_list,\n                        p2cread, p2cwrite, c2pread, c2pwrite,\n                        errread, errwrite,\n                        errpipe_read, errpipe_write,\n                        restore_signals, start_new_session,\n                        process_group, gid, gids, uid, umask,\n                        preexec_fn, _USE_VFORK)\n                self._child_created = True\n            finally:\n                # be sure the FD is closed no matter what\n                os.close(errpipe_write)\n    \n            self._close_pipe_fds(p2cread, p2cwrite,\n                                 c2pread, c2pwrite,\n                                 errread, errwrite)\n    \n            # Wait for exec to fail or succeed; possibly raising an\n            # exception (limited in size)\n            errpipe_data = bytearray()\n            while True:\n                part = os.read(errpipe_read, 50000)\n                errpipe_data += part\n                if not part or len(errpipe_data) > 50000:\n                    break\n        finally:\n            # be sure the FD is closed no matter what\n            os.close(errpipe_read)\n    \n        if errpipe_data:\n            try:\n                pid, sts = os.waitpid(self.pid, 0)\n                if pid == self.pid:\n                    self._handle_exitstatus(sts)\n                else:\n                    self.returncode = sys.maxsize\n            except ChildProcessError:\n                pass\n    \n            try:\n                exception_name, hex_errno, err_msg = (\n                        errpipe_data.split(b':', 2))\n                # The encoding here should match the encoding\n                # written in by the subprocess implementations\n                # like _posixsubprocess\n                err_msg = err_msg.decode()\n            except ValueError:\n                exception_name = b'SubprocessError'\n                hex_errno = b'0'\n                err_msg = 'Bad exception data from child: {!r}'.format(\n                              bytes(errpipe_data))\n            child_exception_type = getattr(\n                    builtins, exception_name.decode('ascii'),\n                    SubprocessError)\n            if issubclass(child_exception_type, OSError) and hex_errno:\n                errno_num = int(hex_errno, 16)\n                if err_msg == \"noexec:chdir\":\n                    err_msg = \"\"\n                    # The error must be from chdir(cwd).\n                    err_filename = cwd\n                elif err_msg == \"noexec\":\n                    err_msg = \"\"\n                    err_filename = None\n                else:\n                    err_filename = orig_executable\n                if errno_num != 0:\n                    err_msg = os.strerror(errno_num)\n                if err_filename is not None:\n>                   raise child_exception_type(errno_num, err_msg, err_filename)\nE                   FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-meet/backend'\n\n/usr/lib/python3.12/subprocess.py:1955: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_frontend_package_json_has_livekit_components",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0005402021342888474,
+                "start": 1778205388.5667439,
+                "stop": 1778205388.5687115,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_frontend_package_json_has_livekit_components():\n        pkg_json = FRONTEND_DIR / \"package.json\"\n>       assert pkg_json.is_file(), \"frontend/package.json not found\"\nE       AssertionError: frontend/package.json not found\nE       assert False\nE        +  where False = is_file()\nE        +    where is_file = PosixPath('/home/user/livekit-meet/frontend/package.json').is_file\n\n/tests/test_final_state.py:137: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_frontend_package_json_has_livekit_client",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00044462108053267,
+                "start": 1778205388.5687957,
+                "stop": 1778205388.5903506,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_frontend_package_json_has_livekit_client():\n        pkg_json = FRONTEND_DIR / \"package.json\"\n>       data = json.loads(pkg_json.read_text())\n                          ^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:147: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/pathlib.py:1029: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/home/user/livekit-meet/frontend/package.json'), mode = 'r'\nbuffering = -1, encoding = 'utf-8', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-meet/frontend/package.json'\n\n/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            }
+        ]
+    }
+}

@@ -1,0 +1,38 @@
+downloading uv 0.9.7 aarch64-unknown-linux-gnu
+no checksums to verify
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+Downloading pygments (1.2MiB)
+ Downloading pygments
+Installed 7 packages in 4ms
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 18 items
+
+../../tests/test_final_state.py ..................                       [100%]
+
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../../tests/test_final_state.py::test_agent_file_exists
+PASSED ../../tests/test_final_state.py::test_pyproject_toml_exists
+PASSED ../../tests/test_final_state.py::test_env_local_exists
+PASSED ../../tests/test_final_state.py::test_venv_exists
+PASSED ../../tests/test_final_state.py::test_agent_contains_realtime_model
+PASSED ../../tests/test_final_state.py::test_agent_contains_voice_coral
+PASSED ../../tests/test_final_state.py::test_agent_contains_rtc_session_decorator
+PASSED ../../tests/test_final_state.py::test_agent_contains_realtime_agent_name
+PASSED ../../tests/test_final_state.py::test_agent_contains_lk_openai_import
+PASSED ../../tests/test_final_state.py::test_agent_contains_agent_session
+PASSED ../../tests/test_final_state.py::test_agent_uses_realtime_model_as_llm
+PASSED ../../tests/test_final_state.py::test_pyproject_contains_livekit_agents
+PASSED ../../tests/test_final_state.py::test_pyproject_contains_openai_plugin
+PASSED ../../tests/test_final_state.py::test_env_local_contains_livekit_keys
+PASSED ../../tests/test_final_state.py::test_env_local_contains_openai_api_key
+PASSED ../../tests/test_final_state.py::test_venv_has_python
+PASSED ../../tests/test_final_state.py::test_agent_has_agent_class
+PASSED ../../tests/test_final_state.py::test_agent_contains_helpful_instructions
+============================== 18 passed in 0.02s ==============================

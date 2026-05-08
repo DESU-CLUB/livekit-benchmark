@@ -1,0 +1,106 @@
+downloading uv 0.9.7 aarch64-unknown-linux-gnu
+no checksums to verify
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+Downloading pygments (1.2MiB)
+ Downloading pygments
+Installed 7 packages in 16ms
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 17 items
+
+../../../tests/test_final_state.py ..F........FFF.F.                     [100%]
+
+=================================== FAILURES ===================================
+____________________________ test_env_local_exists _____________________________
+
+    def test_env_local_exists():
+>       assert ENV_FILE.is_file(), f".env.local not found at {ENV_FILE}"
+E       AssertionError: .env.local not found at /home/user/livekit-agent/.env.local
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/home/user/livekit-agent/.env.local').is_file
+
+/tests/test_final_state.py:22: AssertionError
+________________________ test_agent_uses_agent_session _________________________
+
+    def test_agent_uses_agent_session():
+        source = AGENT_FILE.read_text()
+>       assert "AgentSession" in source, "src/agent.py must use AgentSession"
+E       AssertionError: src/agent.py must use AgentSession
+E       assert 'AgentSession' in 'from livekit import agents\nfrom livekit.agents import Agent, JobContext\nfrom datetime import datetime\n\n\n@agents....onversation."""\n        await super().exit(job)\n        print(f"Assistant agent left conversation: {job.room.name}")'
+
+/tests/test_final_state.py:80: AssertionError
+__________________________ test_agent_uses_silero_vad __________________________
+
+    def test_agent_uses_silero_vad():
+        source = AGENT_FILE.read_text()
+>       assert "silero" in source, "src/agent.py must use silero VAD"
+E       AssertionError: src/agent.py must use silero VAD
+E       assert 'silero' in 'from livekit import agents\nfrom livekit.agents import Agent, JobContext\nfrom datetime import datetime\n\n\n@agents....onversation."""\n        await super().exit(job)\n        print(f"Assistant agent left conversation: {job.room.name}")'
+
+/tests/test_final_state.py:85: AssertionError
+____________________ test_agent_uses_rtc_session_decorator _____________________
+
+    def test_agent_uses_rtc_session_decorator():
+        source = AGENT_FILE.read_text()
+>       assert "rtc_session" in source, (
+            "src/agent.py must use @server.rtc_session decorator"
+        )
+E       AssertionError: src/agent.py must use @server.rtc_session decorator
+E       assert 'rtc_session' in 'from livekit import agents\nfrom livekit.agents import Agent, JobContext\nfrom datetime import datetime\n\n\n@agents....onversation."""\n        await super().exit(job)\n        print(f"Assistant agent left conversation: {job.room.name}")'
+
+/tests/test_final_state.py:90: AssertionError
+_______________________ test_env_local_has_livekit_keys ________________________
+
+    def test_env_local_has_livekit_keys():
+>       content = ENV_FILE.read_text()
+                  ^^^^^^^^^^^^^^^^^^^^
+
+/tests/test_final_state.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/livekit-agent/.env.local'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/.env.local'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../../../tests/test_final_state.py::test_agent_file_exists
+PASSED ../../../tests/test_final_state.py::test_pyproject_toml_exists
+PASSED ../../../tests/test_final_state.py::test_venv_exists
+PASSED ../../../tests/test_final_state.py::test_pyproject_has_livekit_agents
+PASSED ../../../tests/test_final_state.py::test_pyproject_has_silero_plugin
+PASSED ../../../tests/test_final_state.py::test_agent_defines_assistant_class
+PASSED ../../../tests/test_final_state.py::test_agent_has_assistant_agent_name
+PASSED ../../../tests/test_final_state.py::test_agent_has_function_tool_decorator
+PASSED ../../../tests/test_final_state.py::test_agent_has_get_current_time
+PASSED ../../../tests/test_final_state.py::test_agent_has_get_current_date
+PASSED ../../../tests/test_final_state.py::test_agent_has_system_prompt
+PASSED ../../../tests/test_final_state.py::test_venv_has_python_binary
+FAILED ../../../tests/test_final_state.py::test_env_local_exists - AssertionE...
+FAILED ../../../tests/test_final_state.py::test_agent_uses_agent_session - As...
+FAILED ../../../tests/test_final_state.py::test_agent_uses_silero_vad - Asser...
+FAILED ../../../tests/test_final_state.py::test_agent_uses_rtc_session_decorator
+FAILED ../../../tests/test_final_state.py::test_env_local_has_livekit_keys - ...
+========================= 5 failed, 12 passed in 0.03s =========================

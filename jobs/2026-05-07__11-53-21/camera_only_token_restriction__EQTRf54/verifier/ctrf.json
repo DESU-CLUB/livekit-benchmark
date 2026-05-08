@@ -1,0 +1,137 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 13,
+            "passed": 13,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778180180.4473107,
+            "stop": 1778180180.4614675
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_script_exists",
+                "status": "passed",
+                "duration": 0.0005564040038734674,
+                "start": 1778180180.4549844,
+                "stop": 1778180180.4557471,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_token_file_exists",
+                "status": "passed",
+                "duration": 0.00033467705361545086,
+                "start": 1778180180.4558544,
+                "stop": 1778180180.4563146,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_token_file_not_empty",
+                "status": "passed",
+                "duration": 0.0003323429264128208,
+                "start": 1778180180.4563866,
+                "stop": 1778180180.4568238,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_token_is_valid_jwt",
+                "status": "passed",
+                "duration": 0.00030026305466890335,
+                "start": 1778180180.4569192,
+                "stop": 1778180180.4573755,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_contains_can_publish_sources",
+                "status": "passed",
+                "duration": 0.0003308011218905449,
+                "start": 1778180180.4574828,
+                "stop": 1778180180.4579258,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_contains_camera_source",
+                "status": "passed",
+                "duration": 0.0002281030174344778,
+                "start": 1778180180.458014,
+                "stop": 1778180180.4583323,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_contains_video_only_user",
+                "status": "passed",
+                "duration": 0.0002750570420175791,
+                "start": 1778180180.458392,
+                "stop": 1778180180.4587889,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_contains_broadcast_room",
+                "status": "passed",
+                "duration": 0.0002743479562923312,
+                "start": 1778180180.4588544,
+                "stop": 1778180180.4592147,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_contains_access_token",
+                "status": "passed",
+                "duration": 0.00030751305166631937,
+                "start": 1778180180.459274,
+                "stop": 1778180180.459674,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_contains_token_txt_write",
+                "status": "passed",
+                "duration": 0.00032263610046356916,
+                "start": 1778180180.4597435,
+                "stop": 1778180180.4601874,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_does_not_allow_microphone",
+                "status": "passed",
+                "duration": 0.00021060497965663671,
+                "start": 1778180180.4602683,
+                "stop": 1778180180.4605615,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_does_not_allow_screen_share",
+                "status": "passed",
+                "duration": 0.0002028138842433691,
+                "start": 1778180180.4606295,
+                "stop": 1778180180.460914,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_imports_livekit",
+                "status": "passed",
+                "duration": 0.0002782230731099844,
+                "start": 1778180180.4609652,
+                "stop": 1778180180.4613419,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

@@ -1,0 +1,179 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 17,
+            "passed": 15,
+            "failed": 2,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778180900.808215,
+            "stop": 1778180900.8376727
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_agent_file_exists",
+                "status": "passed",
+                "duration": 0.0003546489169821143,
+                "start": 1778180900.8144271,
+                "stop": 1778180900.8149793,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_toml_exists",
+                "status": "passed",
+                "duration": 0.00027270789723843336,
+                "start": 1778180900.8150508,
+                "stop": 1778180900.8154385,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_exists",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0005041960394009948,
+                "start": 1778180900.8155048,
+                "stop": 1778180900.8204575,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_env_local_exists():\n>       assert ENV_FILE.is_file(), f\".env.local not found at {ENV_FILE}\"\nE       AssertionError: .env.local not found at /home/user/livekit-agent/.env.local\nE       assert False\nE        +  where False = is_file()\nE        +    where is_file = PosixPath('/home/user/livekit-agent/.env.local').is_file\n\n/tests/test_final_state.py:22: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_venv_exists",
+                "status": "passed",
+                "duration": 0.0002822940004989505,
+                "start": 1778180900.8205197,
+                "stop": 1778180900.8209176,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_has_livekit_agents",
+                "status": "passed",
+                "duration": 0.0002615799894556403,
+                "start": 1778180900.8209858,
+                "stop": 1778180900.8213491,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_has_silero_plugin",
+                "status": "passed",
+                "duration": 0.00029584101866930723,
+                "start": 1778180900.8214023,
+                "stop": 1778180900.8218133,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_defines_assistant_class",
+                "status": "passed",
+                "duration": 0.00026308197993785143,
+                "start": 1778180900.821878,
+                "stop": 1778180900.822242,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_has_assistant_agent_name",
+                "status": "passed",
+                "duration": 0.00025307596661150455,
+                "start": 1778180900.8222914,
+                "stop": 1778180900.8226428,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_has_function_tool_decorator",
+                "status": "passed",
+                "duration": 0.00027125095948576927,
+                "start": 1778180900.8226922,
+                "stop": 1778180900.823065,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_has_get_current_time",
+                "status": "passed",
+                "duration": 0.0002445750869810581,
+                "start": 1778180900.8231153,
+                "stop": 1778180900.8234565,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_has_get_current_date",
+                "status": "passed",
+                "duration": 0.0002890879986807704,
+                "start": 1778180900.8235059,
+                "stop": 1778180900.8239021,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_agent_session",
+                "status": "passed",
+                "duration": 0.00026095507200807333,
+                "start": 1778180900.8239532,
+                "stop": 1778180900.8243196,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_silero_vad",
+                "status": "passed",
+                "duration": 0.0002880459651350975,
+                "start": 1778180900.8243735,
+                "stop": 1778180900.8247676,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_rtc_session_decorator",
+                "status": "passed",
+                "duration": 0.00027008296456187963,
+                "start": 1778180900.8248208,
+                "stop": 1778180900.8251946,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_has_system_prompt",
+                "status": "passed",
+                "duration": 0.00025270285550504923,
+                "start": 1778180900.8252442,
+                "stop": 1778180900.8256063,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_has_livekit_keys",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0003144290531054139,
+                "start": 1778180900.8256555,
+                "stop": 1778180900.8369617,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_env_local_has_livekit_keys():\n>       content = ENV_FILE.read_text()\n                  ^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:103: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/pathlib.py:1029: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/home/user/livekit-agent/.env.local'), mode = 'r'\nbuffering = -1, encoding = 'utf-8', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/.env.local'\n\n/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_venv_has_python_binary",
+                "status": "passed",
+                "duration": 0.00035390013363212347,
+                "start": 1778180900.8370216,
+                "stop": 1778180900.8374972,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

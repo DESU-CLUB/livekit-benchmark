@@ -1,0 +1,58 @@
+{
+    "id": "1ed7176c-cc5d-4d15-bdd6-d2a5a91e234b",
+    "started_at": "2026-05-07T18:52:30.480593",
+    "finished_at": "2026-05-07T19:08:26.424302",
+    "n_total_trials": 28,
+    "stats": {
+        "n_trials": 28,
+        "n_errors": 0,
+        "evals": {
+            "pochi__gpt-5.2-codex__livekit-tasks": {
+                "n_trials": 28,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 0.5714285714285714
+                    }
+                ],
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "webhook_receiver_express__6ncKfDS",
+                            "list_active_rooms__9BHZDMF",
+                            "full_stack_video_conference_app__NwAgm2B",
+                            "participant_permissions_update__rD4e4wD",
+                            "multi_room_data_broadcast__8NatRhg",
+                            "token_server_express__aAZuTis",
+                            "sip_inbound_trunk_setup__C8dr3fu",
+                            "room_metadata_update__eEqhCtc",
+                            "voice_agent_system_prompt_tool__addwh7x",
+                            "list_participants_in_room__zmV6Jgf",
+                            "agent_with_custom_stt_provider__9tPQR4k",
+                            "token_refresh_server__JFn9grC"
+                        ],
+                        "1.0": [
+                            "token_with_room_config_agent_dis__kYJL7am",
+                            "generate_access_token__Tpeer6W",
+                            "multimodal_vision_agent__esmfeMg",
+                            "realtime_model_agent__vhTqSeh",
+                            "camera_only_token_restriction__6qFPhbo",
+                            "remove_participant__jjUgiVc",
+                            "basic_voice_agent_python__2SBsvNP",
+                            "hand_raise_dynamic_permissions__CsaroKU",
+                            "room_service_list_and_kick__BiERzbS",
+                            "webhook_participant_joined_logge__az9DRAX",
+                            "turn_detection_customization__wVu2z32",
+                            "voice_agent_with_tool_call__ZsxkwMF",
+                            "secure_webhook_validation__aArwFDP",
+                            "subscribe_only_token__K9gCXEs",
+                            "delete_room__DdZsCrp",
+                            "vad_tuning_barge_in__S38CPnB"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        }
+    }
+}

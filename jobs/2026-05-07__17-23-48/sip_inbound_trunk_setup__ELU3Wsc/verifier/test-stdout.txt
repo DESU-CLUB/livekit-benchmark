@@ -1,0 +1,58 @@
+downloading uv 0.9.7 aarch64-unknown-linux-gnu
+no checksums to verify
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+
+To add $HOME/.local/bin to your PATH, either restart your shell or run:
+
+    source $HOME/.local/bin/env (sh, bash, zsh)
+    source $HOME/.local/bin/env.fish (fish)
+Downloading pygments (1.2MiB)
+ Downloading pygments
+Installed 7 packages in 14ms
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 10 items
+
+../../../tests/test_final_state.py .FF.......                            [100%]
+
+=================================== FAILURES ===================================
+__________________ test_script_uses_create_sip_inbound_trunk ___________________
+
+    def test_script_uses_create_sip_inbound_trunk():
+        source = SETUP_SCRIPT.read_text()
+>       assert "create_sip_inbound_trunk" in source, (
+            "setup_sip.py must call create_sip_inbound_trunk"
+        )
+E       AssertionError: setup_sip.py must call create_sip_inbound_trunk
+E       assert 'create_sip_inbound_trunk' in 'import asyncio\nimport json\nfrom dotenv import load_dotenv\nimport livekit.api as api\n\n# Load environment variable...     \n        print(f"Configuration saved to sip_config.json")\n\nif __name__ == "__main__":\n    asyncio.run(main())'
+
+/tests/test_final_state.py:18: AssertionError
+__________________ test_script_uses_create_sip_dispatch_rule ___________________
+
+    def test_script_uses_create_sip_dispatch_rule():
+        source = SETUP_SCRIPT.read_text()
+>       assert "create_sip_dispatch_rule" in source, (
+            "setup_sip.py must call create_sip_dispatch_rule"
+        )
+E       AssertionError: setup_sip.py must call create_sip_dispatch_rule
+E       assert 'create_sip_dispatch_rule' in 'import asyncio\nimport json\nfrom dotenv import load_dotenv\nimport livekit.api as api\n\n# Load environment variable...     \n        print(f"Configuration saved to sip_config.json")\n\nif __name__ == "__main__":\n    asyncio.run(main())'
+
+/tests/test_final_state.py:25: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../../../tests/test_final_state.py::test_setup_sip_py_exists
+PASSED ../../../tests/test_final_state.py::test_script_uses_call_prefix
+PASSED ../../../tests/test_final_state.py::test_script_uses_livekit_api
+PASSED ../../../tests/test_final_state.py::test_sip_config_json_exists
+PASSED ../../../tests/test_final_state.py::test_sip_config_has_trunk_id
+PASSED ../../../tests/test_final_state.py::test_sip_config_has_dispatch_rule_id
+PASSED ../../../tests/test_final_state.py::test_sip_config_trunk_name
+PASSED ../../../tests/test_final_state.py::test_sip_config_numbers
+FAILED ../../../tests/test_final_state.py::test_script_uses_create_sip_inbound_trunk
+FAILED ../../../tests/test_final_state.py::test_script_uses_create_sip_dispatch_rule
+========================= 2 failed, 8 passed in 0.02s ==========================

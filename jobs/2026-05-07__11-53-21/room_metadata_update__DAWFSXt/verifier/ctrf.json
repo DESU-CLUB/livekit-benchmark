@@ -1,0 +1,83 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 7,
+            "passed": 7,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778180537.8833537,
+            "stop": 1778180537.891868
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_update_metadata_script_exists",
+                "status": "passed",
+                "duration": 0.00034257792867720127,
+                "start": 1778180537.8886216,
+                "stop": 1778180537.8891253,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_room_service_client",
+                "status": "passed",
+                "duration": 0.00026579806581139565,
+                "start": 1778180537.8892164,
+                "stop": 1778180537.8895876,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_calls_update_room_metadata",
+                "status": "passed",
+                "duration": 0.0002538389526307583,
+                "start": 1778180537.8896523,
+                "stop": 1778180537.890014,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_targets_conference_room",
+                "status": "passed",
+                "duration": 0.00022971793077886105,
+                "start": 1778180537.8900836,
+                "stop": 1778180537.8904123,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_reads_env_vars",
+                "status": "passed",
+                "duration": 0.00026396289467811584,
+                "start": 1778180537.8904734,
+                "stop": 1778180537.8908432,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_output_log_exists",
+                "status": "passed",
+                "duration": 0.0002374668838456273,
+                "start": 1778180537.890909,
+                "stop": 1778180537.891242,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_output_log_contains_success_message",
+                "status": "passed",
+                "duration": 0.0002975000534206629,
+                "start": 1778180537.891292,
+                "stop": 1778180537.8917148,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

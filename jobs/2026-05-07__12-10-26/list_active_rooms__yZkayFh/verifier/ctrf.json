@@ -1,0 +1,59 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 4,
+            "passed": 3,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778181096.7674031,
+            "stop": 1778181096.7776484
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_rooms_json_exists",
+                "status": "passed",
+                "duration": 0.00032376497983932495,
+                "start": 1778181096.771026,
+                "stop": 1778181096.7715173,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_rooms_json_not_empty",
+                "status": "passed",
+                "duration": 0.00024384399875998497,
+                "start": 1778181096.7715983,
+                "stop": 1778181096.77196,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_rooms_json_is_valid_json",
+                "status": "passed",
+                "duration": 0.00023196800611913204,
+                "start": 1778181096.772022,
+                "stop": 1778181096.772347,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_rooms_json_is_array",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00029830506537109613,
+                "start": 1778181096.7724028,
+                "stop": 1778181096.7774796,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_rooms_json_is_array():\n        content = ROOMS_FILE.read_text().strip()\n        data = json.loads(content)\n>       assert isinstance(data, list), (\n            f\"rooms.json must be a JSON array at the top level, got {type(data).__name__}\"\n        )\nE       AssertionError: rooms.json must be a JSON array at the top level, got dict\nE       assert False\nE        +  where False = isinstance({}, list)\n\n/tests/test_final_state.py:29: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

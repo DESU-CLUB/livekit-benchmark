@@ -1,0 +1,164 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 16,
+            "passed": 16,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778180536.777385,
+            "stop": 1778180536.7906332
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_agent_file_exists",
+                "status": "passed",
+                "duration": 0.0002906681038439274,
+                "start": 1778180536.7835298,
+                "stop": 1778180536.7839825,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_toml_exists",
+                "status": "passed",
+                "duration": 0.00022613490000367165,
+                "start": 1778180536.7840533,
+                "stop": 1778180536.7843773,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_exists",
+                "status": "passed",
+                "duration": 0.00021034595556557178,
+                "start": 1778180536.7844348,
+                "stop": 1778180536.7847733,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_venv_exists",
+                "status": "passed",
+                "duration": 0.0002089720219373703,
+                "start": 1778180536.784826,
+                "stop": 1778180536.7851212,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_contains_function_tool_decorator",
+                "status": "passed",
+                "duration": 0.00021188706159591675,
+                "start": 1778180536.7851741,
+                "stop": 1778180536.7854717,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_contains_get_weather",
+                "status": "passed",
+                "duration": 0.00020913698244839907,
+                "start": 1778180536.7855217,
+                "stop": 1778180536.7858155,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_contains_weather_assistant",
+                "status": "passed",
+                "duration": 0.0004664338193833828,
+                "start": 1778180536.7858703,
+                "stop": 1778180536.7864475,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_contains_agent_session",
+                "status": "passed",
+                "duration": 0.0002447599545121193,
+                "start": 1778180536.7865,
+                "stop": 1778180536.7868447,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_contains_weather_agent_name",
+                "status": "passed",
+                "duration": 0.00028487807139754295,
+                "start": 1778180536.7869134,
+                "stop": 1778180536.787317,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_contains_rtc_session_decorator",
+                "status": "passed",
+                "duration": 0.00028221006505191326,
+                "start": 1778180536.7873876,
+                "stop": 1778180536.7877824,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_contains_silero_vad",
+                "status": "passed",
+                "duration": 0.0003284550039097667,
+                "start": 1778180536.787836,
+                "stop": 1778180536.7882788,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_contains_livekit_agents",
+                "status": "passed",
+                "duration": 0.0002554230159148574,
+                "start": 1778180536.7883306,
+                "stop": 1778180536.7886896,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_contains_silero",
+                "status": "passed",
+                "duration": 0.00029445881955325603,
+                "start": 1778180536.7887387,
+                "stop": 1778180536.7891362,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_contains_livekit_keys",
+                "status": "passed",
+                "duration": 0.0002886259462684393,
+                "start": 1778180536.7892056,
+                "stop": 1778180536.7896202,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_get_weather_returns_sunny",
+                "status": "passed",
+                "duration": 0.00028733594808727503,
+                "start": 1778180536.7896752,
+                "stop": 1778180536.7900655,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_venv_has_python",
+                "status": "passed",
+                "duration": 0.0002692128764465451,
+                "start": 1778180536.7901165,
+                "stop": 1778180536.7904878,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

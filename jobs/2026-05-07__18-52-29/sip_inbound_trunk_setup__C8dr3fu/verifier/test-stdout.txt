@@ -1,0 +1,164 @@
+downloading uv 0.9.7 aarch64-unknown-linux-gnu
+no checksums to verify
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+
+To add $HOME/.local/bin to your PATH, either restart your shell or run:
+
+    source $HOME/.local/bin/env (sh, bash, zsh)
+    source $HOME/.local/bin/env.fish (fish)
+Downloading pygments (1.2MiB)
+ Downloading pygments
+Installed 7 packages in 17ms
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 10 items
+
+../../../tests/test_final_state.py .....FFFFF                            [100%]
+
+=================================== FAILURES ===================================
+_________________________ test_sip_config_json_exists __________________________
+
+    def test_sip_config_json_exists():
+>       assert SIP_CONFIG.is_file(), (
+            f"sip_config.json not found at {SIP_CONFIG} — run setup_sip.py to generate it"
+        )
+E       AssertionError: sip_config.json not found at /home/user/livekit-sip/sip_config.json — run setup_sip.py to generate it
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/home/user/livekit-sip/sip_config.json').is_file
+
+/tests/test_final_state.py:45: AssertionError
+_________________________ test_sip_config_has_trunk_id _________________________
+
+    def test_sip_config_has_trunk_id():
+>       data = json.loads(SIP_CONFIG.read_text())
+                          ^^^^^^^^^^^^^^^^^^^^^^
+
+/tests/test_final_state.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/livekit-sip/sip_config.json'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-sip/sip_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_____________________ test_sip_config_has_dispatch_rule_id _____________________
+
+    def test_sip_config_has_dispatch_rule_id():
+>       data = json.loads(SIP_CONFIG.read_text())
+                          ^^^^^^^^^^^^^^^^^^^^^^
+
+/tests/test_final_state.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/livekit-sip/sip_config.json'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-sip/sip_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+__________________________ test_sip_config_trunk_name __________________________
+
+    def test_sip_config_trunk_name():
+>       data = json.loads(SIP_CONFIG.read_text())
+                          ^^^^^^^^^^^^^^^^^^^^^^
+
+/tests/test_final_state.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/livekit-sip/sip_config.json'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-sip/sip_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+___________________________ test_sip_config_numbers ____________________________
+
+    def test_sip_config_numbers():
+>       data = json.loads(SIP_CONFIG.read_text())
+                          ^^^^^^^^^^^^^^^^^^^^^^
+
+/tests/test_final_state.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/livekit-sip/sip_config.json'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-sip/sip_config.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../../../tests/test_final_state.py::test_setup_sip_py_exists
+PASSED ../../../tests/test_final_state.py::test_script_uses_create_sip_inbound_trunk
+PASSED ../../../tests/test_final_state.py::test_script_uses_create_sip_dispatch_rule
+PASSED ../../../tests/test_final_state.py::test_script_uses_call_prefix
+PASSED ../../../tests/test_final_state.py::test_script_uses_livekit_api
+FAILED ../../../tests/test_final_state.py::test_sip_config_json_exists - Asse...
+FAILED ../../../tests/test_final_state.py::test_sip_config_has_trunk_id - Fil...
+FAILED ../../../tests/test_final_state.py::test_sip_config_has_dispatch_rule_id
+FAILED ../../../tests/test_final_state.py::test_sip_config_trunk_name - FileN...
+FAILED ../../../tests/test_final_state.py::test_sip_config_numbers - FileNotF...
+========================= 5 failed, 5 passed in 0.06s ==========================

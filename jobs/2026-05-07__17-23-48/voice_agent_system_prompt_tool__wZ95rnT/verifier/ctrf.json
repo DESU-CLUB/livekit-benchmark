@@ -1,0 +1,188 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 17,
+            "passed": 12,
+            "failed": 5,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778201130.5980575,
+            "stop": 1778201130.626874
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_agent_file_exists",
+                "status": "passed",
+                "duration": 0.0003257880453020334,
+                "start": 1778201130.604341,
+                "stop": 1778201130.6048234,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_toml_exists",
+                "status": "passed",
+                "duration": 0.0002350391587242484,
+                "start": 1778201130.6049004,
+                "stop": 1778201130.6052382,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_exists",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0004534099716693163,
+                "start": 1778201130.6052954,
+                "stop": 1778201130.610457,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_env_local_exists():\n>       assert ENV_FILE.is_file(), f\".env.local not found at {ENV_FILE}\"\nE       AssertionError: .env.local not found at /home/user/livekit-agent/.env.local\nE       assert False\nE        +  where False = is_file()\nE        +    where is_file = PosixPath('/home/user/livekit-agent/.env.local').is_file\n\n/tests/test_final_state.py:22: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_venv_exists",
+                "status": "passed",
+                "duration": 0.00018666498363018036,
+                "start": 1778201130.6105235,
+                "stop": 1778201130.6107962,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_has_livekit_agents",
+                "status": "passed",
+                "duration": 0.00019153801258653402,
+                "start": 1778201130.6108491,
+                "stop": 1778201130.611132,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_has_silero_plugin",
+                "status": "passed",
+                "duration": 0.00018358102533966303,
+                "start": 1778201130.6111925,
+                "stop": 1778201130.6114573,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_defines_assistant_class",
+                "status": "passed",
+                "duration": 0.0002499120309948921,
+                "start": 1778201130.611508,
+                "stop": 1778201130.611839,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_has_assistant_agent_name",
+                "status": "passed",
+                "duration": 0.0002096220850944519,
+                "start": 1778201130.6118886,
+                "stop": 1778201130.6121807,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_has_function_tool_decorator",
+                "status": "passed",
+                "duration": 0.00017903908155858517,
+                "start": 1778201130.6122305,
+                "stop": 1778201130.6124816,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_has_get_current_time",
+                "status": "passed",
+                "duration": 0.00017620599828660488,
+                "start": 1778201130.6125276,
+                "stop": 1778201130.6127744,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_has_get_current_date",
+                "status": "passed",
+                "duration": 0.00016516493633389473,
+                "start": 1778201130.6128254,
+                "stop": 1778201130.613066,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_agent_session",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0002334550954401493,
+                "start": 1778201130.6131117,
+                "stop": 1778201130.6141796,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_agent_uses_agent_session():\n        source = AGENT_FILE.read_text()\n>       assert \"AgentSession\" in source, \"src/agent.py must use AgentSession\"\nE       AssertionError: src/agent.py must use AgentSession\nE       assert 'AgentSession' in 'from livekit import agents\\nfrom livekit.agents import Agent, JobContext\\nfrom datetime import datetime\\n\\n\\n@agents....onversation.\"\"\"\\n        await super().exit(job)\\n        print(f\"Assistant agent left conversation: {job.room.name}\")'\n\n/tests/test_final_state.py:80: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_silero_vad",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00022578798234462738,
+                "start": 1778201130.614236,
+                "stop": 1778201130.6152067,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_agent_uses_silero_vad():\n        source = AGENT_FILE.read_text()\n>       assert \"silero\" in source, \"src/agent.py must use silero VAD\"\nE       AssertionError: src/agent.py must use silero VAD\nE       assert 'silero' in 'from livekit import agents\\nfrom livekit.agents import Agent, JobContext\\nfrom datetime import datetime\\n\\n\\n@agents....onversation.\"\"\"\\n        await super().exit(job)\\n        print(f\"Assistant agent left conversation: {job.room.name}\")'\n\n/tests/test_final_state.py:85: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_rtc_session_decorator",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0002936209784820676,
+                "start": 1778201130.6152623,
+                "stop": 1778201130.6163151,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_agent_uses_rtc_session_decorator():\n        source = AGENT_FILE.read_text()\n>       assert \"rtc_session\" in source, (\n            \"src/agent.py must use @server.rtc_session decorator\"\n        )\nE       AssertionError: src/agent.py must use @server.rtc_session decorator\nE       assert 'rtc_session' in 'from livekit import agents\\nfrom livekit.agents import Agent, JobContext\\nfrom datetime import datetime\\n\\n\\n@agents....onversation.\"\"\"\\n        await super().exit(job)\\n        print(f\"Assistant agent left conversation: {job.room.name}\")'\n\n/tests/test_final_state.py:90: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_agent_has_system_prompt",
+                "status": "passed",
+                "duration": 0.00022228783927857876,
+                "start": 1778201130.6163707,
+                "stop": 1778201130.6166756,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_has_livekit_keys",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00018824811559170485,
+                "start": 1778201130.616724,
+                "stop": 1778201130.6263747,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_env_local_has_livekit_keys():\n>       content = ENV_FILE.read_text()\n                  ^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:103: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/pathlib.py:1029: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/home/user/livekit-agent/.env.local'), mode = 'r'\nbuffering = -1, encoding = 'utf-8', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/.env.local'\n\n/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_venv_has_python_binary",
+                "status": "passed",
+                "duration": 0.00023341295309364796,
+                "start": 1778201130.6264412,
+                "stop": 1778201130.6267676,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install LiveKit Python server SDK
-RUN pip3 install livekit-server-sdk --break-system-packages
+RUN pip3 install livekit-api --break-system-packages
 
 # Create project directory with pre-existing .env.local
 RUN mkdir -p /home/user/livekit-token

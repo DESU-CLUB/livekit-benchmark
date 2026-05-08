@@ -1,0 +1,1 @@
+INFO: Could not remove participant 'user-123' from room 'demo-room': participant or room does not exist. (TwirpError(code=not_found, message=participant does not exist, status=404))

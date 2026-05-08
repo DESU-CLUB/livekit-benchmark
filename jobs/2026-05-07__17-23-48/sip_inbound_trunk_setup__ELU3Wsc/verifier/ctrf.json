@@ -1,0 +1,116 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 10,
+            "passed": 8,
+            "failed": 2,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778200806.0325608,
+            "stop": 1778200806.0476325
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_setup_sip_py_exists",
+                "status": "passed",
+                "duration": 0.0002510299673303962,
+                "start": 1778200806.0380826,
+                "stop": 1778200806.0384705,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_create_sip_inbound_trunk",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0002801530063152313,
+                "start": 1778200806.0385509,
+                "stop": 1778200806.043802,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_script_uses_create_sip_inbound_trunk():\n        source = SETUP_SCRIPT.read_text()\n>       assert \"create_sip_inbound_trunk\" in source, (\n            \"setup_sip.py must call create_sip_inbound_trunk\"\n        )\nE       AssertionError: setup_sip.py must call create_sip_inbound_trunk\nE       assert 'create_sip_inbound_trunk' in 'import asyncio\\nimport json\\nfrom dotenv import load_dotenv\\nimport livekit.api as api\\n\\n# Load environment variable...     \\n        print(f\"Configuration saved to sip_config.json\")\\n\\nif __name__ == \"__main__\":\\n    asyncio.run(main())'\n\n/tests/test_final_state.py:18: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_create_sip_dispatch_rule",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0003290269523859024,
+                "start": 1778200806.0438783,
+                "stop": 1778200806.0450423,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_script_uses_create_sip_dispatch_rule():\n        source = SETUP_SCRIPT.read_text()\n>       assert \"create_sip_dispatch_rule\" in source, (\n            \"setup_sip.py must call create_sip_dispatch_rule\"\n        )\nE       AssertionError: setup_sip.py must call create_sip_dispatch_rule\nE       assert 'create_sip_dispatch_rule' in 'import asyncio\\nimport json\\nfrom dotenv import load_dotenv\\nimport livekit.api as api\\n\\n# Load environment variable...     \\n        print(f\"Configuration saved to sip_config.json\")\\n\\nif __name__ == \"__main__\":\\n    asyncio.run(main())'\n\n/tests/test_final_state.py:25: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_call_prefix",
+                "status": "passed",
+                "duration": 0.00023973884526640177,
+                "start": 1778200806.045103,
+                "stop": 1778200806.0454354,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_livekit_api",
+                "status": "passed",
+                "duration": 0.0002709031105041504,
+                "start": 1778200806.0455115,
+                "stop": 1778200806.045892,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_sip_config_json_exists",
+                "status": "passed",
+                "duration": 0.00023469608277082443,
+                "start": 1778200806.045949,
+                "stop": 1778200806.0462968,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_sip_config_has_trunk_id",
+                "status": "passed",
+                "duration": 0.00019803305622190237,
+                "start": 1778200806.0463526,
+                "stop": 1778200806.0466278,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_sip_config_has_dispatch_rule_id",
+                "status": "passed",
+                "duration": 0.00018886581528931856,
+                "start": 1778200806.0466752,
+                "stop": 1778200806.046939,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_sip_config_trunk_name",
+                "status": "passed",
+                "duration": 0.0001697000116109848,
+                "start": 1778200806.0469863,
+                "stop": 1778200806.047228,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_sip_config_numbers",
+                "status": "passed",
+                "duration": 0.0001847409876063466,
+                "start": 1778200806.0472755,
+                "stop": 1778200806.0475304,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

@@ -1,0 +1,212 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 19,
+            "passed": 12,
+            "failed": 7,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778180943.2461836,
+            "stop": 1778180943.3094752
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_agent_file_exists",
+                "status": "passed",
+                "duration": 0.0004433010471984744,
+                "start": 1778180943.2550676,
+                "stop": 1778180943.2557201,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_toml_exists",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0005242761690169573,
+                "start": 1778180943.2558162,
+                "stop": 1778180943.2622137,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_pyproject_toml_exists():\n>       assert PYPROJECT_FILE.is_file(), f\"pyproject.toml not found at {PYPROJECT_FILE}\"\nE       AssertionError: pyproject.toml not found at /home/user/livekit-agent/pyproject.toml\nE       assert False\nE        +  where False = is_file()\nE        +    where is_file = PosixPath('/home/user/livekit-agent/pyproject.toml').is_file\n\n/tests/test_final_state.py:18: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_exists",
+                "status": "passed",
+                "duration": 0.0002844360424205661,
+                "start": 1778180943.262313,
+                "stop": 1778180943.2627137,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_venv_exists",
+                "status": "passed",
+                "duration": 0.0002094180090352893,
+                "start": 1778180943.2627935,
+                "stop": 1778180943.263096,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_has_livekit_agents",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0003019380383193493,
+                "start": 1778180943.263154,
+                "stop": 1778180943.2760339,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_pyproject_has_livekit_agents():\n>       content = PYPROJECT_FILE.read_text()\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:32: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/pathlib.py:1029: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/home/user/livekit-agent/pyproject.toml'), mode = 'r'\nbuffering = -1, encoding = 'utf-8', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/pyproject.toml'\n\n/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_has_deepgram_plugin",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00042871502228081226,
+                "start": 1778180943.2761538,
+                "stop": 1778180943.2882211,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_pyproject_has_deepgram_plugin():\n>       content = PYPROJECT_FILE.read_text()\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:39: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/pathlib.py:1029: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/home/user/livekit-agent/pyproject.toml'), mode = 'r'\nbuffering = -1, encoding = 'utf-8', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/pyproject.toml'\n\n/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_has_silero_plugin",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.000397083000279963,
+                "start": 1778180943.2884092,
+                "stop": 1778180943.3005836,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_pyproject_has_silero_plugin():\n>       content = PYPROJECT_FILE.read_text()\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:46: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/pathlib.py:1029: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/home/user/livekit-agent/pyproject.toml'), mode = 'r'\nbuffering = -1, encoding = 'utf-8', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/pyproject.toml'\n\n/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_agent_imports_deepgram_plugin",
+                "status": "passed",
+                "duration": 0.0003544491482898593,
+                "start": 1778180943.300738,
+                "stop": 1778180943.301238,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_deepgram_stt",
+                "status": "passed",
+                "duration": 0.0002831430174410343,
+                "start": 1778180943.3013036,
+                "stop": 1778180943.301699,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_nova_3_model",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00031594105530530214,
+                "start": 1778180943.3017688,
+                "stop": 1778180943.303268,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_agent_uses_nova_3_model():\n        source = AGENT_FILE.read_text()\n>       assert \"nova-3\" in source, (\n            \"src/agent.py must use model='nova-3' for Deepgram STT\"\n        )\nE       AssertionError: src/agent.py must use model='nova-3' for Deepgram STT\nE       assert 'nova-3' in 'import logging\\n\\nfrom dotenv import load_dotenv\\nfrom livekit.agents import (\\n    AgentServer,\\n    AgentSession,\\n...      agent=DeepgramAgent(),\\n        room=ctx.room,\\n    )\\n\\n\\nif __name__ == \"__main__\":\\n    cli.run_app(server)\\n'\n\n/tests/test_final_state.py:68: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_agent_has_deepgram_agent_name",
+                "status": "passed",
+                "duration": 0.0002616789424791932,
+                "start": 1778180943.3033438,
+                "stop": 1778180943.3037102,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_inference_llm",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0003147340612486005,
+                "start": 1778180943.3037758,
+                "stop": 1778180943.3051383,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_agent_uses_inference_llm():\n        source = AGENT_FILE.read_text()\n>       assert \"inference.LLM\" in source, (\n            \"src/agent.py must use inference.LLM for the language model\"\n        )\nE       AssertionError: src/agent.py must use inference.LLM for the language model\nE       assert 'inference.LLM' in 'import logging\\n\\nfrom dotenv import load_dotenv\\nfrom livekit.agents import (\\n    AgentServer,\\n    AgentSession,\\n...      agent=DeepgramAgent(),\\n        room=ctx.room,\\n    )\\n\\n\\nif __name__ == \"__main__\":\\n    cli.run_app(server)\\n'\n\n/tests/test_final_state.py:82: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_inference_tts",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0003336529480293393,
+                "start": 1778180943.305211,
+                "stop": 1778180943.3066278,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_agent_uses_inference_tts():\n        source = AGENT_FILE.read_text()\n>       assert \"inference.TTS\" in source, (\n            \"src/agent.py must use inference.TTS for text-to-speech\"\n        )\nE       AssertionError: src/agent.py must use inference.TTS for text-to-speech\nE       assert 'inference.TTS' in 'import logging\\n\\nfrom dotenv import load_dotenv\\nfrom livekit.agents import (\\n    AgentServer,\\n    AgentSession,\\n...      agent=DeepgramAgent(),\\n        room=ctx.room,\\n    )\\n\\n\\nif __name__ == \"__main__\":\\n    cli.run_app(server)\\n'\n\n/tests/test_final_state.py:89: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_silero_vad",
+                "status": "passed",
+                "duration": 0.00032081687822937965,
+                "start": 1778180943.3067338,
+                "stop": 1778180943.307168,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_rtc_session_decorator",
+                "status": "passed",
+                "duration": 0.00030585587956011295,
+                "start": 1778180943.3072238,
+                "stop": 1778180943.3076644,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_agent_session",
+                "status": "passed",
+                "duration": 0.00024296785704791546,
+                "start": 1778180943.3077214,
+                "stop": 1778180943.308061,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_has_livekit_keys",
+                "status": "passed",
+                "duration": 0.00023729994427412748,
+                "start": 1778180943.3081126,
+                "stop": 1778180943.3084764,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_has_deepgram_api_key",
+                "status": "passed",
+                "duration": 0.00021546112839132547,
+                "start": 1778180943.3085299,
+                "stop": 1778180943.3088365,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_venv_has_python_binary",
+                "status": "passed",
+                "duration": 0.0002836020430549979,
+                "start": 1778180943.3089075,
+                "stop": 1778180943.3092995,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

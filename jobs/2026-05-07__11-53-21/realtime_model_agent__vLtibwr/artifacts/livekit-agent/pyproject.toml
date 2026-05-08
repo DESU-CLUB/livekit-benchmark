@@ -1,0 +1,11 @@
+[project]
+name = "livekit-realtime-agent"
+version = "0.1.0"
+description = "LiveKit Realtime Agent"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "livekit-agents[codecs]",
+    "livekit-plugins-openai",
+    "python-dotenv",
+]

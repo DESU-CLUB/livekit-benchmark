@@ -1,0 +1,136 @@
+downloading uv 0.9.7 aarch64-unknown-linux-gnu
+no checksums to verify
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+Downloading pygments (1.2MiB)
+ Downloading pygments
+Installed 7 packages in 10ms
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 17 items
+
+../../../tests/test_final_state.py ..FF.......F.FFFF                     [100%]
+
+=================================== FAILURES ===================================
+____________________________ test_env_local_exists _____________________________
+
+    def test_env_local_exists():
+>       assert ENV_FILE.is_file(), f".env.local not found at {ENV_FILE}"
+E       AssertionError: .env.local not found at /home/user/livekit-agent/.env.local
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/home/user/livekit-agent/.env.local').is_file
+
+/tests/test_final_state.py:22: AssertionError
+_______________________________ test_venv_exists _______________________________
+
+    def test_venv_exists():
+>       assert VENV_DIR.is_dir(), (
+            f".venv directory not found at {VENV_DIR} — run 'uv sync' to install dependencies"
+        )
+E       AssertionError: .venv directory not found at /home/user/livekit-agent/.venv — run 'uv sync' to install dependencies
+E       assert False
+E        +  where False = is_dir()
+E        +    where is_dir = PosixPath('/home/user/livekit-agent/.venv').is_dir
+
+/tests/test_final_state.py:26: AssertionError
+________________________ test_agent_uses_agent_session _________________________
+
+    def test_agent_uses_agent_session():
+        source = AGENT_FILE.read_text()
+>       assert "AgentSession" in source, "src/agent.py must use AgentSession"
+E       AssertionError: src/agent.py must use AgentSession
+E       assert 'AgentSession' in 'from __future__ import annotations\n\nfrom datetime import datetime, timezone\n\nimport livekit.agents as agents\nfro...nif __name__ == "__main__":\n    cli.run_app(WorkerOptions(entrypoint_fnc=entrypoint, agent_name="assistant-agent"))\n'
+
+/tests/test_final_state.py:80: AssertionError
+____________________ test_agent_uses_rtc_session_decorator _____________________
+
+    def test_agent_uses_rtc_session_decorator():
+        source = AGENT_FILE.read_text()
+>       assert "rtc_session" in source, (
+            "src/agent.py must use @server.rtc_session decorator"
+        )
+E       AssertionError: src/agent.py must use @server.rtc_session decorator
+E       assert 'rtc_session' in 'from __future__ import annotations\n\nfrom datetime import datetime, timezone\n\nimport livekit.agents as agents\nfro...nif __name__ == "__main__":\n    cli.run_app(WorkerOptions(entrypoint_fnc=entrypoint, agent_name="assistant-agent"))\n'
+
+/tests/test_final_state.py:90: AssertionError
+_________________________ test_agent_has_system_prompt _________________________
+
+    def test_agent_has_system_prompt():
+        source = AGENT_FILE.read_text()
+>       assert "instructions" in source, (
+            "Assistant class must define an instructions (system prompt)"
+        )
+E       AssertionError: Assistant class must define an instructions (system prompt)
+E       assert 'instructions' in 'from __future__ import annotations\n\nfrom datetime import datetime, timezone\n\nimport livekit.agents as agents\nfro...nif __name__ == "__main__":\n    cli.run_app(WorkerOptions(entrypoint_fnc=entrypoint, agent_name="assistant-agent"))\n'
+
+/tests/test_final_state.py:97: AssertionError
+_______________________ test_env_local_has_livekit_keys ________________________
+
+    def test_env_local_has_livekit_keys():
+>       content = ENV_FILE.read_text()
+                  ^^^^^^^^^^^^^^^^^^^^
+
+/tests/test_final_state.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/livekit-agent/.env.local'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/.env.local'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_________________________ test_venv_has_python_binary __________________________
+
+    def test_venv_has_python_binary():
+        python_bin = VENV_DIR / "bin" / "python"
+        python_bin3 = VENV_DIR / "bin" / "python3"
+>       assert python_bin.exists() or python_bin3.exists(), (
+            ".venv must contain a python executable"
+        )
+E       AssertionError: .venv must contain a python executable
+E       assert (False or False)
+E        +  where False = exists()
+E        +    where exists = PosixPath('/home/user/livekit-agent/.venv/bin/python').exists
+E        +  and   False = exists()
+E        +    where exists = PosixPath('/home/user/livekit-agent/.venv/bin/python3').exists
+
+/tests/test_final_state.py:112: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../../../tests/test_final_state.py::test_agent_file_exists
+PASSED ../../../tests/test_final_state.py::test_pyproject_toml_exists
+PASSED ../../../tests/test_final_state.py::test_pyproject_has_livekit_agents
+PASSED ../../../tests/test_final_state.py::test_pyproject_has_silero_plugin
+PASSED ../../../tests/test_final_state.py::test_agent_defines_assistant_class
+PASSED ../../../tests/test_final_state.py::test_agent_has_assistant_agent_name
+PASSED ../../../tests/test_final_state.py::test_agent_has_function_tool_decorator
+PASSED ../../../tests/test_final_state.py::test_agent_has_get_current_time
+PASSED ../../../tests/test_final_state.py::test_agent_has_get_current_date
+PASSED ../../../tests/test_final_state.py::test_agent_uses_silero_vad
+FAILED ../../../tests/test_final_state.py::test_env_local_exists - AssertionE...
+FAILED ../../../tests/test_final_state.py::test_venv_exists - AssertionError:...
+FAILED ../../../tests/test_final_state.py::test_agent_uses_agent_session - As...
+FAILED ../../../tests/test_final_state.py::test_agent_uses_rtc_session_decorator
+FAILED ../../../tests/test_final_state.py::test_agent_has_system_prompt - Ass...
+FAILED ../../../tests/test_final_state.py::test_env_local_has_livekit_keys - ...
+FAILED ../../../tests/test_final_state.py::test_venv_has_python_binary - Asse...
+========================= 7 failed, 10 passed in 0.04s =========================

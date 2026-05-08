@@ -1,0 +1,13 @@
+[project]
+name = "livekit-agent"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+  "livekit-agents[codecs,turn-detector]",
+  "livekit-plugins-silero",
+  "python-dotenv",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"

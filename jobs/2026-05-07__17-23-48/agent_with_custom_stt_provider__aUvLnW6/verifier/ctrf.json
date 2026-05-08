@@ -1,0 +1,224 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 19,
+            "passed": 8,
+            "failed": 11,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778201720.5756254,
+            "stop": 1778201720.682381
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_agent_file_exists",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00034394313115626574,
+                "start": 1778201720.5827527,
+                "stop": 1778201720.5881846,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_agent_file_exists():\n>       assert AGENT_FILE.is_file(), f\"src/agent.py not found at {AGENT_FILE}\"\nE       AssertionError: src/agent.py not found at /home/user/livekit-agent/src/agent.py\nE       assert False\nE        +  where False = is_file()\nE        +    where is_file = PosixPath('/home/user/livekit-agent/src/agent.py').is_file\n\n/tests/test_final_state.py:14: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_toml_exists",
+                "status": "passed",
+                "duration": 0.0002986951731145382,
+                "start": 1778201720.588278,
+                "stop": 1778201720.5886846,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_exists",
+                "status": "passed",
+                "duration": 0.0002623220207169652,
+                "start": 1778201720.5887642,
+                "stop": 1778201720.589137,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_venv_exists",
+                "status": "passed",
+                "duration": 0.00023415510077029467,
+                "start": 1778201720.5892086,
+                "stop": 1778201720.5895274,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_has_livekit_agents",
+                "status": "passed",
+                "duration": 0.00021157402079552412,
+                "start": 1778201720.5895793,
+                "stop": 1778201720.589879,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_has_deepgram_plugin",
+                "status": "passed",
+                "duration": 0.00024248904082924128,
+                "start": 1778201720.5899491,
+                "stop": 1778201720.5903068,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_has_silero_plugin",
+                "status": "passed",
+                "duration": 0.00020753196440637112,
+                "start": 1778201720.5903754,
+                "stop": 1778201720.5906675,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_imports_deepgram_plugin",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0002173219108954072,
+                "start": 1778201720.590713,
+                "stop": 1778201720.6023622,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_agent_imports_deepgram_plugin():\n>       source = AGENT_FILE.read_text()\n                 ^^^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:53: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/pathlib.py:1029: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/home/user/livekit-agent/src/agent.py'), mode = 'r'\nbuffering = -1, encoding = 'utf-8', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/src/agent.py'\n\n/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_deepgram_stt",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0002813618630170822,
+                "start": 1778201720.6024358,
+                "stop": 1778201720.6120057,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_agent_uses_deepgram_stt():\n>       source = AGENT_FILE.read_text()\n                 ^^^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:60: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/pathlib.py:1029: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/home/user/livekit-agent/src/agent.py'), mode = 'r'\nbuffering = -1, encoding = 'utf-8', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/src/agent.py'\n\n/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_nova_3_model",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00024882203433662653,
+                "start": 1778201720.6120842,
+                "stop": 1778201720.6216204,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_agent_uses_nova_3_model():\n>       source = AGENT_FILE.read_text()\n                 ^^^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:67: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/pathlib.py:1029: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/home/user/livekit-agent/src/agent.py'), mode = 'r'\nbuffering = -1, encoding = 'utf-8', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/src/agent.py'\n\n/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_agent_has_deepgram_agent_name",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0002641970058903098,
+                "start": 1778201720.621682,
+                "stop": 1778201720.6311395,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_agent_has_deepgram_agent_name():\n>       source = AGENT_FILE.read_text()\n                 ^^^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:74: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/pathlib.py:1029: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/home/user/livekit-agent/src/agent.py'), mode = 'r'\nbuffering = -1, encoding = 'utf-8', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/src/agent.py'\n\n/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_inference_llm",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00031686120200902224,
+                "start": 1778201720.6312037,
+                "stop": 1778201720.6410532,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_agent_uses_inference_llm():\n>       source = AGENT_FILE.read_text()\n                 ^^^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:81: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/pathlib.py:1029: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/home/user/livekit-agent/src/agent.py'), mode = 'r'\nbuffering = -1, encoding = 'utf-8', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/src/agent.py'\n\n/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_inference_tts",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0002669478999450803,
+                "start": 1778201720.6411188,
+                "stop": 1778201720.6507745,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_agent_uses_inference_tts():\n>       source = AGENT_FILE.read_text()\n                 ^^^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:88: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/pathlib.py:1029: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/home/user/livekit-agent/src/agent.py'), mode = 'r'\nbuffering = -1, encoding = 'utf-8', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/src/agent.py'\n\n/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_silero_vad",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0002683220664039254,
+                "start": 1778201720.6508434,
+                "stop": 1778201720.6609838,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_agent_uses_silero_vad():\n>       source = AGENT_FILE.read_text()\n                 ^^^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:95: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/pathlib.py:1029: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/home/user/livekit-agent/src/agent.py'), mode = 'r'\nbuffering = -1, encoding = 'utf-8', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/src/agent.py'\n\n/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_rtc_session_decorator",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0002421558601781726,
+                "start": 1778201720.6610506,
+                "stop": 1778201720.6705425,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_agent_uses_rtc_session_decorator():\n>       source = AGENT_FILE.read_text()\n                 ^^^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:102: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/pathlib.py:1029: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/home/user/livekit-agent/src/agent.py'), mode = 'r'\nbuffering = -1, encoding = 'utf-8', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/src/agent.py'\n\n/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_agent_session",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00024953007232397795,
+                "start": 1778201720.6706164,
+                "stop": 1778201720.6802878,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_agent_uses_agent_session():\n>       source = AGENT_FILE.read_text()\n                 ^^^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:109: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/pathlib.py:1029: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/home/user/livekit-agent/src/agent.py'), mode = 'r'\nbuffering = -1, encoding = 'utf-8', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/src/agent.py'\n\n/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_has_livekit_keys",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00035794300492852926,
+                "start": 1778201720.6803591,
+                "stop": 1778201720.6815252,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_env_local_has_livekit_keys():\n        content = ENV_FILE.read_text()\n>       assert \"LIVEKIT_URL\" in content, \".env.local must contain LIVEKIT_URL\"\nE       AssertionError: .env.local must contain LIVEKIT_URL\nE       assert 'LIVEKIT_URL' in '# Deepgram API Key\\n# Get your API key from https://console.deepgram.com/\\nDEEPGRAM_API_KEY=your_deepgram_api_key_here'\n\n/tests/test_final_state.py:115: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_has_deepgram_api_key",
+                "status": "passed",
+                "duration": 0.00022557203192263842,
+                "start": 1778201720.6816008,
+                "stop": 1778201720.681915,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_venv_has_python_binary",
+                "status": "passed",
+                "duration": 0.00021694786846637726,
+                "start": 1778201720.681967,
+                "stop": 1778201720.682264,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

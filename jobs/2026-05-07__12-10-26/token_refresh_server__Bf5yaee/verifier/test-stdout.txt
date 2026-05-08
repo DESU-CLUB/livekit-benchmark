@@ -1,0 +1,134 @@
+downloading uv 0.9.7 aarch64-unknown-linux-gnu
+no checksums to verify
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+
+To add $HOME/.local/bin to your PATH, either restart your shell or run:
+
+    source $HOME/.local/bin/env (sh, bash, zsh)
+    source $HOME/.local/bin/env.fish (fish)
+Downloading pygments (1.2MiB)
+ Downloading pygments
+Installed 7 packages in 4ms
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 10 items
+
+../../../tests/test_final_state.py ........FF                            [100%]
+
+=================================== FAILURES ===================================
+_______________ test_token_endpoint_returns_token_and_expires_in _______________
+
+    def test_token_endpoint_returns_token_and_expires_in():
+        proc = _start_server()
+        try:
+            url = f"{SERVER_URL}/token?room=test&identity=bob"
+            try:
+                with urllib.request.urlopen(url, timeout=5) as resp:
+                    status = resp.status
+                    body = resp.read().decode("utf-8")
+            except urllib.error.HTTPError as e:
+                body = e.read().decode("utf-8")
+                pytest.fail(f"GET /token returned HTTP {e.code}: {body}")
+    
+            assert status == 200, f"Expected 200, got {status}"
+            data = json.loads(body)
+    
+            assert "token" in data, f"Response must have a 'token' field, got: {data}"
+>           assert data.get("expiresIn") == "30m", (
+                f"Response must have expiresIn: '30m', got: {data}"
+            )
+E           AssertionError: Response must have expiresIn: '30m', got: {'token': 'REDACTED_JWT', 'ttl': '30m'}
+E           assert None == '30m'
+E            +  where None = <built-in method get of dict object at 0xe94953331a00>('expiresIn')
+E            +    where <built-in method get of dict object at 0xe94953331a00> = {'token': 'REDACTED_JWT', 'ttl': '30m'}.get
+
+/tests/test_final_state.py:107: AssertionError
+_________________ test_refresh_endpoint_returns_refreshed_true _________________
+
+    def test_refresh_endpoint_returns_refreshed_true():
+        proc = _start_server()
+        try:
+            url = f"{SERVER_URL}/refresh"
+            payload = json.dumps({"room": "test", "identity": "bob"}).encode("utf-8")
+            request = urllib.request.Request(
+                url,
+                data=payload,
+                headers={"Content-Type": "application/json"},
+                method="POST",
+            )
+    
+            try:
+>               with urllib.request.urlopen(request, timeout=5) as resp:
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/tests/test_final_state.py:136: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/urllib/request.py:215: in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/urllib/request.py:521: in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/urllib/request.py:630: in http_response
+    response = self.parent.error(
+/usr/lib/python3.12/urllib/request.py:559: in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/urllib/request.py:492: in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <urllib.request.HTTPDefaultErrorHandler object at 0xe949534c2960>
+req = <urllib.request.Request object at 0xe949534c6d50>
+fp = <http.client.HTTPResponse object at 0xe949534c5090>, code = 400
+msg = 'Bad Request', hdrs = <http.client.HTTPMessage object at 0xe949534c7470>
+
+    def http_error_default(self, req, fp, code, msg, hdrs):
+>       raise HTTPError(req.full_url, code, msg, hdrs, fp)
+E       urllib.error.HTTPError: HTTP Error 400: Bad Request
+
+/usr/lib/python3.12/urllib/request.py:639: HTTPError
+
+During handling of the above exception, another exception occurred:
+
+    def test_refresh_endpoint_returns_refreshed_true():
+        proc = _start_server()
+        try:
+            url = f"{SERVER_URL}/refresh"
+            payload = json.dumps({"room": "test", "identity": "bob"}).encode("utf-8")
+            request = urllib.request.Request(
+                url,
+                data=payload,
+                headers={"Content-Type": "application/json"},
+                method="POST",
+            )
+    
+            try:
+                with urllib.request.urlopen(request, timeout=5) as resp:
+                    status = resp.status
+                    body = resp.read().decode("utf-8")
+            except urllib.error.HTTPError as e:
+                body = e.read().decode("utf-8")
+>               pytest.fail(f"POST /refresh returned HTTP {e.code}: {body}")
+E               Failed: POST /refresh returned HTTP 400: {"error":"Missing required body field: token"}
+
+/tests/test_final_state.py:141: Failed
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../../../tests/test_final_state.py::test_server_js_exists
+PASSED ../../../tests/test_final_state.py::test_script_uses_access_token
+PASSED ../../../tests/test_final_state.py::test_script_has_ttl_30m
+PASSED ../../../tests/test_final_state.py::test_script_listens_on_port_3000
+PASSED ../../../tests/test_final_state.py::test_script_has_token_endpoint
+PASSED ../../../tests/test_final_state.py::test_script_has_refresh_endpoint
+PASSED ../../../tests/test_final_state.py::test_script_has_health_endpoint
+PASSED ../../../tests/test_final_state.py::test_health_endpoint_returns_ok
+FAILED ../../../tests/test_final_state.py::test_token_endpoint_returns_token_and_expires_in
+FAILED ../../../tests/test_final_state.py::test_refresh_endpoint_returns_refreshed_true
+========================= 2 failed, 8 passed in 6.23s ==========================

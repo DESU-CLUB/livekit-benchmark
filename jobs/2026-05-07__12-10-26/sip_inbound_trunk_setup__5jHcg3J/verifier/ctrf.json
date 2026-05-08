@@ -1,0 +1,110 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 10,
+            "passed": 10,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778181419.327683,
+            "stop": 1778181419.337941
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_setup_sip_py_exists",
+                "status": "passed",
+                "duration": 0.0003492329269647598,
+                "start": 1778181419.3331223,
+                "stop": 1778181419.3336272,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_create_sip_inbound_trunk",
+                "status": "passed",
+                "duration": 0.00033477600663900375,
+                "start": 1778181419.333699,
+                "stop": 1778181419.3341472,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_create_sip_dispatch_rule",
+                "status": "passed",
+                "duration": 0.0002858199877664447,
+                "start": 1778181419.3342154,
+                "stop": 1778181419.334621,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_call_prefix",
+                "status": "passed",
+                "duration": 0.0003322348929941654,
+                "start": 1778181419.334677,
+                "stop": 1778181419.335135,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_livekit_api",
+                "status": "passed",
+                "duration": 0.00025848904624581337,
+                "start": 1778181419.33519,
+                "stop": 1778181419.3355503,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_sip_config_json_exists",
+                "status": "passed",
+                "duration": 0.00026548898313194513,
+                "start": 1778181419.3356016,
+                "stop": 1778181419.3359764,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_sip_config_has_trunk_id",
+                "status": "passed",
+                "duration": 0.00032423611264675856,
+                "start": 1778181419.336026,
+                "stop": 1778181419.3364754,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_sip_config_has_dispatch_rule_id",
+                "status": "passed",
+                "duration": 0.00029927794821560383,
+                "start": 1778181419.3365347,
+                "stop": 1778181419.336941,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_sip_config_trunk_name",
+                "status": "passed",
+                "duration": 0.0002703628269955516,
+                "start": 1778181419.3369915,
+                "stop": 1778181419.3373637,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_sip_config_numbers",
+                "status": "passed",
+                "duration": 0.0002851530443876982,
+                "start": 1778181419.3374133,
+                "stop": 1778181419.337795,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 6,
+            "passed": 6,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778180416.7864149,
+            "stop": 1778180418.853907
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_index_js_exists",
+                "status": "passed",
+                "duration": 0.00029599806293845177,
+                "start": 1778180416.7960691,
+                "stop": 1778180416.79652,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_access_token",
+                "status": "passed",
+                "duration": 0.00023654685355722904,
+                "start": 1778180416.7965965,
+                "stop": 1778180416.796941,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_express",
+                "status": "passed",
+                "duration": 0.00018859689589589834,
+                "start": 1778180416.797008,
+                "stop": 1778180416.7972844,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_listens_on_port_3000",
+                "status": "passed",
+                "duration": 0.00016980909276753664,
+                "start": 1778180416.7973385,
+                "stop": 1778180416.7975852,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_has_token_endpoint",
+                "status": "passed",
+                "duration": 0.0001747659407556057,
+                "start": 1778180416.797634,
+                "stop": 1778180416.7978895,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_token_endpoint_returns_jwt",
+                "status": "passed",
+                "duration": 2.0550865900004283,
+                "start": 1778180416.7979395,
+                "stop": 1778180418.853526,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

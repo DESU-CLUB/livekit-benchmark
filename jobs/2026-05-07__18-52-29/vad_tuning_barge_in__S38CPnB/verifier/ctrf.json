@@ -1,0 +1,164 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 16,
+            "passed": 16,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778205987.490433,
+            "stop": 1778205987.5052853
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_vad_config_json_exists",
+                "status": "passed",
+                "duration": 0.0003768589813262224,
+                "start": 1778205987.49647,
+                "stop": 1778205987.497043,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_vad_config_has_min_silence_duration",
+                "status": "passed",
+                "duration": 0.0003243971150368452,
+                "start": 1778205987.4971123,
+                "stop": 1778205987.4975762,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_vad_config_has_min_speech_duration",
+                "status": "passed",
+                "duration": 0.00031314510852098465,
+                "start": 1778205987.4976351,
+                "stop": 1778205987.4980755,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_vad_config_has_activation_threshold",
+                "status": "passed",
+                "duration": 0.00029026996344327927,
+                "start": 1778205987.4981294,
+                "stop": 1778205987.4985335,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_toml_exists",
+                "status": "passed",
+                "duration": 0.0002827271819114685,
+                "start": 1778205987.498587,
+                "stop": 1778205987.4989977,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_has_livekit_agents_dep",
+                "status": "passed",
+                "duration": 0.000535745988599956,
+                "start": 1778205987.4990578,
+                "stop": 1778205987.4997227,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_has_silero_dep",
+                "status": "passed",
+                "duration": 0.00031977088656276464,
+                "start": 1778205987.499778,
+                "stop": 1778205987.5002146,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_file_exists",
+                "status": "passed",
+                "duration": 0.00029256194829940796,
+                "start": 1778205987.5002854,
+                "stop": 1778205987.500702,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_reads_vad_config",
+                "status": "passed",
+                "duration": 0.0002959769917652011,
+                "start": 1778205987.5007527,
+                "stop": 1778205987.5011685,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_silero_vad_load",
+                "status": "passed",
+                "duration": 0.0009113529231399298,
+                "start": 1778205987.501219,
+                "stop": 1778205987.502252,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_name_is_barge_in_agent",
+                "status": "passed",
+                "duration": 0.0003014791291207075,
+                "start": 1778205987.502302,
+                "stop": 1778205987.5027137,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_exists",
+                "status": "passed",
+                "duration": 0.0002980619901791215,
+                "start": 1778205987.502778,
+                "stop": 1778205987.503194,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_has_livekit_url",
+                "status": "passed",
+                "duration": 0.00028664397541433573,
+                "start": 1778205987.5032437,
+                "stop": 1778205987.5036426,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_has_api_key",
+                "status": "passed",
+                "duration": 0.0003097299486398697,
+                "start": 1778205987.5036917,
+                "stop": 1778205987.5041378,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_has_api_secret",
+                "status": "passed",
+                "duration": 0.00031031202524900436,
+                "start": 1778205987.5042105,
+                "stop": 1778205987.504639,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_venv_exists_after_uv_sync",
+                "status": "passed",
+                "duration": 0.00028660206589847803,
+                "start": 1778205987.5046892,
+                "stop": 1778205987.5051172,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

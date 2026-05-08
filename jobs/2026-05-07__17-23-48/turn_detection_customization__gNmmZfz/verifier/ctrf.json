@@ -1,0 +1,146 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 14,
+            "passed": 14,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778200896.4390273,
+            "stop": 1778200896.4504507
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_pyproject_toml_exists",
+                "status": "passed",
+                "duration": 0.00040384894236922264,
+                "start": 1778200896.4438496,
+                "stop": 1778200896.4444544,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_has_livekit_agents_dep",
+                "status": "passed",
+                "duration": 0.000318384962156415,
+                "start": 1778200896.4445379,
+                "stop": 1778200896.4449782,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_has_silero_dep",
+                "status": "passed",
+                "duration": 0.00030009401962161064,
+                "start": 1778200896.4450588,
+                "stop": 1778200896.445544,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_has_python_dotenv_dep",
+                "status": "passed",
+                "duration": 0.00025775888934731483,
+                "start": 1778200896.4456003,
+                "stop": 1778200896.4459593,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_file_exists",
+                "status": "passed",
+                "duration": 0.0002741770585998893,
+                "start": 1778200896.4460185,
+                "stop": 1778200896.4464262,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_turn_handling_options",
+                "status": "passed",
+                "duration": 0.0002686340594664216,
+                "start": 1778200896.4464939,
+                "stop": 1778200896.4468703,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_multilingual_model",
+                "status": "passed",
+                "duration": 0.0002590520307421684,
+                "start": 1778200896.4469228,
+                "stop": 1778200896.4472792,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_turn_detection_multilingual",
+                "status": "passed",
+                "duration": 0.00025380111765116453,
+                "start": 1778200896.4473293,
+                "stop": 1778200896.4477017,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_name_is_turn_aware_agent",
+                "status": "passed",
+                "duration": 0.00024963507894426584,
+                "start": 1778200896.4477503,
+                "stop": 1778200896.4481013,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_exists",
+                "status": "passed",
+                "duration": 0.0003038429422304034,
+                "start": 1778200896.4481535,
+                "stop": 1778200896.448582,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_has_livekit_url",
+                "status": "passed",
+                "duration": 0.0003808888141065836,
+                "start": 1778200896.4486413,
+                "stop": 1778200896.449128,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_has_api_key",
+                "status": "passed",
+                "duration": 0.0002505100565031171,
+                "start": 1778200896.4491816,
+                "stop": 1778200896.4495275,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_has_api_secret",
+                "status": "passed",
+                "duration": 0.0002486339071765542,
+                "start": 1778200896.4495761,
+                "stop": 1778200896.4499214,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_venv_exists_after_uv_sync",
+                "status": "passed",
+                "duration": 0.0002532589714974165,
+                "start": 1778200896.449971,
+                "stop": 1778200896.4503164,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

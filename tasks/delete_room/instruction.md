@@ -12,6 +12,7 @@ Write a Node.js script using the LiveKit server SDK to delete a specific room, a
    - Imports `RoomServiceClient` from `livekit-server-sdk`.
    - Reads `LIVEKIT_URL`, `LIVEKIT_API_KEY`, and `LIVEKIT_API_SECRET` from environment variables.
    - Creates a `RoomServiceClient` instance.
+   - First creates the target room via `svc.createRoom({ name: 'old-meeting-room' })` so that there is actually something to delete. Treat an "already exists" error as success.
    - Calls `svc.deleteRoom('old-meeting-room')` inside an async function.
    - Handles errors gracefully (e.g., room not found should not crash the script).
    - Appends the message `Room deleted successfully` to `/home/user/livekit-admin/output.log`.

@@ -1,0 +1,5 @@
+{
+  "min_silence_duration": 0.2,
+  "min_speech_duration": 0.05,
+  "activation_threshold": 0.4
+}

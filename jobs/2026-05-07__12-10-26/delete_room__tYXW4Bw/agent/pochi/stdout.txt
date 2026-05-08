@@ -1,0 +1,39 @@
+- Initializing MCP connections...
+You
+# Preserving your work Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable. --- # LiveKit Delete Room (Node.js Server SDK) ## Background LiveKit's `RoomServiceClient` (Node.js server SDK) provides administrative APIs for managing rooms and participants. A common operational task is deleting stale or unused rooms. The `deleteRoom` method removes a room and disconnects all participants. ## Requirements Write a Node.js script using the LiveKit server SDK to delete a specific room, and log the result to a file. ## Implementation Guide 1. Navigate to the project directory at `/home/user/livekit-admin`. 2. Create a file named `delete_room.js` that: - Imports `RoomServiceClient` from `livekit-server-sdk`. - Reads `LIVEKIT_URL`, `LIVEKIT_API_KEY`, and `LIVEKIT_API_SECRET` from environment variables. - Creates a `RoomServiceClient` instance. - First creates the target room via `svc.createRoom({ name: 'old-meeting-room' })` so that there is actually something to delete. Treat an "already exists" error as success. - Calls `svc.deleteRoom('old-meeting-room')` inside an async function. - Handles errors gracefully (e.g., room not found should not crash the script). - Appends the message `Room deleted successfully` to `/home/user/livekit-admin/output.log`. 3. Run the script: `node delete_room.js` ## Constraints - Project path: `/home/user/livekit-admin` - Log file: `/home/user/livekit-admin/output.log` - Script name: `delete_room.js` - Room to delete: `old-meeting-room` - The script must exit with code 0 even if the room does not exist - `livekit-server-sdk` npm package is already installed in the project ## Integrations - **LiveKit Node.js Server SDK**: `RoomServiceClient.deleteRoom()` method   
+
+Pochi
+💭 Thinking for 112 characters   
+📂 Listing files in /home/user/livekit-admin ✔ 
+📖 Reading /home/user/livekit-admin/package.json ✔ 
+💫 Executing grep -r "RoomServiceClient" /home/user/livekit-admin/node_modules/livekit-server-sdk/dist --include="*.js" -l | head -5 ✔ 
+The project uses CommonJS (`"type": "commonjs"`) and the SDK is available. Now I'll write the script:   
+✏️  Writing /home/user/livekit-admin/delete_room.js ✔ 
+💫 Executing cd /home/user/livekit-admin && node delete_room.js ✔ 
+💫 Executing cat /home/user/livekit-admin/output.log ✔ 
+Script ran successfully. Now copy the artifacts:   
+💫 Executing cp /home/user/livekit-admin/delete_room.js /logs/artifacts/delete_room.js && cp /home/user/livekit-admin/output.log /logs/artifacts/output.log ✔ 
+🎉 Task Completed
+The script `/home/user/livekit-admin/delete_room.js` has been created and executed successfully.
+
+**What the script does:**
+1. Reads `LIVEKIT_URL`, `LIVEKIT_API_KEY`, and `LIVEKIT_API_SECRET` from environment variables (with safe fallback defaults).
+2. Instantiates a `RoomServiceClient` with those credentials.
+3. Creates `old-meeting-room` via `svc.createRoom()` — treats an "already exists" error as a non-fatal success.
+4. Calls `svc.deleteRoom('old-meeting-room')` — treats a "not found" / 404 error as non-fatal so the script always exits with code 0.
+5. Appends `Room deleted successfully` to `/home/user/livekit-admin/output.log`.
+
+**Execution output:**
+```
+Room 'old-meeting-room' created.
+Room 'old-meeting-room' deleted successfully.
+Result appended to /home/user/livekit-admin/output.log
+```
+
+**Log file contents (`output.log`):**
+```
+Room deleted successfully
+```
+
+Artifacts saved to `/logs/artifacts/delete_room.js` and `/logs/artifacts/output.log`.   
+  

@@ -1,0 +1,57 @@
+- Initializing MCP connections...
+You
+# Preserving your work Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable. --- ## Background LiveKit access tokens support granular publish permissions through `can_publish_sources`, allowing you to restrict a participant to only publishing specific track types (e.g., camera only, no microphone or screen share). This is useful for broadcast scenarios where mics are muted by default. ## Requirements Write a Python script that generates an access token for a participant restricted to publishing only camera tracks, and write the JWT to a file. ## Implementation Guide 1. Navigate to `/home/user/livekit-token`. 2. Create `camera_token.py` that: - Loads `LIVEKIT_API_KEY` and `LIVEKIT_API_SECRET` from `.env.local` (use `python-dotenv` or manual parsing, or read via `os.environ`) - Imports `AccessToken` and `VideoGrants` from `livekit.api` (Python server SDK) - Creates an `AccessToken` with the API key and secret - Sets `identity` to `"video-only-user"` - Adds a grant with `room_join=True`, `room="broadcast"`, `can_publish=True`, `can_subscribe=True`, `can_publish_sources=["camera"]` - Awaits (or calls synchronously) `to_jwt()` / `AccessToken.to_jwt()` to produce the JWT string - Writes the JWT to `token.txt` - Prints `"Token written to token.txt"` to stdout 3. Run the script with `python3 camera_token.py`. ## Constraints - Project path: `/home/user/livekit-token` - Log file: `/home/user/livekit-token/token.txt` - Pre-existing `.env.local` has `LIVEKIT_API_KEY=test-key` and `LIVEKIT_API_SECRET=test-secret` ## Integrations - LiveKit Server SDK (Python)   
+
+Pochi
+💭 Thinking for 83 characters   
+📂 Listing files in /home/user/livekit-token ✔ 
+📖 Reading /home/user/livekit-token/.env.local ✔ 
+💫 Executing pip show livekit livekit-api 2>&1; python3 -c "from livekit.api import AccessToken, VideoGrants; print('SDK available')" 2>&1 ✔ 
+The SDK is available. Now let me write the script:   
+✏️  Writing /home/user/livekit-token/camera_token.py ✔ 
+💫 Executing cd /home/user/livekit-token && python3 camera_token.py ✔ 
+📖 Reading /home/user/livekit-token/token.txt ✔ 
+The JWT is valid. Let me decode it to verify the payload contains the correct grants:   
+💫 Executing python3 -c "
+import base64, json
+token = open('/home/user/livekit-token/token.txt').read().strip()
+payload_b64 = token.split('.')[1]
+# pad base64
+payload_b64 += '=' * (-len(payload_b64) % 4)
+payload = json.loads(base64.urlsafe_b64decode(payload_b64))
+print(json.dumps(payload, indent=2))
+" ✔ 
+Now copy artifacts to the log directory:   
+💫 Executing cp /home/user/livekit-token/camera_token.py /logs/artifacts/ && cp /home/user/livekit-token/token.txt /logs/artifacts/ ✔ 
+🎉 Task Completed
+The script `camera_token.py` has been created at `/home/user/livekit-token/` and runs successfully.
+
+**What it does:**
+1. Parses `.env.local` to load `LIVEKIT_API_KEY` and `LIVEKIT_API_SECRET` without any external dependencies.
+2. Creates an `AccessToken` using the LiveKit Python SDK (`livekit-api` v1.1.0).
+3. Sets identity to `"video-only-user"` and attaches `VideoGrants` with:
+   - `room_join=True`, `room="broadcast"`
+   - `can_publish=True`, `can_subscribe=True`
+   - `can_publish_sources=["camera"]` — restricts publishing to camera tracks only
+4. Calls `to_jwt()` synchronously and writes the JWT to `token.txt`.
+5. Prints `"Token written to token.txt"`.
+
+**Decoded JWT payload confirms the grants:**
+```json
+{
+  "video": {
+    "roomJoin": true,
+    "room": "broadcast",
+    "canPublish": true,
+    "canSubscribe": true,
+    "canPublishData": true,
+    "canPublishSources": ["camera"]
+  },
+  "sub": "video-only-user",
+  "iss": "REDACTED_LIVEKIT_API_KEY",
+  ...
+}
+```
+
+Artifacts saved to `/logs/artifacts/camera_token.py` and `/logs/artifacts/token.txt`.   
+  

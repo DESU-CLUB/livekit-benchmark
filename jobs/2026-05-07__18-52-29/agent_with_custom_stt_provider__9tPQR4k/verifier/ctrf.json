@@ -1,0 +1,212 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 19,
+            "passed": 12,
+            "failed": 7,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778206095.8049498,
+            "stop": 1778206095.8285897
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_agent_file_exists",
+                "status": "passed",
+                "duration": 0.0003321029944345355,
+                "start": 1778206095.8112988,
+                "stop": 1778206095.8117921,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_toml_exists",
+                "status": "passed",
+                "duration": 0.00030451593920588493,
+                "start": 1778206095.811868,
+                "stop": 1778206095.8122883,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_exists",
+                "status": "passed",
+                "duration": 0.0002578470157459378,
+                "start": 1778206095.812351,
+                "stop": 1778206095.8127308,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_venv_exists",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.000329726142808795,
+                "start": 1778206095.8127832,
+                "stop": 1778206095.8176744,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_venv_exists():\n>       assert VENV_DIR.is_dir(), (\n            f\".venv directory not found at {VENV_DIR} \u2014 run 'uv sync' to install dependencies\"\n        )\nE       AssertionError: .venv directory not found at /home/user/livekit-agent/.venv \u2014 run 'uv sync' to install dependencies\nE       assert False\nE        +  where False = is_dir()\nE        +    where is_dir = PosixPath('/home/user/livekit-agent/.venv').is_dir\n\n/tests/test_final_state.py:26: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_has_livekit_agents",
+                "status": "passed",
+                "duration": 0.00028847402427345514,
+                "start": 1778206095.8177395,
+                "stop": 1778206095.8181474,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_has_deepgram_plugin",
+                "status": "passed",
+                "duration": 0.000279307016171515,
+                "start": 1778206095.8181999,
+                "stop": 1778206095.8185992,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_pyproject_has_silero_plugin",
+                "status": "passed",
+                "duration": 0.00024405517615377903,
+                "start": 1778206095.8186486,
+                "stop": 1778206095.818991,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_imports_deepgram_plugin",
+                "status": "passed",
+                "duration": 0.0002730548148974776,
+                "start": 1778206095.819047,
+                "stop": 1778206095.819427,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_deepgram_stt",
+                "status": "passed",
+                "duration": 0.0002849750453606248,
+                "start": 1778206095.8194833,
+                "stop": 1778206095.8198729,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_nova_3_model",
+                "status": "passed",
+                "duration": 0.0002765980316326022,
+                "start": 1778206095.819925,
+                "stop": 1778206095.8203037,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_has_deepgram_agent_name",
+                "status": "passed",
+                "duration": 0.0002657240256667137,
+                "start": 1778206095.8203554,
+                "stop": 1778206095.8207412,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_inference_llm",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00032072607427835464,
+                "start": 1778206095.8207927,
+                "stop": 1778206095.821972,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_agent_uses_inference_llm():\n        source = AGENT_FILE.read_text()\n>       assert \"inference.LLM\" in source, (\n            \"src/agent.py must use inference.LLM for the language model\"\n        )\nE       AssertionError: src/agent.py must use inference.LLM for the language model\nE       assert 'inference.LLM' in 'from __future__ import annotations\\n\\nimport asyncio\\nimport os\\nfrom pathlib import Path\\n\\nfrom livekit import rtc\\...stt, track, participant))\\n\\n\\nif __name__ == \"__main__\":\\n    cli.run_app(WorkerOptions(entrypoint_fnc=entrypoint))\\n'\n\n/tests/test_final_state.py:82: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_inference_tts",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00029826711397618055,
+                "start": 1778206095.822031,
+                "stop": 1778206095.823174,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_agent_uses_inference_tts():\n        source = AGENT_FILE.read_text()\n>       assert \"inference.TTS\" in source, (\n            \"src/agent.py must use inference.TTS for text-to-speech\"\n        )\nE       AssertionError: src/agent.py must use inference.TTS for text-to-speech\nE       assert 'inference.TTS' in 'from __future__ import annotations\\n\\nimport asyncio\\nimport os\\nfrom pathlib import Path\\n\\nfrom livekit import rtc\\...stt, track, participant))\\n\\n\\nif __name__ == \"__main__\":\\n    cli.run_app(WorkerOptions(entrypoint_fnc=entrypoint))\\n'\n\n/tests/test_final_state.py:89: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_silero_vad",
+                "status": "passed",
+                "duration": 0.00027159706223756075,
+                "start": 1778206095.8232305,
+                "stop": 1778206095.823602,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_rtc_session_decorator",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00027909805066883564,
+                "start": 1778206095.823653,
+                "stop": 1778206095.8247216,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_agent_uses_rtc_session_decorator():\n        source = AGENT_FILE.read_text()\n>       assert \"rtc_session\" in source, (\n            \"src/agent.py must use @server.rtc_session decorator\"\n        )\nE       AssertionError: src/agent.py must use @server.rtc_session decorator\nE       assert 'rtc_session' in 'from __future__ import annotations\\n\\nimport asyncio\\nimport os\\nfrom pathlib import Path\\n\\nfrom livekit import rtc\\...stt, track, participant))\\n\\n\\nif __name__ == \"__main__\":\\n    cli.run_app(WorkerOptions(entrypoint_fnc=entrypoint))\\n'\n\n/tests/test_final_state.py:103: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_agent_uses_agent_session",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00028268073219805956,
+                "start": 1778206095.824775,
+                "stop": 1778206095.8257926,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_agent_uses_agent_session():\n        source = AGENT_FILE.read_text()\n>       assert \"AgentSession\" in source, \"src/agent.py must use AgentSession\"\nE       AssertionError: src/agent.py must use AgentSession\nE       assert 'AgentSession' in 'from __future__ import annotations\\n\\nimport asyncio\\nimport os\\nfrom pathlib import Path\\n\\nfrom livekit import rtc\\...stt, track, participant))\\n\\n\\nif __name__ == \"__main__\":\\n    cli.run_app(WorkerOptions(entrypoint_fnc=entrypoint))\\n'\n\n/tests/test_final_state.py:110: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_has_livekit_keys",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00029522390104830265,
+                "start": 1778206095.8258448,
+                "stop": 1778206095.8268492,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_env_local_has_livekit_keys():\n        content = ENV_FILE.read_text()\n>       assert \"LIVEKIT_URL\" in content, \".env.local must contain LIVEKIT_URL\"\nE       AssertionError: .env.local must contain LIVEKIT_URL\nE       assert 'LIVEKIT_URL' in 'DEEPGRAM_API_KEY=\\n'\n\n/tests/test_final_state.py:115: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_env_local_has_deepgram_api_key",
+                "status": "passed",
+                "duration": 0.0002828490687534213,
+                "start": 1778206095.8269,
+                "stop": 1778206095.8272853,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_venv_has_python_binary",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00029268302023410797,
+                "start": 1778206095.8273344,
+                "stop": 1778206095.8284528,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_venv_has_python_binary():\n        python_bin = VENV_DIR / \"bin\" / \"python\"\n        python_bin3 = VENV_DIR / \"bin\" / \"python3\"\n>       assert python_bin.exists() or python_bin3.exists(), (\n            \".venv must contain a python executable\"\n        )\nE       AssertionError: .venv must contain a python executable\nE       assert (False or False)\nE        +  where False = exists()\nE        +    where exists = PosixPath('/home/user/livekit-agent/.venv/bin/python').exists\nE        +  and   False = exists()\nE        +    where exists = PosixPath('/home/user/livekit-agent/.venv/bin/python3').exists\n\n/tests/test_final_state.py:130: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

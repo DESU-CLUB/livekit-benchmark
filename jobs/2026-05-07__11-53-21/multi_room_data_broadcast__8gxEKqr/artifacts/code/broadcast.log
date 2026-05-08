@@ -1,0 +1,4 @@
+2026-05-07 18:58:48,645 - INFO - Fetching active rooms...
+2026-05-07 18:58:49,173 - INFO - Found 1 active room(s).
+2026-05-07 18:58:49,173 - INFO - Sending message to room: test-room
+2026-05-07 18:58:49,297 - INFO - Message sent to room: test-room

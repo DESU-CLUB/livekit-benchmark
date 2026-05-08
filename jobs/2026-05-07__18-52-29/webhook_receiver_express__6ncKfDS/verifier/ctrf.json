@@ -1,0 +1,95 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 8,
+            "passed": 7,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778205224.7089007,
+            "stop": 1778205226.759361
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_server_js_exists",
+                "status": "passed",
+                "duration": 0.0003141239285469055,
+                "start": 1778205224.7205105,
+                "stop": 1778205224.720978,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_webhook_receiver",
+                "status": "passed",
+                "duration": 0.0003074981505051255,
+                "start": 1778205224.7210662,
+                "stop": 1778205224.7215023,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_imports_livekit_server_sdk",
+                "status": "passed",
+                "duration": 0.0002445400459691882,
+                "start": 1778205224.721575,
+                "stop": 1778205224.7219164,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_express_raw_middleware",
+                "status": "passed",
+                "duration": 0.0002320408821105957,
+                "start": 1778205224.7219756,
+                "stop": 1778205224.722302,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_references_events_log",
+                "status": "passed",
+                "duration": 0.0003033729735761881,
+                "start": 1778205224.7223587,
+                "stop": 1778205224.7227921,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_listens_on_port_4000",
+                "status": "passed",
+                "duration": 0.00023699889425188303,
+                "start": 1778205224.7228622,
+                "stop": 1778205224.723197,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_defines_webhook_post_route",
+                "status": "passed",
+                "duration": 0.00026458094362169504,
+                "start": 1778205224.7232528,
+                "stop": 1778205224.723629,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_unauthorized_webhook_returns_401",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 2.0273178840288892,
+                "start": 1778205224.723691,
+                "stop": 1778205226.7591522,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_unauthorized_webhook_returns_401():\n        node_path = shutil.which(\"node\")\n        assert node_path is not None, \"node must be installed\"\n    \n        env = os.environ.copy()\n        env.setdefault(\"LIVEKIT_API_KEY\", \"test-api-key\")\n        env.setdefault(\"LIVEKIT_API_SECRET\", \"test-api-secret\")\n    \n        proc = subprocess.Popen(\n            [node_path, \"server.js\"],\n            cwd=str(PROJECT_DIR),\n            env=env,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n        )\n    \n        try:\n            time.sleep(2)\n    \n            webhook_url = f\"{SERVER_URL}/webhook\"\n            request = urllib.request.Request(\n                webhook_url,\n                data=b'{\"event\":\"room_started\",\"room\":{}}',\n                headers={\n                    \"Content-Type\": \"application/webhook+json\",\n                },\n                method=\"POST\",\n            )\n    \n            try:\n                with urllib.request.urlopen(request, timeout=5) as resp:\n                    status = resp.status\n            except urllib.error.HTTPError as e:\n                status = e.code\n    \n>           assert status == 401, (\n                f\"POST /webhook with no/invalid Authorization header must return 401, got {status}\"\n            )\nE           AssertionError: POST /webhook with no/invalid Authorization header must return 401, got 200\nE           assert 200 == 401\n\n/tests/test_final_state.py:94: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

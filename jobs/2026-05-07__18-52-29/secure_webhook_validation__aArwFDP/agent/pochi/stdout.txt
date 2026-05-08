@@ -1,0 +1,24 @@
+- Initializing MCP connections...
+You
+# Preserving your work Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable. --- ## Background LiveKit sends signed webhook events to your server for room lifecycle and participant events. A production-grade webhook handler must validate the HMAC signature using `WebhookReceiver`, use `express.raw()` (not `express.json()`) for the webhook route to preserve the raw body for signature verification, and route different event types to dedicated handler functions. ## Requirements Build a Node.js Express webhook server that validates LiveKit signatures, routes all major event types to handler functions, and logs events to a file. ## Implementation Guide See `instruction.md` for full details. ## Constraints - Project path: `/home/user/livekit-webhook` - Port: `4000` - Start command: `node server.js` - Log file: `/home/user/livekit-webhook/events.log` - `express` and `livekit-server-sdk` npm packages are already installed - Must use `express.raw({type: 'application/webhook+json'})` for the webhook route - Must NOT use `express.json()` globally before the webhook route ## Integrations - **LiveKit Node.js Server SDK**: `WebhookReceiver` for signature validation - **Express**: HTTP framework   
+
+Pochi
+💭 Thinking for 0 characters   
+📖 Reading instruction.md ✖ "ENOENT: no such file or directory, open '/home/user/livekit-webhook/instruction.md'"
+💭 Thinking for 0 characters   
+📂 Listing files in . ✔ 
+💭 Thinking for 0 characters   
+📋 Updating todo list (3 items) ✔ 
+💭 Thinking for 109 characters   
+📂 Listing files in . recursively ✔ 
+💭 Thinking for 363 characters   
+💭 Thinking for 415 characters   
+✏️  Writing server.js ✔ 
+💭 Thinking for 179 characters   
+✏️  Writing /logs/artifacts/code/server.js ✔ 
+💭 Thinking for 0 characters   
+📋 Updating todo list (3 items) ✔ 
+💭 Thinking for 0 characters   
+🎉 Task Completed
+Implemented server.js with LiveKit WebhookReceiver validation, raw-body webhook route, event routing handlers, and JSONL logging to events.log on port 4000. Saved a copy to /logs/artifacts/code/server.js. Start with: node server.js (ensure LIVEKIT_WEBHOOK_API_KEY and LIVEKIT_WEBHOOK_API_SECRET are set).   
+  

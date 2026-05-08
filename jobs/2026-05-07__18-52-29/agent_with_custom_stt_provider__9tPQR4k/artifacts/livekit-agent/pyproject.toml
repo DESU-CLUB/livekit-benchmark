@@ -1,0 +1,13 @@
+[project]
+name = "livekit-agent"
+version = "0.1.0"
+description = "LiveKit Agent using Deepgram STT"
+requires-python = ">=3.10"
+dependencies = [
+  "livekit-agents[codecs,turn-detector]",
+  "livekit-plugins-deepgram",
+  "livekit-plugins-silero",
+]
+
+[tool.uv]
+package = false

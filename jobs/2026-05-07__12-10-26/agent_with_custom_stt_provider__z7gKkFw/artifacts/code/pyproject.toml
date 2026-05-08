@@ -1,0 +1,11 @@
+[project]
+name = "livekit-agent"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.12"
+dependencies = [
+    "livekit-agents[codecs,turn-detector]>=1.5.8",
+    "livekit-plugins-deepgram>=1.5.8",
+    "livekit-plugins-silero>=1.5.8",
+    "python-dotenv>=1.2.2",
+]

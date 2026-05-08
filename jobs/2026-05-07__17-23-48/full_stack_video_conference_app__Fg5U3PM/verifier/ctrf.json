@@ -1,0 +1,110 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 10,
+            "passed": 10,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778200662.638806,
+            "stop": 1778200663.2211351
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_backend_dir_exists",
+                "status": "passed",
+                "duration": 0.00032661505974829197,
+                "start": 1778200662.6518662,
+                "stop": 1778200662.6523461,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_frontend_dir_exists",
+                "status": "passed",
+                "duration": 0.00034757202956825495,
+                "start": 1778200662.652427,
+                "stop": 1778200662.6528988,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_backend_entry_point_exists",
+                "status": "passed",
+                "duration": 0.00023232691455632448,
+                "start": 1778200662.6529675,
+                "stop": 1778200662.6532955,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_backend_uses_access_token",
+                "status": "passed",
+                "duration": 0.00022236700169742107,
+                "start": 1778200662.6533518,
+                "stop": 1778200662.6536632,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_backend_listens_on_port_3001",
+                "status": "passed",
+                "duration": 0.00022628484293818474,
+                "start": 1778200662.6537166,
+                "stop": 1778200662.654029,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_frontend_has_livekit_room_component",
+                "status": "passed",
+                "duration": 0.00033023988362401724,
+                "start": 1778200662.6540802,
+                "stop": 1778200662.654499,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_frontend_has_video_conference_component",
+                "status": "passed",
+                "duration": 0.00031578121706843376,
+                "start": 1778200662.654578,
+                "stop": 1778200662.6550062,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_backend_token_endpoint",
+                "status": "passed",
+                "duration": 0.5630934101063758,
+                "start": 1778200662.6550727,
+                "stop": 1778200663.2186215,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_frontend_package_json_has_livekit_components",
+                "status": "passed",
+                "duration": 0.0006196891190484166,
+                "start": 1778200663.2188518,
+                "stop": 1778200663.219724,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_frontend_package_json_has_livekit_client",
+                "status": "passed",
+                "duration": 0.0005277340533211827,
+                "start": 1778200663.219901,
+                "stop": 1778200663.2208233,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

@@ -1,0 +1,1 @@
+[2026-05-08T01:55:49Z] Failed to remove participant 'user-123' from room 'demo-room': TwirpError(code=not_found, message=participant does not exist, status=404)

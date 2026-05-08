@@ -1,0 +1,131 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 12,
+            "passed": 11,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778180549.5458698,
+            "stop": 1778180553.675493
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_server_js_exists",
+                "status": "passed",
+                "duration": 0.0005073458887636662,
+                "start": 1778180549.5621266,
+                "stop": 1778180549.5629146,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_webhook_receiver",
+                "status": "passed",
+                "duration": 0.0005309679545462132,
+                "start": 1778180549.56301,
+                "stop": 1778180549.5636747,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_express_raw_middleware",
+                "status": "passed",
+                "duration": 0.0003892369568347931,
+                "start": 1778180549.563748,
+                "stop": 1778180549.564327,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_references_events_log",
+                "status": "passed",
+                "duration": 0.000382488826289773,
+                "start": 1778180549.5643942,
+                "stop": 1778180549.5648808,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_listens_on_port_4000",
+                "status": "passed",
+                "duration": 0.0009764060378074646,
+                "start": 1778180549.5649457,
+                "stop": 1778180549.5660663,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_has_room_started_handler",
+                "status": "passed",
+                "duration": 0.00023730099201202393,
+                "start": 1778180549.5661292,
+                "stop": 1778180549.5669806,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_has_room_finished_handler",
+                "status": "passed",
+                "duration": 0.0002502581337466836,
+                "start": 1778180549.5670443,
+                "stop": 1778180549.567413,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_has_participant_joined_handler",
+                "status": "passed",
+                "duration": 0.0003415779210627079,
+                "start": 1778180549.5675604,
+                "stop": 1778180549.5680227,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_has_participant_left_handler",
+                "status": "passed",
+                "duration": 0.0023230949882417917,
+                "start": 1778180549.5681634,
+                "stop": 1778180549.5706284,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_has_track_published_handler",
+                "status": "passed",
+                "duration": 0.0002574640093371272,
+                "start": 1778180549.5707278,
+                "stop": 1778180549.571097,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_health_endpoint_returns_ok",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 2.0233019629959017,
+                "start": 1778180549.5711591,
+                "stop": 1778180551.6399086,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_health_endpoint_returns_ok():\n        node_path = shutil.which(\"node\")\n        assert node_path is not None, \"node must be installed\"\n    \n        env = os.environ.copy()\n        env.setdefault(\"LIVEKIT_API_KEY\", \"test-api-key\")\n        env.setdefault(\"LIVEKIT_API_SECRET\", \"test-api-secret\")\n    \n        proc = subprocess.Popen(\n            [node_path, \"server.js\"],\n            cwd=str(PROJECT_DIR),\n            env=env,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n        )\n    \n        try:\n            time.sleep(2)\n    \n            health_url = f\"{SERVER_URL}/health\"\n            try:\n>               with urllib.request.urlopen(health_url, timeout=5) as resp:\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:104: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/urllib/request.py:215: in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n/usr/lib/python3.12/urllib/request.py:521: in open\n    response = meth(req, response)\n               ^^^^^^^^^^^^^^^^^^^\n/usr/lib/python3.12/urllib/request.py:630: in http_response\n    response = self.parent.error(\n/usr/lib/python3.12/urllib/request.py:559: in error\n    return self._call_chain(*args)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n/usr/lib/python3.12/urllib/request.py:492: in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <urllib.request.HTTPDefaultErrorHandler object at 0xe6a832e12ea0>\nreq = <urllib.request.Request object at 0xe6a832e1c710>\nfp = <http.client.HTTPResponse object at 0xe6a833045870>, code = 404\nmsg = 'Not Found', hdrs = <http.client.HTTPMessage object at 0xe6a832af3710>\n\n    def http_error_default(self, req, fp, code, msg, hdrs):\n>       raise HTTPError(req.full_url, code, msg, hdrs, fp)\nE       urllib.error.HTTPError: HTTP Error 404: Not Found\n\n/usr/lib/python3.12/urllib/request.py:639: HTTPError\n\nDuring handling of the above exception, another exception occurred:\n\n    def test_health_endpoint_returns_ok():\n        node_path = shutil.which(\"node\")\n        assert node_path is not None, \"node must be installed\"\n    \n        env = os.environ.copy()\n        env.setdefault(\"LIVEKIT_API_KEY\", \"test-api-key\")\n        env.setdefault(\"LIVEKIT_API_SECRET\", \"test-api-secret\")\n    \n        proc = subprocess.Popen(\n            [node_path, \"server.js\"],\n            cwd=str(PROJECT_DIR),\n            env=env,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n        )\n    \n        try:\n            time.sleep(2)\n    \n            health_url = f\"{SERVER_URL}/health\"\n            try:\n                with urllib.request.urlopen(health_url, timeout=5) as resp:\n                    status = resp.status\n                    body = resp.read().decode(\"utf-8\")\n            except urllib.error.HTTPError as e:\n                body = e.read().decode(\"utf-8\")\n>               pytest.fail(f\"GET /health returned HTTP {e.code}: {body}\")\nE               Failed: GET /health returned HTTP 404: <!DOCTYPE html>\nE               <html lang=\"en\">\nE               <head>\nE               <meta charset=\"utf-8\">\nE               <title>Error</title>\nE               </head>\nE               <body>\nE               <pre>Cannot GET /health</pre>\nE               </body>\nE               </html>\n\n/tests/test_final_state.py:109: Failed",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_unauthorized_webhook_returns_401",
+                "status": "passed",
+                "duration": 2.034119648160413,
+                "start": 1778180551.640014,
+                "stop": 1778180553.674945,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

@@ -1,0 +1,58 @@
+{
+    "id": "2b0164ab-7cbe-4554-9dea-fd2669dc755b",
+    "started_at": "2026-05-07T11:53:23.271551",
+    "finished_at": "2026-05-07T12:09:14.125004",
+    "n_total_trials": 28,
+    "stats": {
+        "n_trials": 28,
+        "n_errors": 0,
+        "evals": {
+            "pochi__gemini-3.1-pro__livekit-tasks": {
+                "n_trials": 28,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 0.7857142857142857
+                    }
+                ],
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "webhook_receiver_express__vivUeGv",
+                            "token_with_room_config_agent_dis__3M8uKet",
+                            "generate_access_token__MXkxxsH",
+                            "multimodal_vision_agent__h4B93uf",
+                            "realtime_model_agent__vLtibwr",
+                            "camera_only_token_restriction__EQTRf54",
+                            "remove_participant__Xhc9gHL",
+                            "full_stack_video_conference_app__yKHabFG",
+                            "basic_voice_agent_python__BS4GDJQ",
+                            "hand_raise_dynamic_permissions__VfoGtT5",
+                            "participant_permissions_update__LB4z6kK",
+                            "token_server_express__QJBrJfo",
+                            "room_service_list_and_kick__cMGcY5Q",
+                            "sip_inbound_trunk_setup__9QzdZbm",
+                            "webhook_participant_joined_logge__aYoHkkV",
+                            "turn_detection_customization__8dawrt9",
+                            "voice_agent_with_tool_call__4uoXCYp",
+                            "room_metadata_update__DAWFSXt",
+                            "subscribe_only_token__WCRua5w",
+                            "list_participants_in_room__uHRHrhw",
+                            "delete_room__p5QtAaG",
+                            "vad_tuning_barge_in__eS7TTsH"
+                        ],
+                        "0.0": [
+                            "list_active_rooms__KhedJZx",
+                            "multi_room_data_broadcast__8gxEKqr",
+                            "secure_webhook_validation__QiCD8KU",
+                            "voice_agent_system_prompt_tool__zcNYCfR",
+                            "agent_with_custom_stt_provider__9DJy8KW",
+                            "token_refresh_server__nfkLYso"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        }
+    }
+}

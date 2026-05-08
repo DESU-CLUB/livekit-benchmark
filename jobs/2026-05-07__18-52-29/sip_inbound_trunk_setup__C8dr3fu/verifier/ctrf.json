@@ -1,0 +1,125 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 10,
+            "passed": 5,
+            "failed": 5,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778205646.8712745,
+            "stop": 1778205646.9285424
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_setup_sip_py_exists",
+                "status": "passed",
+                "duration": 0.0003292451146990061,
+                "start": 1778205646.8766341,
+                "stop": 1778205646.8771472,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_create_sip_inbound_trunk",
+                "status": "passed",
+                "duration": 0.0003110369434580207,
+                "start": 1778205646.8772352,
+                "stop": 1778205646.8776615,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_create_sip_dispatch_rule",
+                "status": "passed",
+                "duration": 0.0002682459307834506,
+                "start": 1778205646.8777235,
+                "stop": 1778205646.8781042,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_call_prefix",
+                "status": "passed",
+                "duration": 0.000335453893058002,
+                "start": 1778205646.878159,
+                "stop": 1778205646.8786137,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_livekit_api",
+                "status": "passed",
+                "duration": 0.00030312000308185816,
+                "start": 1778205646.8786983,
+                "stop": 1778205646.8791018,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_sip_config_json_exists",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00036187097430229187,
+                "start": 1778205646.8791816,
+                "stop": 1778205646.8842378,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_sip_config_json_exists():\n>       assert SIP_CONFIG.is_file(), (\n            f\"sip_config.json not found at {SIP_CONFIG} \u2014 run setup_sip.py to generate it\"\n        )\nE       AssertionError: sip_config.json not found at /home/user/livekit-sip/sip_config.json \u2014 run setup_sip.py to generate it\nE       assert False\nE        +  where False = is_file()\nE        +    where is_file = PosixPath('/home/user/livekit-sip/sip_config.json').is_file\n\n/tests/test_final_state.py:45: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_sip_config_has_trunk_id",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00033503700979053974,
+                "start": 1778205646.8843079,
+                "stop": 1778205646.8966362,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_sip_config_has_trunk_id():\n>       data = json.loads(SIP_CONFIG.read_text())\n                          ^^^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:51: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/pathlib.py:1029: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/home/user/livekit-sip/sip_config.json'), mode = 'r'\nbuffering = -1, encoding = 'utf-8', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-sip/sip_config.json'\n\n/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_sip_config_has_dispatch_rule_id",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0003442040178924799,
+                "start": 1778205646.896705,
+                "stop": 1778205646.9068794,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_sip_config_has_dispatch_rule_id():\n>       data = json.loads(SIP_CONFIG.read_text())\n                          ^^^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:59: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/pathlib.py:1029: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/home/user/livekit-sip/sip_config.json'), mode = 'r'\nbuffering = -1, encoding = 'utf-8', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-sip/sip_config.json'\n\n/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_sip_config_trunk_name",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00033461989369243383,
+                "start": 1778205646.9069731,
+                "stop": 1778205646.9168046,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_sip_config_trunk_name():\n>       data = json.loads(SIP_CONFIG.read_text())\n                          ^^^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:69: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/pathlib.py:1029: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/home/user/livekit-sip/sip_config.json'), mode = 'r'\nbuffering = -1, encoding = 'utf-8', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-sip/sip_config.json'\n\n/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_sip_config_numbers",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00035462004598230124,
+                "start": 1778205646.916873,
+                "stop": 1778205646.9282908,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_sip_config_numbers():\n>       data = json.loads(SIP_CONFIG.read_text())\n                          ^^^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:76: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/pathlib.py:1029: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/home/user/livekit-sip/sip_config.json'), mode = 'r'\nbuffering = -1, encoding = 'utf-8', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-sip/sip_config.json'\n\n/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            }
+        ]
+    }
+}

@@ -1,0 +1,116 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 10,
+            "passed": 8,
+            "failed": 2,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778205970.7316635,
+            "stop": 1778205976.8476868
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_server_js_exists",
+                "status": "passed",
+                "duration": 0.0003227450652047992,
+                "start": 1778205970.7420263,
+                "stop": 1778205970.7424903,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_access_token",
+                "status": "passed",
+                "duration": 0.00024412013590335846,
+                "start": 1778205970.7426014,
+                "stop": 1778205970.7429557,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_has_ttl_30m",
+                "status": "passed",
+                "duration": 0.00023732997942715883,
+                "start": 1778205970.7430258,
+                "stop": 1778205970.743371,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_listens_on_port_3000",
+                "status": "passed",
+                "duration": 0.0002080799313262105,
+                "start": 1778205970.7434406,
+                "stop": 1778205970.7437365,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_has_token_endpoint",
+                "status": "passed",
+                "duration": 0.00021382991690188646,
+                "start": 1778205970.7438087,
+                "stop": 1778205970.744118,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_has_refresh_endpoint",
+                "status": "passed",
+                "duration": 0.00017728901002556086,
+                "start": 1778205970.744179,
+                "stop": 1778205970.7444377,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_has_health_endpoint",
+                "status": "passed",
+                "duration": 0.0002195378765463829,
+                "start": 1778205970.744486,
+                "stop": 1778205970.7447948,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_health_endpoint_returns_ok",
+                "status": "passed",
+                "duration": 2.028933118097484,
+                "start": 1778205970.7448518,
+                "stop": 1778205972.7740982,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_token_endpoint_returns_token_and_expires_in",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 2.0180444710422307,
+                "start": 1778205972.7742553,
+                "stop": 1778205974.803507,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_token_endpoint_returns_token_and_expires_in():\n        proc = _start_server()\n        try:\n            url = f\"{SERVER_URL}/token?room=test&identity=bob\"\n            try:\n                with urllib.request.urlopen(url, timeout=5) as resp:\n                    status = resp.status\n                    body = resp.read().decode(\"utf-8\")\n            except urllib.error.HTTPError as e:\n                body = e.read().decode(\"utf-8\")\n                pytest.fail(f\"GET /token returned HTTP {e.code}: {body}\")\n    \n            assert status == 200, f\"Expected 200, got {status}\"\n            data = json.loads(body)\n    \n            assert \"token\" in data, f\"Response must have a 'token' field, got: {data}\"\n>           assert data.get(\"expiresIn\") == \"30m\", (\n                f\"Response must have expiresIn: '30m', got: {data}\"\n            )\nE           AssertionError: Response must have expiresIn: '30m', got: {'token': {}, 'ttl': '30m'}\nE           assert None == '30m'\nE            +  where None = <built-in method get of dict object at 0xe902b90c67c0>('expiresIn')\nE            +    where <built-in method get of dict object at 0xe902b90c67c0> = {'token': {}, 'ttl': '30m'}.get\n\n/tests/test_final_state.py:107: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_refresh_endpoint_returns_refreshed_true",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 2.0390420840121806,
+                "start": 1778205974.8036747,
+                "stop": 1778205976.8471873,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_refresh_endpoint_returns_refreshed_true():\n        proc = _start_server()\n        try:\n            url = f\"{SERVER_URL}/refresh\"\n            payload = json.dumps({\"room\": \"test\", \"identity\": \"bob\"}).encode(\"utf-8\")\n            request = urllib.request.Request(\n                url,\n                data=payload,\n                headers={\"Content-Type\": \"application/json\"},\n                method=\"POST\",\n            )\n    \n            try:\n                with urllib.request.urlopen(request, timeout=5) as resp:\n                    status = resp.status\n                    body = resp.read().decode(\"utf-8\")\n            except urllib.error.HTTPError as e:\n                body = e.read().decode(\"utf-8\")\n                pytest.fail(f\"POST /refresh returned HTTP {e.code}: {body}\")\n    \n            assert status == 200, f\"Expected 200, got {status}\"\n            data = json.loads(body)\n    \n            assert \"token\" in data, f\"Response must have a 'token' field, got: {data}\"\n>           assert data.get(\"refreshed\") is True, (\n                f\"Response must have refreshed: true, got: {data}\"\n            )\nE           AssertionError: Response must have refreshed: true, got: {'token': {}, 'ttl': '30m'}\nE           assert None is True\nE            +  where None = <built-in method get of dict object at 0xe902b8e806c0>('refreshed')\nE            +    where <built-in method get of dict object at 0xe902b8e806c0> = {'token': {}, 'ttl': '30m'}.get\n\n/tests/test_final_state.py:147: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

@@ -1,0 +1,119 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 10,
+            "passed": 7,
+            "failed": 3,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778201365.9181256,
+            "stop": 1778201372.0777347
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_server_js_exists",
+                "status": "passed",
+                "duration": 0.0003686960553750396,
+                "start": 1778201365.9300246,
+                "stop": 1778201365.9305692,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_access_token",
+                "status": "passed",
+                "duration": 0.0003060310846194625,
+                "start": 1778201365.930667,
+                "stop": 1778201365.9311333,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_has_ttl_30m",
+                "status": "passed",
+                "duration": 0.0003146551316604018,
+                "start": 1778201365.9312148,
+                "stop": 1778201365.931665,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_listens_on_port_3000",
+                "status": "passed",
+                "duration": 0.0003143651410937309,
+                "start": 1778201365.931742,
+                "stop": 1778201365.932212,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_has_token_endpoint",
+                "status": "passed",
+                "duration": 0.00026219908613711596,
+                "start": 1778201365.9322798,
+                "stop": 1778201365.9326746,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_has_refresh_endpoint",
+                "status": "passed",
+                "duration": 0.0002519490662962198,
+                "start": 1778201365.9327419,
+                "stop": 1778201365.9331098,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_has_health_endpoint",
+                "status": "passed",
+                "duration": 0.0002547829644754529,
+                "start": 1778201365.9331756,
+                "stop": 1778201365.9335248,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_health_endpoint_returns_ok",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 2.0505716098705307,
+                "start": 1778201365.9335961,
+                "stop": 1778201367.990969,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_health_endpoint_returns_ok():\n        proc = _start_server()\n        try:\n            url = f\"{SERVER_URL}/health\"\n            try:\n                with urllib.request.urlopen(url, timeout=5) as resp:\n                    status = resp.status\n                    body = resp.read().decode(\"utf-8\")\n            except urllib.error.HTTPError as e:\n                pytest.fail(f\"GET /health returned HTTP {e.code}\")\n    \n            assert status == 200, f\"Expected 200, got {status}\"\n            data = json.loads(body)\n>           assert data.get(\"status\") == \"ok\", f\"Expected {{status: 'ok'}}, got {data}\"\nE           AssertionError: Expected {status: 'ok'}, got {'status': 'healthy', 'timestamp': '2026-05-08T00:49:27.978Z'}\nE           assert 'healthy' == 'ok'\nE             \nE             - ok\nE             + healthy\n\n/tests/test_final_state.py:82: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_token_endpoint_returns_token_and_expires_in",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 2.0352105461061,
+                "start": 1778201367.9910905,
+                "stop": 1778201370.03119,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_token_endpoint_returns_token_and_expires_in():\n        proc = _start_server()\n        try:\n            url = f\"{SERVER_URL}/token?room=test&identity=bob\"\n            try:\n                with urllib.request.urlopen(url, timeout=5) as resp:\n                    status = resp.status\n                    body = resp.read().decode(\"utf-8\")\n            except urllib.error.HTTPError as e:\n                body = e.read().decode(\"utf-8\")\n                pytest.fail(f\"GET /token returned HTTP {e.code}: {body}\")\n    \n            assert status == 200, f\"Expected 200, got {status}\"\n            data = json.loads(body)\n    \n            assert \"token\" in data, f\"Response must have a 'token' field, got: {data}\"\n>           assert data.get(\"expiresIn\") == \"30m\", (\n                f\"Response must have expiresIn: '30m', got: {data}\"\n            )\nE           AssertionError: Response must have expiresIn: '30m', got: {'token': {}, 'identity': 'bob', 'roomName': None, 'expiresIn': 1800}\nE           assert 1800 == '30m'\nE            +  where 1800 = <built-in method get of dict object at 0xe5d6ae2bb740>('expiresIn')\nE            +    where <built-in method get of dict object at 0xe5d6ae2bb740> = {'expiresIn': 1800, 'identity': 'bob', 'roomName': None, 'token': {}}.get\n\n/tests/test_final_state.py:107: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_refresh_endpoint_returns_refreshed_true",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 2.0413877478567883,
+                "start": 1778201370.0314314,
+                "stop": 1778201372.0772707,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_refresh_endpoint_returns_refreshed_true():\n        proc = _start_server()\n        try:\n            url = f\"{SERVER_URL}/refresh\"\n            payload = json.dumps({\"room\": \"test\", \"identity\": \"bob\"}).encode(\"utf-8\")\n            request = urllib.request.Request(\n                url,\n                data=payload,\n                headers={\"Content-Type\": \"application/json\"},\n                method=\"POST\",\n            )\n    \n            try:\n                with urllib.request.urlopen(request, timeout=5) as resp:\n                    status = resp.status\n                    body = resp.read().decode(\"utf-8\")\n            except urllib.error.HTTPError as e:\n                body = e.read().decode(\"utf-8\")\n                pytest.fail(f\"POST /refresh returned HTTP {e.code}: {body}\")\n    \n            assert status == 200, f\"Expected 200, got {status}\"\n            data = json.loads(body)\n    \n            assert \"token\" in data, f\"Response must have a 'token' field, got: {data}\"\n>           assert data.get(\"refreshed\") is True, (\n                f\"Response must have refreshed: true, got: {data}\"\n            )\nE           AssertionError: Response must have refreshed: true, got: {'token': {}, 'identity': 'bob', 'roomName': None, 'expiresIn': 1800, 'refreshedAt': '2026-05-08T00:49:32.060Z'}\nE           assert None is True\nE            +  where None = <built-in method get of dict object at 0xe5d6ae2ad640>('refreshed')\nE            +    where <built-in method get of dict object at 0xe5d6ae2ad640> = {'expiresIn': 1800, 'identity': 'bob', 'refreshedAt': '2026-05-08T00:49:32.060Z', 'roomName': None, ...}.get\n\n/tests/test_final_state.py:147: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

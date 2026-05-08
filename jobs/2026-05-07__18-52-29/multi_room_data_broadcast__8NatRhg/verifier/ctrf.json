@@ -1,0 +1,116 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 10,
+            "passed": 8,
+            "failed": 2,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778205532.6064334,
+            "stop": 1778205532.6488936
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_broadcast_script_exists",
+                "status": "passed",
+                "duration": 0.00037478702142834663,
+                "start": 1778205532.6113892,
+                "stop": 1778205532.6119397,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_send_data",
+                "status": "passed",
+                "duration": 0.00030124711338430643,
+                "start": 1778205532.612048,
+                "stop": 1778205532.6124833,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_list_rooms",
+                "status": "passed",
+                "duration": 0.0002857890212908387,
+                "start": 1778205532.6125453,
+                "stop": 1778205532.6129394,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_data_packet_kind_reliable",
+                "status": "passed",
+                "duration": 0.0002877468941733241,
+                "start": 1778205532.612994,
+                "stop": 1778205532.6133947,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_has_system_message_type",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00034066312946379185,
+                "start": 1778205532.6134481,
+                "stop": 1778205532.6184678,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_script_has_system_message_type():\n        source = SCRIPT_FILE.read_text()\n>       assert \"system\" in source, (\n            \"broadcast.py must include a message with type 'system'\"\n        )\nE       AssertionError: broadcast.py must include a message with type 'system'\nE       assert 'system' in '#!/usr/bin/env python3\\nimport asyncio\\nimport logging\\nimport os\\nimport sys\\nfrom pathlib import Path\\nfrom typing ...\"Using message: %s\", message)\\n    await broadcast(message)\\n\\n\\nif __name__ == \"__main__\":\\n    asyncio.run(main())\\n'\n\n/tests/test_final_state.py:41: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_script_has_maintenance_message",
+                "status": "passed",
+                "duration": 0.00028366304468363523,
+                "start": 1778205532.6185336,
+                "stop": 1778205532.618937,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_references_log_file",
+                "status": "passed",
+                "duration": 0.00030437286477535963,
+                "start": 1778205532.6189954,
+                "stop": 1778205532.6194148,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_livekit_api",
+                "status": "passed",
+                "duration": 0.00027899688575416803,
+                "start": 1778205532.61947,
+                "stop": 1778205532.6198568,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_broadcast_log_created_after_run",
+                "status": "passed",
+                "duration": 0.02711964782793075,
+                "start": 1778205532.6199107,
+                "stop": 1778205532.6472774,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_broadcast_log_has_valid_content",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.000351079972460866,
+                "start": 1778205532.6473696,
+                "stop": 1778205532.6487315,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_broadcast_log_has_valid_content():\n        if not LOG_FILE.is_file():\n            pytest.skip(\"broadcast.log does not exist \u2014 run test_broadcast_log_created_after_run first\")\n    \n        content = LOG_FILE.read_text()\n>       assert \"Broadcast sent to\" in content or \"No active rooms found\" in content, (\n            \"broadcast.log must contain 'Broadcast sent to <room>' or 'No active rooms found'\"\n        )\nE       AssertionError: broadcast.log must contain 'Broadcast sent to <room>' or 'No active rooms found'\nE       assert ('Broadcast sent to' in '' or 'No active rooms found' in '')\n\n/tests/test_final_state.py:101: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

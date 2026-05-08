@@ -1,0 +1,92 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 8,
+            "passed": 8,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778180127.5312743,
+            "stop": 1778180129.5845823
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_server_js_exists",
+                "status": "passed",
+                "duration": 0.0004886799724772573,
+                "start": 1778180127.5465267,
+                "stop": 1778180127.5472867,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_webhook_receiver",
+                "status": "passed",
+                "duration": 0.0004509330028668046,
+                "start": 1778180127.547384,
+                "stop": 1778180127.5479798,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_imports_livekit_server_sdk",
+                "status": "passed",
+                "duration": 0.0004108500434085727,
+                "start": 1778180127.5481362,
+                "stop": 1778180127.5486896,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_express_raw_middleware",
+                "status": "passed",
+                "duration": 0.00032531400211155415,
+                "start": 1778180127.548768,
+                "stop": 1778180127.5493004,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_references_events_log",
+                "status": "passed",
+                "duration": 0.00029694102704524994,
+                "start": 1778180127.549387,
+                "stop": 1778180127.549904,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_listens_on_port_4000",
+                "status": "passed",
+                "duration": 0.0003232309827581048,
+                "start": 1778180127.549965,
+                "stop": 1778180127.5504508,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_defines_webhook_post_route",
+                "status": "passed",
+                "duration": 0.0004642640706151724,
+                "start": 1778180127.5505412,
+                "stop": 1778180127.5512128,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_unauthorized_webhook_returns_401",
+                "status": "passed",
+                "duration": 2.032769008888863,
+                "start": 1778180127.5513234,
+                "stop": 1778180129.5844004,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

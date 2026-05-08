@@ -1,0 +1,37 @@
+- Initializing MCP connections...
+You
+# Preserving your work Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable. *** ## Background LiveKit's `RoomServiceClient` provides server-side APIs to manage rooms and participants. Common administrative operations include listing active rooms and forcibly removing participants who violate platform policies. ## Requirements Write a Node.js script that uses `RoomServiceClient` to list all active rooms, log the count, remove a specific participant from a target room, and write all log output to a file. ## Implementation Guide 1. Navigate to `/home/user/livekit-admin`. 2. Create `list_and_kick.mjs` that: * Imports `RoomServiceClient` from `livekit-server-sdk` * Imports `fs` from `node:fs` * Reads `LIVEKIT_URL`, `LIVEKIT_API_KEY`, `LIVEKIT_API_SECRET` from environment (fall back to `"http://localhost:7880"`, `"devkey"`, `"devsecret"`) * Creates a `RoomServiceClient` instance * Calls `svc.listRooms()` and stores the result * Builds a log line: `"Active rooms: N"` where `N` is `rooms.length` * Calls `svc.removeParticipant('live-session', 'banned-user')` inside a `try/catch` (participant may not exist) * In the `catch` block, logs `"Note: participant not found or already removed"` * After the try/catch, appends `"Removed participant banned-user from live-session"` to the log * Collects all log lines into an array and writes them (newline-joined) to `output.log` * Also prints each log line to stdout with `console.log` 3. Run the script with `node list_and_kick.mjs` to produce `output.log`. ## Constraints * Project path: `/home/user/livekit-admin` * Log file: `/home/user/livekit-admin/output.log` ## Integrations * LiveKit Server SDK (Node.js)   
+
+Pochi
+💭 Thinking for 85 characters   
+📂 Listing files in /home/user/livekit-admin ✔ 
+📖 Reading /home/user/livekit-admin/package.json ✔ 
+📋 Updating todo list (3 items) ✔ 
+✏️  Writing /home/user/livekit-admin/list_and_kick.mjs ✔ 
+📋 Updating todo list (3 items) ✔ 
+💫 Executing node list_and_kick.mjs ✔ 
+📖 Reading /home/user/livekit-admin/output.log ✔ 
+📋 Updating todo list (3 items) ✔ 
+💫 Executing cp /home/user/livekit-admin/list_and_kick.mjs /logs/artifacts/ && cp /home/user/livekit-admin/output.log /logs/artifacts/ ✔ 
+📋 Updating todo list (3 items) ✔ 
+🎉 Task Completed
+The script `list_and_kick.mjs` has been created, executed, and its artifacts saved.
+
+**Script: `/home/user/livekit-admin/list_and_kick.mjs`**
+
+- Reads `LIVEKIT_URL`, `LIVEKIT_API_KEY`, `LIVEKIT_API_SECRET` from environment, falling back to localhost defaults
+- Creates a `RoomServiceClient` instance
+- Calls `svc.listRooms()` and logs `"Active rooms: N"`
+- Calls `svc.removeParticipant('live-session', 'banned-user')` in a `try/catch` — on failure logs `"Note: participant not found or already removed"`
+- Always appends `"Removed participant banned-user from live-session"` after the try/catch
+- Writes all log lines to `output.log` and prints each to stdout
+
+**Output (`/home/user/livekit-admin/output.log`):**
+```
+Active rooms: 0
+Note: participant not found or already removed
+Removed participant banned-user from live-session
+```
+
+The `removeParticipant` call caught an error (no live LiveKit server running), so the catch-block message was logged before the final confirmation line. Both files have been copied to `/logs/artifacts/`.   
+  

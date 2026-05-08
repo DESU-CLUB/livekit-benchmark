@@ -1,0 +1,1 @@
+Failed to remove participant: TwirpError(code=not_found, message=participant does not exist, status=404)

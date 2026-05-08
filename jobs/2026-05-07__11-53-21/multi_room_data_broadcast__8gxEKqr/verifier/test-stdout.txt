@@ -1,0 +1,61 @@
+downloading uv 0.9.7 aarch64-unknown-linux-gnu
+no checksums to verify
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+
+To add $HOME/.local/bin to your PATH, either restart your shell or run:
+
+    source $HOME/.local/bin/env (sh, bash, zsh)
+    source $HOME/.local/bin/env.fish (fish)
+Downloading pygments (1.2MiB)
+ Downloading pygments
+Installed 7 packages in 7ms
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 10 items
+
+../../../tests/test_final_state.py ...F.....F                            [100%]
+
+=================================== FAILURES ===================================
+__________________ test_script_uses_data_packet_kind_reliable __________________
+
+    def test_script_uses_data_packet_kind_reliable():
+        source = SCRIPT_FILE.read_text()
+>       assert "DATA_PACKET_KIND_RELIABLE" in source, (
+            "broadcast.py must use DATA_PACKET_KIND_RELIABLE for reliable delivery"
+        )
+E       AssertionError: broadcast.py must use DATA_PACKET_KIND_RELIABLE for reliable delivery
+E       assert 'DATA_PACKET_KIND_RELIABLE' in 'import os\nimport sys\nimport json\nimport asyncio\nimport logging\nfrom dotenv import load_dotenv\nfrom livekit.api ...ror occurred: {e}")\n    finally:\n        await api.aclose()\n\nif __name__ == "__main__":\n    asyncio.run(main())\n'
+
+/tests/test_final_state.py:34: AssertionError
+_____________________ test_broadcast_log_has_valid_content _____________________
+
+    def test_broadcast_log_has_valid_content():
+        if not LOG_FILE.is_file():
+            pytest.skip("broadcast.log does not exist — run test_broadcast_log_created_after_run first")
+    
+        content = LOG_FILE.read_text()
+>       assert "Broadcast sent to" in content or "No active rooms found" in content, (
+            "broadcast.log must contain 'Broadcast sent to <room>' or 'No active rooms found'"
+        )
+E       AssertionError: broadcast.log must contain 'Broadcast sent to <room>' or 'No active rooms found'
+E       assert ('Broadcast sent to' in '2026-05-07 18:58:48,645 - INFO - Fetching active rooms...\n2026-05-07 18:58:49,173 - INFO - Found 1 active room(s).\n...49,173 - INFO - Sending message to room: test-room\n2026-05-07 18:58:49,297 - INFO - Message sent to room: test-room\n' or 'No active rooms found' in '2026-05-07 18:58:48,645 - INFO - Fetching active rooms...\n2026-05-07 18:58:49,173 - INFO - Found 1 active room(s).\n...49,173 - INFO - Sending message to room: test-room\n2026-05-07 18:58:49,297 - INFO - Message sent to room: test-room\n')
+
+/tests/test_final_state.py:101: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../../../tests/test_final_state.py::test_broadcast_script_exists
+PASSED ../../../tests/test_final_state.py::test_script_uses_send_data
+PASSED ../../../tests/test_final_state.py::test_script_uses_list_rooms
+PASSED ../../../tests/test_final_state.py::test_script_has_system_message_type
+PASSED ../../../tests/test_final_state.py::test_script_has_maintenance_message
+PASSED ../../../tests/test_final_state.py::test_script_references_log_file
+PASSED ../../../tests/test_final_state.py::test_script_uses_livekit_api
+PASSED ../../../tests/test_final_state.py::test_broadcast_log_created_after_run
+FAILED ../../../tests/test_final_state.py::test_script_uses_data_packet_kind_reliable
+FAILED ../../../tests/test_final_state.py::test_broadcast_log_has_valid_content
+========================= 2 failed, 8 passed in 0.08s ==========================

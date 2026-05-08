@@ -1,0 +1,77 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 6,
+            "passed": 5,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778200616.2614279,
+            "stop": 1778200618.3795202
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_index_js_exists",
+                "status": "passed",
+                "duration": 0.0003726591821759939,
+                "start": 1778200616.271004,
+                "stop": 1778200616.2715511,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_access_token",
+                "status": "passed",
+                "duration": 0.0002974530216306448,
+                "start": 1778200616.271623,
+                "stop": 1778200616.2720351,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_express",
+                "status": "passed",
+                "duration": 0.0002709940308704972,
+                "start": 1778200616.2720938,
+                "stop": 1778200616.2724733,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_listens_on_port_3000",
+                "status": "passed",
+                "duration": 0.00025757914409041405,
+                "start": 1778200616.2725267,
+                "stop": 1778200616.2728863,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_has_token_endpoint",
+                "status": "passed",
+                "duration": 0.00025936891324818134,
+                "start": 1778200616.2729385,
+                "stop": 1778200616.2732997,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_token_endpoint_returns_jwt",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 2.0515420050360262,
+                "start": 1778200616.2733521,
+                "stop": 1778200618.379312,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_token_endpoint_returns_jwt():\n        node_path = shutil.which(\"node\")\n        assert node_path is not None, \"node must be installed\"\n    \n        env = os.environ.copy()\n        env.setdefault(\"LIVEKIT_API_KEY\", \"test-api-key\")\n        env.setdefault(\"LIVEKIT_API_SECRET\", \"test-api-secret\")\n    \n        proc = subprocess.Popen(\n            [node_path, \"index.js\"],\n            cwd=str(PROJECT_DIR),\n            env=env,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n        )\n    \n        try:\n            time.sleep(2)\n    \n            token_url = f\"{SERVER_URL}/token?room=test-room&identity=alice\"\n            try:\n>               with urllib.request.urlopen(token_url, timeout=5) as resp:\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:63: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/urllib/request.py:215: in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n/usr/lib/python3.12/urllib/request.py:521: in open\n    response = meth(req, response)\n               ^^^^^^^^^^^^^^^^^^^\n/usr/lib/python3.12/urllib/request.py:630: in http_response\n    response = self.parent.error(\n/usr/lib/python3.12/urllib/request.py:559: in error\n    return self._call_chain(*args)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n/usr/lib/python3.12/urllib/request.py:492: in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <urllib.request.HTTPDefaultErrorHandler object at 0xff60bd5920f0>\nreq = <urllib.request.Request object at 0xff60bcb1fb60>\nfp = <http.client.HTTPResponse object at 0xff60bcb1f850>, code = 500\nmsg = 'Internal Server Error'\nhdrs = <http.client.HTTPMessage object at 0xff60bc802f00>\n\n    def http_error_default(self, req, fp, code, msg, hdrs):\n>       raise HTTPError(req.full_url, code, msg, hdrs, fp)\nE       urllib.error.HTTPError: HTTP Error 500: Internal Server Error\n\n/usr/lib/python3.12/urllib/request.py:639: HTTPError\n\nDuring handling of the above exception, another exception occurred:\n\n    def test_token_endpoint_returns_jwt():\n        node_path = shutil.which(\"node\")\n        assert node_path is not None, \"node must be installed\"\n    \n        env = os.environ.copy()\n        env.setdefault(\"LIVEKIT_API_KEY\", \"test-api-key\")\n        env.setdefault(\"LIVEKIT_API_SECRET\", \"test-api-secret\")\n    \n        proc = subprocess.Popen(\n            [node_path, \"index.js\"],\n            cwd=str(PROJECT_DIR),\n            env=env,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n        )\n    \n        try:\n            time.sleep(2)\n    \n            token_url = f\"{SERVER_URL}/token?room=test-room&identity=alice\"\n            try:\n                with urllib.request.urlopen(token_url, timeout=5) as resp:\n                    status = resp.status\n                    body = resp.read().decode(\"utf-8\")\n            except urllib.error.HTTPError as e:\n                body = e.read().decode(\"utf-8\")\n>               pytest.fail(f\"GET /token returned HTTP {e.code}: {body}\")\nE               Failed: GET /token returned HTTP 500: {\"error\":\"Failed to generate token\"}\n\n/tests/test_final_state.py:68: Failed",
+                "message": "The test failed in the call phase"
+            }
+        ]
+    }
+}

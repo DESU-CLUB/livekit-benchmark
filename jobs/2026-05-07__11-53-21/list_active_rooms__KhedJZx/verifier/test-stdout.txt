@@ -1,0 +1,43 @@
+downloading uv 0.9.7 aarch64-unknown-linux-gnu
+no checksums to verify
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+
+To add $HOME/.local/bin to your PATH, either restart your shell or run:
+
+    source $HOME/.local/bin/env (sh, bash, zsh)
+    source $HOME/.local/bin/env.fish (fish)
+Downloading pygments (1.2MiB)
+ Downloading pygments
+Installed 7 packages in 6ms
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 4 items
+
+../../../tests/test_final_state.py ...F                                  [100%]
+
+=================================== FAILURES ===================================
+___________________________ test_rooms_json_is_array ___________________________
+
+    def test_rooms_json_is_array():
+        content = ROOMS_FILE.read_text().strip()
+        data = json.loads(content)
+>       assert isinstance(data, list), (
+            f"rooms.json must be a JSON array at the top level, got {type(data).__name__}"
+        )
+E       AssertionError: rooms.json must be a JSON array at the top level, got dict
+E       assert False
+E        +  where False = isinstance({}, list)
+
+/tests/test_final_state.py:29: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../../../tests/test_final_state.py::test_rooms_json_exists
+PASSED ../../../tests/test_final_state.py::test_rooms_json_not_empty
+PASSED ../../../tests/test_final_state.py::test_rooms_json_is_valid_json
+FAILED ../../../tests/test_final_state.py::test_rooms_json_is_array - Asserti...
+========================= 1 failed, 3 passed in 0.01s ==========================

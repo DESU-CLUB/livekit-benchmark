@@ -1,0 +1,92 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 7,
+            "passed": 4,
+            "failed": 3,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778205843.9212282,
+            "stop": 1778205843.9520373
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_list_participants_script_exists",
+                "status": "passed",
+                "duration": 0.00036211987026035786,
+                "start": 1778205843.9255416,
+                "stop": 1778205843.9260952,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_room_service_client",
+                "status": "passed",
+                "duration": 0.00023033097386360168,
+                "start": 1778205843.9261668,
+                "stop": 1778205843.9264987,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_calls_list_participants",
+                "status": "passed",
+                "duration": 0.00020341388881206512,
+                "start": 1778205843.926563,
+                "stop": 1778205843.9268634,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_targets_main_room",
+                "status": "passed",
+                "duration": 0.00018808187451213598,
+                "start": 1778205843.9269173,
+                "stop": 1778205843.9271865,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_participants_json_exists",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00035412004217505455,
+                "start": 1778205843.9272656,
+                "stop": 1778205843.9323142,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_participants_json_exists():\n>       assert OUTPUT_FILE.is_file(), f\"participants.json not found at {OUTPUT_FILE}\"\nE       AssertionError: participants.json not found at /home/user/livekit-admin/participants.json\nE       assert False\nE        +  where False = is_file()\nE        +    where is_file = PosixPath('/home/user/livekit-admin/participants.json').is_file\n\n/tests/test_final_state.py:36: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_participants_json_is_valid_json",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0002273310674354434,
+                "start": 1778205843.9323802,
+                "stop": 1778205843.9424517,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_participants_json_is_valid_json():\n>       content = OUTPUT_FILE.read_text().strip()\n                  ^^^^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:40: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/pathlib.py:1029: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/home/user/livekit-admin/participants.json'), mode = 'r'\nbuffering = -1, encoding = 'utf-8', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-admin/participants.json'\n\n/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_participants_json_is_array",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00025141192600131035,
+                "start": 1778205843.942515,
+                "stop": 1778205843.9518776,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_participants_json_is_array():\n>       content = OUTPUT_FILE.read_text().strip()\n                  ^^^^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:51: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/pathlib.py:1029: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/home/user/livekit-admin/participants.json'), mode = 'r'\nbuffering = -1, encoding = 'utf-8', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-admin/participants.json'\n\n/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            }
+        ]
+    }
+}

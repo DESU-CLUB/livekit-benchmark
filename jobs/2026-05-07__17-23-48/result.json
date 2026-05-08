@@ -1,0 +1,58 @@
+{
+    "id": "b0e05ba3-a9e3-4cb9-87f2-99091c5828a6",
+    "started_at": "2026-05-07T17:23:49.736068",
+    "finished_at": "2026-05-07T17:55:31.446738",
+    "n_total_trials": 28,
+    "stats": {
+        "n_trials": 28,
+        "n_errors": 0,
+        "evals": {
+            "pochi__glm-4.7__livekit-tasks": {
+                "n_trials": 28,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 0.6071428571428571
+                    }
+                ],
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "webhook_receiver_express__saXZcCV",
+                            "token_with_room_config_agent_dis__CnyXTQ3",
+                            "generate_access_token__zFJUFR7",
+                            "multimodal_vision_agent__boi5zHs",
+                            "realtime_model_agent__YPkWp7C",
+                            "camera_only_token_restriction__utE2qEx",
+                            "remove_participant__bqNgmKG",
+                            "full_stack_video_conference_app__Fg5U3PM",
+                            "basic_voice_agent_python__nKxgELd",
+                            "hand_raise_dynamic_permissions__PX4AbKS",
+                            "room_service_list_and_kick__z5YCbK9",
+                            "webhook_participant_joined_logge__8qkQaQb",
+                            "turn_detection_customization__gNmmZfz",
+                            "voice_agent_with_tool_call__RQhCZfK",
+                            "subscribe_only_token__eCYGYVR",
+                            "delete_room__jjduhxc",
+                            "vad_tuning_barge_in__gdLsgow"
+                        ],
+                        "0.0": [
+                            "list_active_rooms__3Bt52g9",
+                            "participant_permissions_update__u9Pxigs",
+                            "multi_room_data_broadcast__o7F4QBu",
+                            "token_server_express__XWoPNWV",
+                            "sip_inbound_trunk_setup__ELU3Wsc",
+                            "room_metadata_update__tnDxenM",
+                            "secure_webhook_validation__eS5LNiB",
+                            "voice_agent_system_prompt_tool__wZ95rnT",
+                            "list_participants_in_room__meHvJyC",
+                            "agent_with_custom_stt_provider__aUvLnW6",
+                            "token_refresh_server__ez6ejEb"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        }
+    }
+}

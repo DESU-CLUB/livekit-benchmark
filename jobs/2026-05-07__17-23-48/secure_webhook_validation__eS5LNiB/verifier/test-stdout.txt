@@ -1,0 +1,79 @@
+downloading uv 0.9.7 aarch64-unknown-linux-gnu
+no checksums to verify
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+
+To add $HOME/.local/bin to your PATH, either restart your shell or run:
+
+    source $HOME/.local/bin/env (sh, bash, zsh)
+    source $HOME/.local/bin/env.fish (fish)
+Downloading pygments (1.2MiB)
+ Downloading pygments
+Installed 7 packages in 4ms
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 12 items
+
+../../../tests/test_final_state.py ..........F.                          [100%]
+
+=================================== FAILURES ===================================
+_______________________ test_health_endpoint_returns_ok ________________________
+
+    def test_health_endpoint_returns_ok():
+        node_path = shutil.which("node")
+        assert node_path is not None, "node must be installed"
+    
+        env = os.environ.copy()
+        env.setdefault("LIVEKIT_API_KEY", "test-api-key")
+        env.setdefault("LIVEKIT_API_SECRET", "test-api-secret")
+    
+        proc = subprocess.Popen(
+            [node_path, "server.js"],
+            cwd=str(PROJECT_DIR),
+            env=env,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        )
+    
+        try:
+            time.sleep(2)
+    
+            health_url = f"{SERVER_URL}/health"
+            try:
+                with urllib.request.urlopen(health_url, timeout=5) as resp:
+                    status = resp.status
+                    body = resp.read().decode("utf-8")
+            except urllib.error.HTTPError as e:
+                body = e.read().decode("utf-8")
+                pytest.fail(f"GET /health returned HTTP {e.code}: {body}")
+    
+            assert status == 200, f"Expected HTTP 200, got {status}"
+    
+            data = json.loads(body)
+>           assert data.get("status") == "ok", f"Expected {{status: 'ok'}}, got {data}"
+E           AssertionError: Expected {status: 'ok'}, got {'status': 'healthy', 'timestamp': '2026-05-08T00:48:51.351Z'}
+E           assert 'healthy' == 'ok'
+E             
+E             - ok
+E             + healthy
+
+/tests/test_final_state.py:114: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../../../tests/test_final_state.py::test_server_js_exists
+PASSED ../../../tests/test_final_state.py::test_script_uses_webhook_receiver
+PASSED ../../../tests/test_final_state.py::test_script_uses_express_raw_middleware
+PASSED ../../../tests/test_final_state.py::test_script_references_events_log
+PASSED ../../../tests/test_final_state.py::test_script_listens_on_port_4000
+PASSED ../../../tests/test_final_state.py::test_script_has_room_started_handler
+PASSED ../../../tests/test_final_state.py::test_script_has_room_finished_handler
+PASSED ../../../tests/test_final_state.py::test_script_has_participant_joined_handler
+PASSED ../../../tests/test_final_state.py::test_script_has_participant_left_handler
+PASSED ../../../tests/test_final_state.py::test_script_has_track_published_handler
+PASSED ../../../tests/test_final_state.py::test_unauthorized_webhook_returns_401
+FAILED ../../../tests/test_final_state.py::test_health_endpoint_returns_ok - ...
+========================= 1 failed, 11 passed in 4.09s =========================

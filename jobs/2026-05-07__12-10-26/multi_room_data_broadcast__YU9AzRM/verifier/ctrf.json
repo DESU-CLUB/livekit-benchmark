@@ -1,0 +1,113 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 10,
+            "passed": 9,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778181329.0441105,
+            "stop": 1778181329.0846093
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_broadcast_script_exists",
+                "status": "passed",
+                "duration": 0.00028607004787772894,
+                "start": 1778181329.0491207,
+                "stop": 1778181329.049547,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_send_data",
+                "status": "passed",
+                "duration": 0.0002175311092287302,
+                "start": 1778181329.0496166,
+                "stop": 1778181329.049936,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_list_rooms",
+                "status": "passed",
+                "duration": 0.0002010309835895896,
+                "start": 1778181329.049991,
+                "stop": 1778181329.0502765,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_data_packet_kind_reliable",
+                "status": "passed",
+                "duration": 0.00019361497834324837,
+                "start": 1778181329.0503283,
+                "stop": 1778181329.0506027,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_has_system_message_type",
+                "status": "passed",
+                "duration": 0.00018999003805220127,
+                "start": 1778181329.0506523,
+                "stop": 1778181329.0509279,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_has_maintenance_message",
+                "status": "passed",
+                "duration": 0.00021640595514327288,
+                "start": 1778181329.0509763,
+                "stop": 1778181329.0512729,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_references_log_file",
+                "status": "passed",
+                "duration": 0.00018553284462541342,
+                "start": 1778181329.051332,
+                "stop": 1778181329.051596,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_livekit_api",
+                "status": "passed",
+                "duration": 0.00022194907069206238,
+                "start": 1778181329.0516424,
+                "stop": 1778181329.0519419,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_broadcast_log_created_after_run",
+                "status": "passed",
+                "duration": 0.027109297923743725,
+                "start": 1778181329.0520175,
+                "stop": 1778181329.0793254,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_broadcast_log_has_valid_content",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0003017361741513014,
+                "start": 1778181329.0794044,
+                "stop": 1778181329.08449,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_broadcast_log_has_valid_content():\n        if not LOG_FILE.is_file():\n            pytest.skip(\"broadcast.log does not exist \u2014 run test_broadcast_log_created_after_run first\")\n    \n        content = LOG_FILE.read_text()\n>       assert \"Broadcast sent to\" in content or \"No active rooms found\" in content, (\n            \"broadcast.log must contain 'Broadcast sent to <room>' or 'No active rooms found'\"\n        )\nE       AssertionError: broadcast.log must contain 'Broadcast sent to <room>' or 'No active rooms found'\nE       assert ('Broadcast sent to' in '' or 'No active rooms found' in '')\n\n/tests/test_final_state.py:101: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

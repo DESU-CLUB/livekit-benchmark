@@ -1,0 +1,83 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 7,
+            "passed": 7,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778205309.269497,
+            "stop": 1778205309.278451
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_generate_token_script_exists",
+                "status": "passed",
+                "duration": 0.00033716403413563967,
+                "start": 1778205309.2746212,
+                "stop": 1778205309.2751546,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_token_file_exists",
+                "status": "passed",
+                "duration": 0.0002327898982912302,
+                "start": 1778205309.2752297,
+                "stop": 1778205309.2755666,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_token_file_not_empty",
+                "status": "passed",
+                "duration": 0.0004609128227457404,
+                "start": 1778205309.2756383,
+                "stop": 1778205309.2762535,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_token_is_valid_jwt_format",
+                "status": "passed",
+                "duration": 0.00029249803628772497,
+                "start": 1778205309.2763221,
+                "stop": 1778205309.2767262,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_livekit_api",
+                "status": "passed",
+                "duration": 0.0002749970881268382,
+                "start": 1778205309.276778,
+                "stop": 1778205309.2771568,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_targets_correct_room",
+                "status": "passed",
+                "duration": 0.00038424786180257797,
+                "start": 1778205309.2772486,
+                "stop": 1778205309.2777348,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_targets_correct_identity",
+                "status": "passed",
+                "duration": 0.0003387879114598036,
+                "start": 1778205309.2778184,
+                "stop": 1778205309.2782924,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

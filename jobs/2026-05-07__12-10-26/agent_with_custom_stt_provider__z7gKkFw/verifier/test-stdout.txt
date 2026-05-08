@@ -1,0 +1,73 @@
+downloading uv 0.9.7 aarch64-unknown-linux-gnu
+no checksums to verify
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+Downloading pygments (1.2MiB)
+ Downloading pygments
+Installed 7 packages in 11ms
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 19 items
+
+../../../tests/test_final_state.py ...........FF.F....                   [100%]
+
+=================================== FAILURES ===================================
+________________________ test_agent_uses_inference_llm _________________________
+
+    def test_agent_uses_inference_llm():
+        source = AGENT_FILE.read_text()
+>       assert "inference.LLM" in source, (
+            "src/agent.py must use inference.LLM for the language model"
+        )
+E       AssertionError: src/agent.py must use inference.LLM for the language model
+E       assert 'inference.LLM' in 'import os\nfrom dotenv import load_dotenv\n\nfrom livekit.agents import Agent, AgentSession, JobContext, WorkerOption...  WorkerOptions(\n            entrypoint_fnc=entrypoint,\n            agent_name="deepgram-agent",\n        )\n    )\n'
+
+/tests/test_final_state.py:82: AssertionError
+________________________ test_agent_uses_inference_tts _________________________
+
+    def test_agent_uses_inference_tts():
+        source = AGENT_FILE.read_text()
+>       assert "inference.TTS" in source, (
+            "src/agent.py must use inference.TTS for text-to-speech"
+        )
+E       AssertionError: src/agent.py must use inference.TTS for text-to-speech
+E       assert 'inference.TTS' in 'import os\nfrom dotenv import load_dotenv\n\nfrom livekit.agents import Agent, AgentSession, JobContext, WorkerOption...  WorkerOptions(\n            entrypoint_fnc=entrypoint,\n            agent_name="deepgram-agent",\n        )\n    )\n'
+
+/tests/test_final_state.py:89: AssertionError
+____________________ test_agent_uses_rtc_session_decorator _____________________
+
+    def test_agent_uses_rtc_session_decorator():
+        source = AGENT_FILE.read_text()
+>       assert "rtc_session" in source, (
+            "src/agent.py must use @server.rtc_session decorator"
+        )
+E       AssertionError: src/agent.py must use @server.rtc_session decorator
+E       assert 'rtc_session' in 'import os\nfrom dotenv import load_dotenv\n\nfrom livekit.agents import Agent, AgentSession, JobContext, WorkerOption...  WorkerOptions(\n            entrypoint_fnc=entrypoint,\n            agent_name="deepgram-agent",\n        )\n    )\n'
+
+/tests/test_final_state.py:103: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../../../tests/test_final_state.py::test_agent_file_exists
+PASSED ../../../tests/test_final_state.py::test_pyproject_toml_exists
+PASSED ../../../tests/test_final_state.py::test_env_local_exists
+PASSED ../../../tests/test_final_state.py::test_venv_exists
+PASSED ../../../tests/test_final_state.py::test_pyproject_has_livekit_agents
+PASSED ../../../tests/test_final_state.py::test_pyproject_has_deepgram_plugin
+PASSED ../../../tests/test_final_state.py::test_pyproject_has_silero_plugin
+PASSED ../../../tests/test_final_state.py::test_agent_imports_deepgram_plugin
+PASSED ../../../tests/test_final_state.py::test_agent_uses_deepgram_stt
+PASSED ../../../tests/test_final_state.py::test_agent_uses_nova_3_model
+PASSED ../../../tests/test_final_state.py::test_agent_has_deepgram_agent_name
+PASSED ../../../tests/test_final_state.py::test_agent_uses_silero_vad
+PASSED ../../../tests/test_final_state.py::test_agent_uses_agent_session
+PASSED ../../../tests/test_final_state.py::test_env_local_has_livekit_keys
+PASSED ../../../tests/test_final_state.py::test_env_local_has_deepgram_api_key
+PASSED ../../../tests/test_final_state.py::test_venv_has_python_binary
+FAILED ../../../tests/test_final_state.py::test_agent_uses_inference_llm - As...
+FAILED ../../../tests/test_final_state.py::test_agent_uses_inference_tts - As...
+FAILED ../../../tests/test_final_state.py::test_agent_uses_rtc_session_decorator
+========================= 3 failed, 16 passed in 0.02s =========================

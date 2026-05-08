@@ -1,0 +1,32 @@
+- Initializing MCP connections...
+You
+# Preserving your work Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable. --- ## Background LiveKit Agents supports multimodal AI pipelines including vision. An agent can subscribe to video tracks published by participants and process video frames using an LLM's vision capabilities. The `rtc.VideoStream` class provides an async iterator over `VideoFrame` objects from a subscribed video track. Frames can be captured and included in chat messages using `ChatMessage` with image content. ## Requirements Build a LiveKit Python agent that subscribes to video tracks, periodically captures a frame, and asks an LLM to describe the scene. ## Implementation Guide 1. Navigate to the project directory at `/home/user/livekit-agent`. 2. Create `pyproject.toml` with: - Project name `livekit-agent`, version `0.1.0`, requires Python `>=3.11`. - Dependencies: `livekit-agents[codecs,turn-detector]`, `livekit-plugins-openai`, `livekit-plugins-silero`, `python-dotenv`. 3. Create `.env.local` in the project root with placeholder values: - `LIVEKIT_URL=wss://your-livekit-server.livekit.cloud` - `LIVEKIT_API_KEY=your-api-key` - `LIVEKIT_API_SECRET=your-api-secret` - `OPENAI_API_KEY=your-openai-api-key` 4. Create the directory `src/` and file `src/agent.py` that: - Imports `asyncio`, `agents`, `rtc` from `livekit` and `livekit.agents`. - Imports `AgentServer`, `AgentSession`, `Agent` from `livekit.agents`. - Imports `openai` from `livekit.plugins`. - Creates `server = AgentServer()`. - Defines a `VisionAssistant(Agent)` class with instructions `"You are a vision assistant. Describe what you see in the video."` and an async `describe_scene(self)` method. - In the `@server.rtc_session(agent_name="vision-agent")` handler: - Registers a `track_subscribed` event on `ctx.room`. - In the handler, if `track.kind == rtc.TrackKind.KIND_VIDEO`, creates a `rtc.VideoStream(track)` and stores it. - Creates an `AgentSession` with STT, LLM (OpenAI), TTS, VAD. - Starts an `asyncio.create_task` for a periodic loop that calls `describe_scene()` every 5 seconds. - Calls `await ctx.connect()` and `await session.start(room=ctx.room, agent=VisionAssistant())`. - Has `if __name__ == "__main__": agents.cli.run_app(server)` entry point. 5. Run `uv sync` to install dependencies. ## Constraints - Project path: `/home/user/livekit-agent` - Use `uv` as the package manager (already installed) - Python version must be 3.11 or higher - Agent file must be at `src/agent.py` - Agent name must be `"vision-agent"` - Must use `rtc.VideoStream` to consume video frames - Must use `rtc.TrackKind.KIND_VIDEO` to filter video tracks - `describe_scene()` async method must exist on the assistant class ## Integrations - **LiveKit Agents Python**: `livekit-agents[codecs,turn-detector]` pip package - **LiveKit OpenAI Plugin**: `livekit-plugins-openai` pip package - **LiveKit Silero Plugin**: `livekit-plugins-silero` pip package   
+
+Pochi
+💭 Thinking for 536 characters   
+✏️  Writing /home/user/livekit-agent/pyproject.toml ✔ 
+💭 Thinking for 139 characters   
+✏️  Writing /home/user/livekit-agent/.env.local ✔ 
+💭 Thinking for 1100 characters   
+✏️  Writing /home/user/livekit-agent/src/agent.py ✔ 
+💭 Thinking for 294 characters   
+💫 Executing uv sync ✔ 
+💭 Thinking for 264 characters   
+💫 Executing mkdir -p /logs/artifacts/code && cp pyproject.toml .env.local src/agent.py /logs/artifacts/code/ ✔ 
+💭 Thinking for 177 characters   
+📂 Listing files in /logs/artifacts/code ✔ 
+💭 Thinking for 713 characters   
+🎉 Task Completed
+I have successfully created the LiveKit Python agent that subscribes to video tracks, captures frames, and asks an LLM to describe the scene.
+
+Here is a summary of the work done:
+1. Initialized a Python project at `/home/user/livekit-agent` with a `pyproject.toml` containing all required dependencies (`livekit-agents[codecs,turn-detector]`, `livekit-plugins-openai`, `livekit-plugins-silero`, `python-dotenv`) and Python `>=3.11`.
+2. Created a `.env.local` file with placeholder API keys and configuration.
+3. Created `src/agent.py` containing the `VisionAssistant` class that inherits from `Agent` with an async `describe_scene` method.
+4. Set up the `AgentServer` and registered the session handler with `agent_name="vision-agent"`.
+5. Implemented the track subscription logic filtering by `rtc.TrackKind.KIND_VIDEO` and initializing the `rtc.VideoStream`.
+6. Created an `AgentSession` initialized with STT, LLM, TTS, and VAD plugins from OpenAI and Silero.
+7. Started a periodic `asyncio` loop running every 5 seconds to call `describe_scene()`.
+8. Handled dependencies installation via `uv sync`.
+9. Saved a copy of all created files to `/logs/artifacts/code/` as requested.   
+  

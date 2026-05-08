@@ -1,0 +1,320 @@
+downloading uv 0.9.7 aarch64-unknown-linux-gnu
+no checksums to verify
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+Downloading pygments (1.2MiB)
+ Downloading pygments
+Installed 7 packages in 7ms
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 19 items
+
+../../../tests/test_final_state.py F......FFFFFFFFFF..                   [100%]
+
+=================================== FAILURES ===================================
+____________________________ test_agent_file_exists ____________________________
+
+    def test_agent_file_exists():
+>       assert AGENT_FILE.is_file(), f"src/agent.py not found at {AGENT_FILE}"
+E       AssertionError: src/agent.py not found at /home/user/livekit-agent/src/agent.py
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/home/user/livekit-agent/src/agent.py').is_file
+
+/tests/test_final_state.py:14: AssertionError
+______________________ test_agent_imports_deepgram_plugin ______________________
+
+    def test_agent_imports_deepgram_plugin():
+>       source = AGENT_FILE.read_text()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+
+/tests/test_final_state.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/livekit-agent/src/agent.py'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/src/agent.py'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_________________________ test_agent_uses_deepgram_stt _________________________
+
+    def test_agent_uses_deepgram_stt():
+>       source = AGENT_FILE.read_text()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+
+/tests/test_final_state.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/livekit-agent/src/agent.py'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/src/agent.py'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_________________________ test_agent_uses_nova_3_model _________________________
+
+    def test_agent_uses_nova_3_model():
+>       source = AGENT_FILE.read_text()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+
+/tests/test_final_state.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/livekit-agent/src/agent.py'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/src/agent.py'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+______________________ test_agent_has_deepgram_agent_name ______________________
+
+    def test_agent_has_deepgram_agent_name():
+>       source = AGENT_FILE.read_text()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+
+/tests/test_final_state.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/livekit-agent/src/agent.py'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/src/agent.py'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+________________________ test_agent_uses_inference_llm _________________________
+
+    def test_agent_uses_inference_llm():
+>       source = AGENT_FILE.read_text()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+
+/tests/test_final_state.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/livekit-agent/src/agent.py'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/src/agent.py'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+________________________ test_agent_uses_inference_tts _________________________
+
+    def test_agent_uses_inference_tts():
+>       source = AGENT_FILE.read_text()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+
+/tests/test_final_state.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/livekit-agent/src/agent.py'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/src/agent.py'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+__________________________ test_agent_uses_silero_vad __________________________
+
+    def test_agent_uses_silero_vad():
+>       source = AGENT_FILE.read_text()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+
+/tests/test_final_state.py:95: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/livekit-agent/src/agent.py'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/src/agent.py'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+____________________ test_agent_uses_rtc_session_decorator _____________________
+
+    def test_agent_uses_rtc_session_decorator():
+>       source = AGENT_FILE.read_text()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+
+/tests/test_final_state.py:102: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/livekit-agent/src/agent.py'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/src/agent.py'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+________________________ test_agent_uses_agent_session _________________________
+
+    def test_agent_uses_agent_session():
+>       source = AGENT_FILE.read_text()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+
+/tests/test_final_state.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/livekit-agent/src/agent.py'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-agent/src/agent.py'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_______________________ test_env_local_has_livekit_keys ________________________
+
+    def test_env_local_has_livekit_keys():
+        content = ENV_FILE.read_text()
+>       assert "LIVEKIT_URL" in content, ".env.local must contain LIVEKIT_URL"
+E       AssertionError: .env.local must contain LIVEKIT_URL
+E       assert 'LIVEKIT_URL' in '# Deepgram API Key\n# Get your API key from https://console.deepgram.com/\nDEEPGRAM_API_KEY=your_deepgram_api_key_here'
+
+/tests/test_final_state.py:115: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../../../tests/test_final_state.py::test_pyproject_toml_exists
+PASSED ../../../tests/test_final_state.py::test_env_local_exists
+PASSED ../../../tests/test_final_state.py::test_venv_exists
+PASSED ../../../tests/test_final_state.py::test_pyproject_has_livekit_agents
+PASSED ../../../tests/test_final_state.py::test_pyproject_has_deepgram_plugin
+PASSED ../../../tests/test_final_state.py::test_pyproject_has_silero_plugin
+PASSED ../../../tests/test_final_state.py::test_env_local_has_deepgram_api_key
+PASSED ../../../tests/test_final_state.py::test_venv_has_python_binary
+FAILED ../../../tests/test_final_state.py::test_agent_file_exists - Assertion...
+FAILED ../../../tests/test_final_state.py::test_agent_imports_deepgram_plugin
+FAILED ../../../tests/test_final_state.py::test_agent_uses_deepgram_stt - Fil...
+FAILED ../../../tests/test_final_state.py::test_agent_uses_nova_3_model - Fil...
+FAILED ../../../tests/test_final_state.py::test_agent_has_deepgram_agent_name
+FAILED ../../../tests/test_final_state.py::test_agent_uses_inference_llm - Fi...
+FAILED ../../../tests/test_final_state.py::test_agent_uses_inference_tts - Fi...
+FAILED ../../../tests/test_final_state.py::test_agent_uses_silero_vad - FileN...
+FAILED ../../../tests/test_final_state.py::test_agent_uses_rtc_session_decorator
+FAILED ../../../tests/test_final_state.py::test_agent_uses_agent_session - Fi...
+FAILED ../../../tests/test_final_state.py::test_env_local_has_livekit_keys - ...
+========================= 11 failed, 8 passed in 0.11s =========================

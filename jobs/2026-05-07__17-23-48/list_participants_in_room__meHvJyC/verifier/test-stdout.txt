@@ -1,0 +1,101 @@
+downloading uv 0.9.7 aarch64-unknown-linux-gnu
+no checksums to verify
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+
+To add $HOME/.local/bin to your PATH, either restart your shell or run:
+
+    source $HOME/.local/bin/env (sh, bash, zsh)
+    source $HOME/.local/bin/env.fish (fish)
+Downloading pygments (1.2MiB)
+ Downloading pygments
+Installed 7 packages in 9ms
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 7 items
+
+../../../tests/test_final_state.py ....FFF                               [100%]
+
+=================================== FAILURES ===================================
+________________________ test_participants_json_exists _________________________
+
+    def test_participants_json_exists():
+>       assert OUTPUT_FILE.is_file(), f"participants.json not found at {OUTPUT_FILE}"
+E       AssertionError: participants.json not found at /home/user/livekit-admin/participants.json
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/home/user/livekit-admin/participants.json').is_file
+
+/tests/test_final_state.py:36: AssertionError
+_____________________ test_participants_json_is_valid_json _____________________
+
+    def test_participants_json_is_valid_json():
+>       content = OUTPUT_FILE.read_text().strip()
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+
+/tests/test_final_state.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/livekit-admin/participants.json'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-admin/participants.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_______________________ test_participants_json_is_array ________________________
+
+    def test_participants_json_is_array():
+>       content = OUTPUT_FILE.read_text().strip()
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+
+/tests/test_final_state.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/user/livekit-admin/participants.json'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-admin/participants.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../../../tests/test_final_state.py::test_list_participants_script_exists
+PASSED ../../../tests/test_final_state.py::test_script_uses_room_service_client
+PASSED ../../../tests/test_final_state.py::test_script_calls_list_participants
+PASSED ../../../tests/test_final_state.py::test_script_targets_main_room
+FAILED ../../../tests/test_final_state.py::test_participants_json_exists - As...
+FAILED ../../../tests/test_final_state.py::test_participants_json_is_valid_json
+FAILED ../../../tests/test_final_state.py::test_participants_json_is_array - ...
+========================= 3 failed, 4 passed in 0.03s ==========================

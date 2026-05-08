@@ -1,0 +1,12 @@
+[project]
+name = "livekit-agent"
+version = "0.1.0"
+description = "LiveKit voice assistant agent"
+requires-python = ">=3.10"
+dependencies = [
+    "livekit-agents[codecs,turn-detector]",
+    "livekit-plugins-silero",
+]
+
+[tool.uv]
+package = true

@@ -1,0 +1,83 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 7,
+            "passed": 7,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778180613.220573,
+            "stop": 1778180613.2270904
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_delete_room_script_exists",
+                "status": "passed",
+                "duration": 0.00026042305398732424,
+                "start": 1778180613.2243996,
+                "stop": 1778180613.2247891,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_output_log_exists",
+                "status": "passed",
+                "duration": 0.0002195530105382204,
+                "start": 1778180613.2248538,
+                "stop": 1778180613.225162,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_output_log_contains_success_message",
+                "status": "passed",
+                "duration": 0.00028354593086987734,
+                "start": 1778180613.2252145,
+                "stop": 1778180613.2256203,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_room_service_client",
+                "status": "passed",
+                "duration": 0.0001843079226091504,
+                "start": 1778180613.2256722,
+                "stop": 1778180613.2259424,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_imports_livekit_server_sdk",
+                "status": "passed",
+                "duration": 0.00022517889738082886,
+                "start": 1778180613.225993,
+                "stop": 1778180613.2263207,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_targets_correct_room",
+                "status": "passed",
+                "duration": 0.00019201601389795542,
+                "start": 1778180613.2263718,
+                "stop": 1778180613.2266414,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_environment_variables",
+                "status": "passed",
+                "duration": 0.00019114208407700062,
+                "start": 1778180613.2267108,
+                "stop": 1778180613.2269807,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

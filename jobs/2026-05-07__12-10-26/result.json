@@ -1,0 +1,62 @@
+{
+    "id": "9ef06093-c8a3-4ef3-bfa8-6ead6ede38a0",
+    "started_at": "2026-05-07T12:10:28.139035",
+    "finished_at": "2026-05-07T12:23:10.439315",
+    "n_total_trials": 28,
+    "stats": {
+        "n_trials": 28,
+        "n_errors": 1,
+        "evals": {
+            "pochi__claude-4-6-sonnet__livekit-tasks": {
+                "n_trials": 28,
+                "n_errors": 1,
+                "metrics": [
+                    {
+                        "mean": 0.75
+                    }
+                ],
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "webhook_receiver_express__yR8wWWq",
+                            "token_with_room_config_agent_dis__ZvHs7LS",
+                            "generate_access_token__ZSozibW",
+                            "multimodal_vision_agent__m3xZckh",
+                            "realtime_model_agent__VBKy8zS",
+                            "camera_only_token_restriction__dBvJSpq",
+                            "remove_participant__XQaBDJJ",
+                            "full_stack_video_conference_app__nsBmMtU",
+                            "basic_voice_agent_python__T6RgTAu",
+                            "hand_raise_dynamic_permissions__ktRmJj4",
+                            "token_server_express__ustPDdR",
+                            "room_service_list_and_kick__QtMhzh8",
+                            "sip_inbound_trunk_setup__5jHcg3J",
+                            "webhook_participant_joined_logge__zCaPkr3",
+                            "turn_detection_customization__xD9kjrZ",
+                            "voice_agent_with_tool_call__GrHMWJt",
+                            "secure_webhook_validation__w78Kkzk",
+                            "subscribe_only_token__5FKBD2X",
+                            "list_participants_in_room__pYfQrdQ",
+                            "delete_room__tYXW4Bw",
+                            "vad_tuning_barge_in__5WLWmwf"
+                        ],
+                        "0.0": [
+                            "list_active_rooms__yZkayFh",
+                            "participant_permissions_update__ZuDQggf",
+                            "multi_room_data_broadcast__YU9AzRM",
+                            "room_metadata_update__jEnNjrX",
+                            "voice_agent_system_prompt_tool__sgdwCKm",
+                            "agent_with_custom_stt_provider__z7gKkFw",
+                            "token_refresh_server__Bf5yaee"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "NonZeroAgentExitCodeError": [
+                        "full_stack_video_conference_app__nsBmMtU"
+                    ]
+                }
+            }
+        }
+    }
+}

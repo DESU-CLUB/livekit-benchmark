@@ -1,0 +1,110 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 10,
+            "passed": 10,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778181397.7939384,
+            "stop": 1778181397.8471503
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_backend_dir_exists",
+                "status": "passed",
+                "duration": 0.00028319505508989096,
+                "start": 1778181397.8072126,
+                "stop": 1778181397.8076406,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_frontend_dir_exists",
+                "status": "passed",
+                "duration": 0.00023332401178777218,
+                "start": 1778181397.8077142,
+                "stop": 1778181397.8080413,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_backend_entry_point_exists",
+                "status": "passed",
+                "duration": 0.00020786502864211798,
+                "start": 1778181397.8081,
+                "stop": 1778181397.8083937,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_backend_uses_access_token",
+                "status": "passed",
+                "duration": 0.0002151980297639966,
+                "start": 1778181397.808453,
+                "stop": 1778181397.8087516,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_backend_listens_on_port_3001",
+                "status": "passed",
+                "duration": 0.00021932192612439394,
+                "start": 1778181397.8088043,
+                "stop": 1778181397.8091056,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_frontend_has_livekit_room_component",
+                "status": "passed",
+                "duration": 0.0002881960244849324,
+                "start": 1778181397.8091562,
+                "stop": 1778181397.8095372,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_frontend_has_video_conference_component",
+                "status": "passed",
+                "duration": 0.00023111514747142792,
+                "start": 1778181397.8095891,
+                "stop": 1778181397.8099008,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_backend_token_endpoint",
+                "status": "passed",
+                "duration": 0.03567747806664556,
+                "start": 1778181397.8099513,
+                "stop": 1778181397.8458648,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_frontend_package_json_has_livekit_components",
+                "status": "passed",
+                "duration": 0.00036689999978989363,
+                "start": 1778181397.8459733,
+                "stop": 1778181397.8464725,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_frontend_package_json_has_livekit_client",
+                "status": "passed",
+                "duration": 0.000304569024592638,
+                "start": 1778181397.8465338,
+                "stop": 1778181397.8469791,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

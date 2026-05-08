@@ -1,0 +1,98 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 8,
+            "passed": 6,
+            "failed": 2,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778181289.7514455,
+            "stop": 1778181289.7730432
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_update_permissions_script_exists",
+                "status": "passed",
+                "duration": 0.0002615370322018862,
+                "start": 1778181289.7556093,
+                "stop": 1778181289.7560177,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_calls_update_participant",
+                "status": "passed",
+                "duration": 0.00019208085723221302,
+                "start": 1778181289.7560873,
+                "stop": 1778181289.7563636,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_targets_speaker_identity",
+                "status": "passed",
+                "duration": 0.00017416395712643862,
+                "start": 1778181289.7564156,
+                "stop": 1778181289.7566648,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_targets_stage_room",
+                "status": "passed",
+                "duration": 0.00020937202498316765,
+                "start": 1778181289.7567153,
+                "stop": 1778181289.7570148,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_sets_can_publish_true",
+                "status": "passed",
+                "duration": 0.00020895595662295818,
+                "start": 1778181289.7570665,
+                "stop": 1778181289.7573571,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_livekit_api",
+                "status": "passed",
+                "duration": 0.00016216514632105827,
+                "start": 1778181289.7574065,
+                "stop": 1778181289.7576394,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_output_log_exists",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0002716630697250366,
+                "start": 1778181289.7576852,
+                "stop": 1778181289.7627635,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_output_log_exists():\n>       assert LOG_FILE.is_file(), f\"output.log not found at {LOG_FILE}\"\nE       AssertionError: output.log not found at /home/user/livekit-admin/output.log\nE       assert False\nE        +  where False = is_file()\nE        +    where is_file = PosixPath('/home/user/livekit-admin/output.log').is_file\n\n/tests/test_final_state.py:49: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_output_log_contains_success_message",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00022145616821944714,
+                "start": 1778181289.762822,
+                "stop": 1778181289.7729378,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_output_log_contains_success_message():\n>       content = LOG_FILE.read_text()\n                  ^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_final_state.py:53: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.12/pathlib.py:1029: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/home/user/livekit-admin/output.log'), mode = 'r'\nbuffering = -1, encoding = 'utf-8', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/livekit-admin/output.log'\n\n/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            }
+        ]
+    }
+}

@@ -1,0 +1,92 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 8,
+            "passed": 8,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778200344.3873022,
+            "stop": 1778200344.3988564
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_remove_participant_script_exists",
+                "status": "passed",
+                "duration": 0.0004037109902128577,
+                "start": 1778200344.3922007,
+                "stop": 1778200344.392833,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_output_log_exists",
+                "status": "passed",
+                "duration": 0.00034563394729048014,
+                "start": 1778200344.3929129,
+                "stop": 1778200344.3934655,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_output_log_not_empty",
+                "status": "passed",
+                "duration": 0.0015617241151630878,
+                "start": 1778200344.3935258,
+                "stop": 1778200344.3953168,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_imports_livekit_api",
+                "status": "passed",
+                "duration": 0.0004950339207425714,
+                "start": 1778200344.3953795,
+                "stop": 1778200344.3960948,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_remove_participant",
+                "status": "passed",
+                "duration": 0.0006416891701519489,
+                "start": 1778200344.396169,
+                "stop": 1778200344.3969424,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_targets_correct_room",
+                "status": "passed",
+                "duration": 0.0006584370275959373,
+                "start": 1778200344.3970027,
+                "stop": 1778200344.3977737,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_targets_correct_identity",
+                "status": "passed",
+                "duration": 0.00027968210633844137,
+                "start": 1778200344.397838,
+                "stop": 1778200344.3982546,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_livekit_api_context_manager",
+                "status": "passed",
+                "duration": 0.0002990120556205511,
+                "start": 1778200344.3983083,
+                "stop": 1778200344.3987057,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

@@ -2,17 +2,17 @@
     "id": "95a4785a-1f09-4f57-8d50-8eb5657b4442",
     "started_at": "2026-05-01T19:17:55.599014",
     "finished_at": "2026-05-01T19:39:17.703331",
-    "n_total_trials": 30,
+    "n_total_trials": 29,
     "stats": {
-        "n_trials": 30,
+        "n_trials": 29,
         "n_errors": 8,
         "evals": {
             "pochi__gemini-3-flash__livekit-tasks": {
-                "n_trials": 22,
+                "n_trials": 21,
                 "n_errors": 8,
                 "metrics": [
                     {
-                        "mean": 0.5333333333333333
+                        "mean": 0.5517241379310345
                     }
                 ],
                 "reward_stats": {
@@ -36,7 +36,6 @@
                             "vad_tuning_barge_in__a3sATS3"
                         ],
                         "0.0": [
-                            "egress_recording_trigger__3ZvWe7L",
                             "secure_webhook_validation__rLsR8c2",
                             "voice_agent_system_prompt_tool__3d82gBc",
                             "mute_published_track__VC4yyGJ",

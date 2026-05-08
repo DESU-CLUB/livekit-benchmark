@@ -1,0 +1,34 @@
+- Initializing MCP connections...
+You
+# Preserving your work Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable. --- ## Background LiveKit's Room Service API allows server-side applications to send data messages to participants in any active room. A common use case is broadcasting system notifications (e.g., maintenance warnings) to all active rooms simultaneously. The `send_data` method accepts a `SendDataRequest` with the room name, binary payload, and packet kind (`DATA_PACKET_KIND_RELIABLE` for guaranteed delivery). ## Requirements Write a Python script that lists all active LiveKit rooms and broadcasts a system message to each one using the Room Service `send_data` API. ## Implementation Guide See `instruction.md` for full details. ## Constraints - Project path: `/home/user/livekit-broadcast` - Script file: `/home/user/livekit-broadcast/broadcast.py` - Log file: `/home/user/livekit-broadcast/broadcast.log` - `.env.local` is pre-created with `LIVEKIT_API_KEY`, `LIVEKIT_API_SECRET`, `LIVEKIT_URL` - `livekit-server-sdk` (Python) is already installed ## Integrations - **LiveKit Python Server SDK**: `livekit.api` — `LiveKitAPI`, `ListRoomsRequest`, `SendDataRequest`, `DataPacketKind`   
+
+Pochi
+💭 Thinking for 0 characters   
+📋 Updating todo list (3 items) ✔ 
+📖 Reading instruction.md ✖ "ENOENT: no such file or directory, open '/home/user/livekit-broadcast/instruction.md'"
+💭 Thinking for 134 characters   
+📂 Listing files in . ✔ 
+💭 Thinking for 144 characters   
+📂 Listing files in . recursively ✔ 
+💭 Thinking for 0 characters   
+📂 Listing files in /home/user ✔ 
+💭 Thinking for 225 characters   
+📂 Listing files in / ✔ 
+💭 Thinking for 271 characters   
+💭 Thinking for 294 characters   
+✏️  Writing broadcast.py ✔ 
+💭 Thinking for 192 characters   
+✏️  Writing broadcast.log ✔ 
+💭 Thinking for 193 characters   
+📂 Listing files in /logs/artifacts ✔ 
+💭 Thinking for 185 characters   
+💫 Executing mkdir -p /logs/artifacts/code && cp /home/user/livekit-broadcast/broadcast.py /logs/artifacts/code/broadcast.py && cp /home/user/livekit-broadcast/broadcast.log /logs/artifacts/code/broadcast.log ✔ 
+💭 Thinking for 0 characters   
+📋 Updating todo list (3 items) ✔ 
+💭 Thinking for 173 characters   
+🎉 Task Completed
+Implemented broadcast.py to load LiveKit credentials from .env.local, list active rooms, and send a reliable data packet to each with logging to broadcast.log. Created an empty broadcast.log file and saved copies of both files to /logs/artifacts/code/. Note: instruction.md was not found in the project directory, so the script follows the requirements provided in the request.
+
+Usage:
+- python3 broadcast.py "Your message here" (defaults to a maintenance notification if omitted)   
+  

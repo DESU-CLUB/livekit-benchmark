@@ -1,0 +1,92 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 8,
+            "passed": 8,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778180251.193463,
+            "stop": 1778180251.2005386
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_update_permissions_script_exists",
+                "status": "passed",
+                "duration": 0.000275092083029449,
+                "start": 1778180251.1977327,
+                "stop": 1778180251.1981423,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_calls_update_participant",
+                "status": "passed",
+                "duration": 0.00021126715000718832,
+                "start": 1778180251.1982114,
+                "stop": 1778180251.1985164,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_targets_speaker_identity",
+                "status": "passed",
+                "duration": 0.0001802290789783001,
+                "start": 1778180251.198575,
+                "stop": 1778180251.198827,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_targets_stage_room",
+                "status": "passed",
+                "duration": 0.00017710309475660324,
+                "start": 1778180251.198887,
+                "stop": 1778180251.199142,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_sets_can_publish_true",
+                "status": "passed",
+                "duration": 0.00020501692779362202,
+                "start": 1778180251.1991959,
+                "stop": 1778180251.1994724,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_livekit_api",
+                "status": "passed",
+                "duration": 0.00019639590755105019,
+                "start": 1778180251.1995556,
+                "stop": 1778180251.199829,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_output_log_exists",
+                "status": "passed",
+                "duration": 0.0001822708873078227,
+                "start": 1778180251.199886,
+                "stop": 1778180251.2001405,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_output_log_contains_success_message",
+                "status": "passed",
+                "duration": 0.000172103988006711,
+                "start": 1778180251.200191,
+                "stop": 1778180251.2004437,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

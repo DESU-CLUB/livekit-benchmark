@@ -1,0 +1,146 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 14,
+            "passed": 14,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1778205611.1758862,
+            "stop": 1778205611.1880865
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_script_exists",
+                "status": "passed",
+                "duration": 0.000223289942368865,
+                "start": 1778205611.181413,
+                "stop": 1778205611.1817532,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_output_log_exists",
+                "status": "passed",
+                "duration": 0.0002626220230013132,
+                "start": 1778205611.1818168,
+                "stop": 1778205611.1822085,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_output_log_not_empty",
+                "status": "passed",
+                "duration": 0.0002826640848070383,
+                "start": 1778205611.182293,
+                "stop": 1778205611.1826901,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_output_log_contains_active_rooms",
+                "status": "passed",
+                "duration": 0.0002177900169044733,
+                "start": 1778205611.1827748,
+                "stop": 1778205611.183102,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_output_log_contains_removed_participant",
+                "status": "passed",
+                "duration": 0.00022828904911875725,
+                "start": 1778205611.183173,
+                "stop": 1778205611.183492,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_output_log_contains_live_session",
+                "status": "passed",
+                "duration": 0.0002472460037097335,
+                "start": 1778205611.1835585,
+                "stop": 1778205611.1839166,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_contains_list_rooms",
+                "status": "passed",
+                "duration": 0.00019808101933449507,
+                "start": 1778205611.183976,
+                "stop": 1778205611.1842468,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_contains_remove_participant",
+                "status": "passed",
+                "duration": 0.00019579019863158464,
+                "start": 1778205611.1843204,
+                "stop": 1778205611.1845994,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_contains_banned_user",
+                "status": "passed",
+                "duration": 0.00017928890883922577,
+                "start": 1778205611.1846519,
+                "stop": 1778205611.1849096,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_contains_live_session",
+                "status": "passed",
+                "duration": 0.0003201630897819996,
+                "start": 1778205611.1849608,
+                "stop": 1778205611.1853795,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_contains_room_service_client",
+                "status": "passed",
+                "duration": 0.00041082920506596565,
+                "start": 1778205611.1854317,
+                "stop": 1778205611.1860735,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_contains_output_log_write",
+                "status": "passed",
+                "duration": 0.0009873220697045326,
+                "start": 1778205611.1861353,
+                "stop": 1778205611.1872246,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_has_error_handling",
+                "status": "passed",
+                "duration": 0.00019133102614432573,
+                "start": 1778205611.1872797,
+                "stop": 1778205611.187545,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_active_rooms_line_has_number",
+                "status": "passed",
+                "duration": 0.0002545370953157544,
+                "start": 1778205611.1876075,
+                "stop": 1778205611.1879468,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

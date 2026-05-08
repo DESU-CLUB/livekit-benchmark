@@ -1,0 +1,17 @@
+{
+  "name": "livekit-meet-backend",
+  "version": "1.0.0",
+  "description": "LiveKit token server for video conferencing",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "livekit-server-sdk": "^1.2.7",
+    "cors": "^2.8.5"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

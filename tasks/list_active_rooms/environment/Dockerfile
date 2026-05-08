@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
     curl \
     ca-certificates \
     git \
+    jq \
     python3 \
     python3-pip \
     python3-pytest \

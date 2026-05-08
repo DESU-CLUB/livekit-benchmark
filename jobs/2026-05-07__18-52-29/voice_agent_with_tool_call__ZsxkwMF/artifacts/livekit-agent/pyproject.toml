@@ -1,0 +1,14 @@
+[project]
+name = "livekit-weather-agent"
+version = "0.1.0"
+description = "LiveKit weather voice agent"
+requires-python = ">=3.11"
+dependencies = [
+  "livekit-agents[codecs,turn-detector]",
+  "livekit-plugins-silero",
+  "python-dotenv",
+]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"

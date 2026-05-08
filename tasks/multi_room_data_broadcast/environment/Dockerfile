@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
     bash \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install --break-system-packages livekit-server-sdk python-dotenv
+RUN pip3 install --break-system-packages livekit-api python-dotenv
 
 RUN mkdir -p /home/user/livekit-broadcast
 

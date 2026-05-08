@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install --break-system-packages \
-    "livekit-server-sdk" \
+    "livekit-api" \
     "python-dotenv"
 
 RUN mkdir -p /home/user/livekit-sip
